@@ -1,0 +1,20 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+nav {
+    /* Navigation styling */
+}
+
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    /* Mobile styles */
+}
