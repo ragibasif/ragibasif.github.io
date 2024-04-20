@@ -4,7 +4,6 @@ body {
     Bitstream Vera Sans Mono, monospace, sans-serif;
   background: #faf3e0;
   color: #1e212d;
-  /* background: url("/assets/background/creambackground.png") repeat; */
 }
 div#text-container {
   padding-left: 5%;
@@ -66,3 +65,46 @@ ul li {
 /* ol {
   padding-left: 3em;
 } */
+
+/* Dark mode styles */
+.toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+#darkModeToggle {
+  background: transparent;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#gearIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  fill: white;
+}
+
+#darkModeToggle:hover {
+  background: transparent;
+}
+
+body.dark-mode {
+  background: #222831;
+  color: #eeeeee;
+}
+body.dark-mode a[href] {
+  color: #eeeeee;
+  background: #393e46;
+  text-decoration: none;
+}
+body.dark-mode a[href]:hover {
+  background: #00adb5;
+}
+body.dark-mode a[href]:focus {
+  background: #00adb5;
+}
