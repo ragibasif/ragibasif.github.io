@@ -52,40 +52,6 @@ div#text {
     margin-right: auto;
     max-width: 90%;
   }
-  nav#TOC {
-    overflow-y: scroll;
-    order: 2;
-    background: #211c00;
-  }
-  nav#TOC code {
-    background: inherit;
-  }
-  nav#TOC ul {
-    padding-left: 2em;
-    padding-right: 1em;
-  }
-  nav#TOC ul li {
-    list-style-type: none;
-    padding: 5px 0 0 0;
-  }
-  nav#TOC ul li a {
-    color: #ffd608;
-    background: none;
-    display: inline !important;
-  }
-  nav#TOC ul li a:hover {
-    color: #a18600;
-  }
-  nav#TOC ul li a:focus {
-    color: #a18600;
-  }
-  nav#TOC ul li ul {
-    margin: 0 0 20px 0;
-    font-weight: 400 !important;
-  }
-  nav#TOC ul li ul:first-child {
-    font-weight: bold;
-  }
 }
 p {
   max-width: 60rem;
@@ -97,6 +63,6 @@ ul {
 ul li {
   padding: 5px 0 0 0;
 }
-ol {
+/* ol {
   padding-left: 3em;
-}
+} */
