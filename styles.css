@@ -2,23 +2,23 @@ body {
   margin: 0 0 0 0;
   font-family: Consolas, Monaco, Lucida Console, Liberation Mono,
     Bitstream Vera Sans Mono, monospace, sans-serif;
-  background: #fffad1;
-  color: #211c00;
+  background: #faf3e0;
+  color: #1e212d;
   /* background: url("/assets/background/creambackground.png") repeat; */
 }
 div#text-container {
   padding-left: 5%;
 }
 a[href] {
-  color: black;
-  background: #ffd608;
+  color: #1e212d;
+  background: #eabf9f;
   text-decoration: none;
 }
 a[href]:hover {
-  background: #c2a200;
+  background: #b68973;
 }
 a[href]:focus {
-  background: #c2a200;
+  background: #b68973;
 }
 body h1 {
   margin: 70px 0 0 0;
