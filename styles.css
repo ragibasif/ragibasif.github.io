@@ -151,3 +151,28 @@ body.dark-mode a[href]:hover {
 body.dark-mode a[href]:focus {
   background: #00adb5;
 }
+
+/* animation */
+
+.rotate {
+  animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* for nav */
+.slide-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
