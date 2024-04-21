@@ -35,6 +35,34 @@ body p {
 div#text {
   padding-right: 5%;
 }
+
+div#error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+div#error-header {
+  padding: 2px;
+}
+div#error-text {
+  text-align: center;
+}
+
+div#error-poem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div#error-poem a {
+  background: none;
+}
+
+div#error-poem-text {
+  text-align: left;
+}
 @media (min-width: 800px) {
   div#everything {
     overflow: hidden;
@@ -50,6 +78,19 @@ div#text {
     margin-left: auto;
     margin-right: auto;
     max-width: 90%;
+  }
+
+  div#error {
+    overflow: hidden;
+    display: flex;
+    max-height: 100vh;
+    width: 100%;
+  }
+
+  div#error-text {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
   }
 }
 p {
