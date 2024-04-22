@@ -18,7 +18,6 @@ project structure, features, and instructions on how to set it up locally.
 - Responsive design
 - Home, About, Projects, GitHub, LinkedIn, and Contact sections
 - Smooth scrolling
-%% - Dynamic content loading
 - CSS animations
 
 ## Prerequisites
@@ -26,7 +25,6 @@ project structure, features, and instructions on how to set it up locally.
 Before you begin, ensure you have the following installed on your 
 machine:
 
-- Node.js
 - Git
 
 ## Installation
@@ -39,18 +37,6 @@ git clone https://github.com/ragibasif/ragibasif.github.io
 ```bash
 cd ragibasif.github.io
 ```
-3. Install the dependencies:
-```bash
-npm install
-```
-
-## Usage
-
-1. Start the development server:
-```bash
-npm start
-```
-2. Open your web browser and navigate to http://localhost:3000 to view the website.
 
 ## Contributing
 
