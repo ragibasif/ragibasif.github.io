@@ -4,23 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/assets/icons/firstname.png" />
-    <title>404 Error</title>
-
-    <link rel="stylesheet" href="styles.css" />
+    <title>Ragib Asif</title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div id="error">
-      <div id="error-header">
-        <h1 class="shake rotate">404 Error</h1>
+    <div id="everything">
+      <div class="toggle-container">
+        <button id="darkModeToggle">
+          <img
+            class="rotate"
+            src="/assets/icons/gear-solid.svg"
+            alt="Gear Icon"
+            id="gearIcon"
+          />
+        </button>
       </div>
-      <div id="error-text">
-        <h2>Oops! You've hit a snag!</h2>
-        <p>
-          Looks like you've ventured into the digital wilderness! You might've
-          taken a wrong turn in the vast internet universe. 🚀
-        </p>
-        <h2><a href="/index.html">Home</a></h2>
+      <div id="text-container">
+        <div id="text">
+          <h1 class="shake">404 Error</h1>
+          <div style="max-width: 900px">
+            <h1>Oops! Page Not Found</h1>
+            <p>
+              Looks like you took a wrong turn. Don't worry, even the best get
+              lost sometimes!
+            </p>
+            <img
+              src="assets/gifs/where-do-i-go.gif"
+              alt="Confused Emma Stone"
+            />
+            <p>
+              <a style="padding: 10px; font-size: 20px" href="/"
+                >Back to Home</a
+              >
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+
+    <script src="/scripts.js"></script>
   </body>
 </html>
