@@ -123,19 +123,19 @@ ul li {
 }
 
 body.dark-mode {
-  background: #222831;
-  color: #eeeeee;
+  background: #20262e;
+  color: #e9e8e8;
 }
 body.dark-mode a[href] {
-  color: #eeeeee;
-  background: #393e46;
+  color: #e9e8e8;
+  background: #913175;
   text-decoration: none;
 }
 body.dark-mode a[href]:hover {
-  background: #00adb5;
+  background: #cd5888;
 }
 body.dark-mode a[href]:focus {
-  background: #00adb5;
+  background: #cd5888;
 }
 
 /* animation */
