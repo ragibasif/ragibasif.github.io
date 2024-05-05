@@ -7,9 +7,10 @@ body {
     Bitstream Vera Sans Mono, monospace, sans-serif;
   background: #faf3e0;
   color: #1e212d;
+  display: flex;
 }
 div#text-container {
-  padding-left: 5%;
+  text-align: center;
 }
 a[href] {
   color: #1e212d;
@@ -29,14 +30,8 @@ body h2 {
   font-size: 1.4em;
   margin: 35px 0 0 0;
 }
-body h3 {
-  margin: 35px 0 0 0;
-}
 body p {
   line-height: 1.4em;
-}
-div#text {
-  padding-right: 5%;
 }
 
 div#error {
@@ -82,20 +77,6 @@ div#error-text {
     max-width: 50%;
   }
 }
-p {
-  max-width: 60rem;
-}
-ul {
-  padding-left: 3em;
-  max-width: 60rem;
-}
-ul li {
-  padding: 5px 0 0 0;
-}
-/* ol {
-  padding-left: 3em;
-} */
-
 /* Dark mode styles */
 .toggle-container {
   position: fixed;
@@ -138,6 +119,9 @@ body.dark-mode a[href]:focus {
   background: #cd5888;
 }
 
+body.dark-mode .card {
+  border: 1px solid #e9e8e8;
+}
 /* animation */
 
 .rotate {
@@ -183,4 +167,61 @@ body.dark-mode a[href]:focus {
   80% {
     transform: translateX(10px);
   }
+}
+
+.about-me,
+.projects-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid #1e212d;
+  /* border: none; */
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+  width: 200px;
+  background: transparent;
+  text-align: center;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+.card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.intro-cards {
+  background: transparent;
+  text-align: left;
+  /* border: 1px solid #ccc; */
+  border: none;
+  /* border-radius: 5px; */
+  padding: 20px;
+  margin: 20px;
+  width: 350px;
+  text-align: left;
+}
+
+mark {
+  background: #eabf9f;
+  color: #1e212d;
+}
+mark:hover {
+  background: #b68973;
+}
+body.dark-mode mark {
+  background: #913175;
+  color: #e9e8e8;
+}
+
+body.dark-mode mark:hover {
+  background: #cd5888;
+  color: #e9e8e8;
 }
