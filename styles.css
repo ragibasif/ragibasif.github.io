@@ -147,6 +147,10 @@ body.dark-mode .card {
   }
 }
 
+.about-me {
+  margin-left: 20%;
+  margin-right: 20%;
+}
 .about-me,
 .projects-cards {
   display: flex;
@@ -164,6 +168,19 @@ body.dark-mode .card {
   width: 200px;
   background: transparent;
   text-align: center;
+  box-shadow: 0 8px 16px rgba(230, 180, 100, 0.2);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(150, 100, 50, 0.2);
+  scale: 1.055;
+}
+
+body.dark-mode .card {
+  box-shadow: 0 8px 16px rgba(150, 50, 150, 0.2);
+}
+body.dark-mode .card:hover {
+  box-shadow: 0 8px 16px rgba(100, 30, 130, 0.2);
 }
 
 .card h2 {
@@ -173,18 +190,6 @@ body.dark-mode .card {
 .card img {
   max-width: 100%;
   border-radius: 5px;
-}
-
-.intro-cards {
-  background: transparent;
-  text-align: left;
-  /* border: 1px solid #ccc; */
-  border: none;
-  /* border-radius: 5px; */
-  padding: 20px;
-  margin: 20px;
-  width: 350px;
-  text-align: left;
 }
 
 mark {
