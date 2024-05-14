@@ -166,8 +166,13 @@ body.dark-mode .card {
   padding: 20px;
   margin: 20px;
   width: 200px;
+  height: 300px;
   background: transparent;
   text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   box-shadow: 0 8px 16px rgba(230, 180, 100, 0.2);
 }
 
@@ -185,10 +190,13 @@ body.dark-mode .card:hover {
 
 .card h2 {
   margin-top: 0;
+  margin-bottom: 10px;
   font-size: 1.2em;
 }
 .card img {
-  max-width: 100%;
+  object-fit: cover;
+  width: 180px;
+  height: 180px;
   border-radius: 5px;
 }
 
