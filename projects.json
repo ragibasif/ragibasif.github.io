@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Audio Visualizer",
+        "website": "https://ragibasif.github.io/audio-visualizer/",
+        "code": "https://github.com/ragibasif/audio-visualizer",
+        "category": "",
+        "status": "featured",
+        "id": 1,
+        "image": "",
+        "tools": [
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+
+    },
+]
