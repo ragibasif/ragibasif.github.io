@@ -1,27 +1,4 @@
-const darkModeToggle = document.getElementById("darkModeToggle");
 const body = document.body;
-
-// Function to set dark mode
-const setDarkMode = (isDarkMode) => {
-  if (isDarkMode) {
-    body.classList.add("dark-mode");
-  } else {
-    body.classList.remove("dark-mode");
-  }
-};
-
-// Check user preference from localStorage
-const savedDarkMode = localStorage.getItem("darkMode") === "true";
-
-// Initialize dark mode based on user preference
-setDarkMode(savedDarkMode);
-
-// Toggle dark mode
-darkModeToggle.addEventListener("click", () => {
-  const isDarkMode = body.classList.toggle("dark-mode");
-  // Save user preference
-  localStorage.setItem("darkMode", isDarkMode);
-});
 
 // retrieve json with projects
 
@@ -39,10 +16,6 @@ fetch("./projects.json")
       title.classList.add("card-title");
       title.textContent = item.title;
 
-      // Create a description element
-      //   const description = document.createElement("p");
-      //   description.classList.add("card-description");
-      //   description.textContent = item.description;
       // Create a website element
       const website = document.createElement("a");
       website.classList.add("card-website");
@@ -67,7 +40,6 @@ fetch("./projects.json")
       // Append title and description to the card
       card.appendChild(title);
       card.appendChild(image);
-      //   card.appendChild(description);
       card.appendChild(website);
       card.appendChild(code);
       card.appendChild(tools);
