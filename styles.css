@@ -80,24 +80,23 @@ div#error-text {
 }
 /* Dark mode styles */
 .toggle-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  position: absolute;
+  margin: 1rem;
   z-index: 1000;
 }
 #darkModeToggle {
-  background: transparent;
+  background: none;
   border: none;
   padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
+  top: 107px;
+  right: 90px;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 #gearIcon {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+  width: 2rem;
+  height: 2rem;
 }
 
 #darkModeToggle:hover {
@@ -120,9 +119,6 @@ body.dark-mode a[href]:focus {
   background: #cd5888;
 }
 
-body.dark-mode .card {
-  border: 1px solid #e9e8e8;
-}
 /* animation */
 
 .rotate {
@@ -160,32 +156,25 @@ body.dark-mode .card {
 }
 
 .card {
-  border: 1px solid #1e212d;
-  /* border: none; */
+  border: none;
   border-radius: 5px;
-  padding: 20px;
-  margin: 20px;
+  padding: 10px;
+  margin: 10px;
   width: 200px;
-  height: 300px;
+  height: 350px;
   background: transparent;
   text-align: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  box-shadow: 0 8px 16px rgba(230, 180, 100, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px rgba(150, 100, 50, 0.2);
+  border: 1px solid #1e212d;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   scale: 1.055;
-}
-
-body.dark-mode .card {
-  box-shadow: 0 8px 16px rgba(150, 50, 150, 0.2);
-}
-body.dark-mode .card:hover {
-  box-shadow: 0 8px 16px rgba(100, 30, 130, 0.2);
 }
 
 .card h2 {
@@ -195,9 +184,17 @@ body.dark-mode .card:hover {
 }
 .card img {
   object-fit: cover;
-  width: 180px;
-  height: 180px;
+  width: 100%;
+  height: 60%;
   border-radius: 5px;
+}
+
+.card a {
+  margin: 2px;
+}
+
+body.dark-mode .card:hover {
+  border: 1px solid #e9e8e8;
 }
 
 mark {
