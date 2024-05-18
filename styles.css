@@ -2,7 +2,7 @@
   --background-color: #171717;
   --text-color: #eeebdd;
   --primary-color: #444444;
-  --cards-color: rgba(0, 0, 0, 0.1);
+  --cards-color: rgba(0, 0, 0, 0.3);
   --accent-color: #da0037;
   --box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
   --favorite-blue: #1e90ff; /* Dodger Blue */
@@ -130,8 +130,8 @@ div#error-text {
 .card {
   border: none;
   border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
+  padding: 1rem;
+  margin: 1rem;
   width: 200px;
   height: 350px;
   background: var(--cards-color);
@@ -151,7 +151,7 @@ div#error-text {
 
 .card h2 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 1.2em;
 }
 .card img {
