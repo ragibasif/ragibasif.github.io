@@ -22,19 +22,65 @@ body {
   color: var(--text-color);
   display: flex;
 }
+nav {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  background: none;
+  background: var(--background-color);
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+  padding: 20px;
+  z-index: 20;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
 div#text-container {
   text-align: center;
+  margin-top: 3rem;
 }
 a[href] {
   color: var(--text-color);
-  background: var(--primary-color);
+  background: none;
   text-decoration: none;
+  padding: 5px;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 a[href]:hover {
   background: var(--accent-color);
 }
 a[href]:focus {
-  background: var(--primary-color);
+  background: none;
 }
 body h1 {
   margin: 70px 0 0 0;
@@ -61,12 +107,37 @@ div#error-text {
   text-align: center;
 }
 
-@media (min-width: 800px) {
+@media (max-width: 768px) {
   div#everything {
     overflow: hidden;
     display: flex;
     max-height: 100vh;
     width: 100%;
+  }
+  nav {
+    background: none;
+    justify-content: space-between;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    top: 15px;
+    left: 0px;
+    background: var(--background-color);
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav-active .nav-links {
+    display: flex;
+  }
+
+  nav.nav-active {
+    background-color: var(--background-color);
   }
   div#text-container {
     overflow-y: scroll;
@@ -139,8 +210,10 @@ div#error-text {
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   box-shadow: var(--box-shadow);
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .card:hover {
@@ -168,6 +241,10 @@ div#error-text {
 mark {
   background: var(--primary-color);
   color: var(--text-color);
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 mark:hover {
   background: var(--accent-color);
