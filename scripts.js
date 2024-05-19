@@ -1,6 +1,9 @@
 const body = document.body;
 const nav = document.querySelector("nav");
 const burger = document.querySelector(".burger");
+const linkedin = document.getElementById("linkedin");
+const github = document.getElementById("github");
+const mail = document.getElementById("mail");
 
 function navToggler() {
   nav.classList.toggle("nav-active");
@@ -59,3 +62,22 @@ fetch("./projects.json")
     });
   })
   .catch((error) => console.error("Error fetching the JSON data:", error));
+
+linkedin.addEventListener("mouseenter", () => {
+  linkedin.classList.add("rotate");
+});
+linkedin.addEventListener("mouseleave", () => {
+  linkedin.classList.remove("rotate");
+});
+github.addEventListener("mouseenter", () => {
+  github.classList.add("rotate");
+});
+github.addEventListener("mouseleave", () => {
+  github.classList.remove("rotate");
+});
+mail.addEventListener("mouseenter", () => {
+  mail.classList.add("rotate");
+});
+mail.addEventListener("mouseleave", () => {
+  mail.classList.remove("rotate");
+});

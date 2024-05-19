@@ -94,17 +94,36 @@ body p {
 }
 
 div#error {
+  height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
-}
-div#error-header {
-  padding: 2px;
+  margin: 1rem;
 }
 div#error-text {
+  overflow: hidden;
   text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: var(--cards-color);
+  box-shadow: var(--box-shadow);
+  border-top-left-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+}
+div#error-text img {
+  padding: 1rem;
+}
+div#error-text a {
+  font-size: 1.5rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -158,14 +177,19 @@ div#error-text {
 
   div#error-text {
     margin-left: auto;
+    padding: 2rem;
     margin-right: auto;
-    max-width: 50%;
+    max-width: 90%;
+  }
+  div#error img {
+    width: 100%;
   }
 }
 /* animation */
 
 .rotate {
-  animation: rotate 2s linear infinite;
+  /* animation: rotate 2s linear infinite; */
+  animation: rotate 2s linear;
 }
 @keyframes rotate {
   to {
@@ -214,12 +238,14 @@ div#error-text {
   box-shadow: var(--box-shadow);
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   border: 1px solid;
   border-color: var(--primary-color);
   scale: 1.055;
+  transform: rotate(-5deg);
 }
 
 .card h2 {
@@ -256,6 +282,9 @@ mark:hover {
   align-items: center;
   text-align: center;
   padding: 2rem;
+}
+.footer p {
+  background-color: var(--cards-color);
 }
 
 .footer a {
