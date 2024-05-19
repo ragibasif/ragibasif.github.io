@@ -7,11 +7,7 @@
         "category": "",
         "status": "featured",
         "image": "./assets/screenshots/audio-visualizer-screenshot.png",
-        "tools": [
-            "JavaScript",
-            "HTML/CSS"
-        ]
-
+        "tools": ["JavaScript"]
     },
     {
         "title": "German Club",
@@ -21,10 +17,6 @@
         "category": "",
         "status": "featured",
         "image": "./assets/thumbnails/WIP.png",
-        "tools": [
-            "JavaScript",
-            "HTML/CSS"
-        ]
-
+        "tools": ["JavaScript"]
     }
 ]
