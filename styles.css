@@ -79,9 +79,9 @@ a[href] {
 a[href]:hover {
   background: var(--accent-color);
 }
-a[href]:focus {
+/* a[href]:focus {
   background: none;
-}
+} */
 body h1 {
   margin: 70px 0 0 0;
 }
