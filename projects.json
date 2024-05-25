@@ -1,22 +1,22 @@
 [
   {
-    "title": "Audio Visualizer",
-    "description": "Description",
-    "website": "https://ragibasif.github.io/audio-visualizer/",
-    "code": "https://github.com/ragibasif/audio-visualizer",
-    "category": "",
-    "status": "featured",
-    "image": "./assets/thumbnails/WIP.png",
-    "tools": ["JavaScript"]
-  },
-  {
     "title": "German Club",
     "description": "Description",
     "website": "https://ragibasif.github.io/german-club-hunter/",
     "code": "https://github.com/ragibasif/german-club-hunter",
     "category": "",
     "status": "featured",
-    "image": "./assets/thumbnails/WIP.png",
+    "image": "./assets/screenshots/german-club-website.png",
+    "tools": ["JavaScript"]
+  },
+  {
+    "title": "Audio Visualizer",
+    "description": "Description",
+    "website": "https://ragibasif.github.io/audio-visualizer/",
+    "code": "https://github.com/ragibasif/audio-visualizer",
+    "category": "",
+    "status": "featured",
+    "image": "./assets/screenshots/audio-visualizer.png",
     "tools": ["JavaScript"]
   }
 ]
