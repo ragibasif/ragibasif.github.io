@@ -282,9 +282,14 @@ mark:hover {
   align-items: center;
   text-align: center;
   padding: 2rem;
+  background-color: var(--background-color);
 }
-.footer p {
+
+/* .footer:hover {
   background-color: var(--cards-color);
+} */
+.footer p {
+  /* background-color: var(--cards-color); */
 }
 
 .footer a {
@@ -294,9 +299,16 @@ mark:hover {
 
 .footer a:hover {
   background: none;
-  color: var(--accent-color);
 }
 
 .footer a:focus {
   background: none;
+}
+
+.footer a img {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  background: transparent;
+  filter: contrast(0%);
 }
