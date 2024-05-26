@@ -18,5 +18,15 @@
     "status": "featured",
     "image": "./assets/screenshots/audio-visualizer.png",
     "tools": ["JavaScript"]
+  },
+  {
+    "title": "Gallery",
+    "description": "Description",
+    "website": "https://ragibasif.github.io/gallery/",
+    "code": "https://github.com/ragibasif/gallery",
+    "category": "",
+    "status": "featured",
+    "image": "./assets/screenshots/gallery.png",
+    "tools": ["JavaScript", "Python"]
   }
 ]
