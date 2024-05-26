@@ -312,3 +312,14 @@ mark:hover {
   background: transparent;
   filter: contrast(0%);
 }
+
+.abilities {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 1rem;
+}
