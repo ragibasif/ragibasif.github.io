@@ -59,3 +59,6 @@ const handleOnMove = (e) => {
 window.onmousemove = (e) => handleOnMove(e);
 
 window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+
+const currentYear = new Date().getFullYear();
+document.getElementById("copyright-year").textContent = currentYear;

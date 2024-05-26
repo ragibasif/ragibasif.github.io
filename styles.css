@@ -5,10 +5,6 @@
   --cards-color: rgba(0, 0, 0, 0.3);
   --accent-color: #da0037;
   --box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-  --favorite-blue: #1e90ff; /* Dodger Blue */
-  --favorite-green: #32cd32; /* Lime Green */
-  --favorite-purple: #9370db; /* Medium Purple */
-  --favorite-red: #ff4500; /* Orange Red */
 }
 html {
   scroll-behavior: smooth;
@@ -40,6 +36,7 @@ nav {
   text-align: center;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
 .nav-links a {

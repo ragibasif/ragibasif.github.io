@@ -81,3 +81,6 @@ mail.addEventListener("mouseenter", () => {
 mail.addEventListener("mouseleave", () => {
   mail.classList.remove("rotate");
 });
+
+var currentYear = new Date().getFullYear();
+document.getElementById("copyright-year").textContent = currentYear;
