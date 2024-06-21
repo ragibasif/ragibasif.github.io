@@ -4,8 +4,8 @@ Welcome to my portfolio website repository! This website is built using
 vanilla JavaScript, CSS, and HTML. Below you'll find an overview of the 
 project structure, features, and instructions on how to set it up locally.
 
+[Demo](https://ragibasif.github.io/)
 
-[Linktree](https://linktr.ee/ragibasif?subscribe)
 ## Table of Contents
 
 - Features
@@ -40,15 +40,33 @@ git clone https://github.com/ragibasif/ragibasif.github.io
 cd ragibasif.github.io
 ```
 
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+
+## Features
+
+- Cross platform
+
+## Feedback
+
+If you have any feedback, please reach out to us at fake@fake.com
+
+
 ## Contributing
 
-If you'd like to contribute to this project, please fork the repository
-and submit a pull request. Make sure to follow the code of conduct.
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
+
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file 
-for details.
+[MIT](https://choosealicense.com/licenses/mit/)
+
 
 
 

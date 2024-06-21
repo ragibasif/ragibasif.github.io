@@ -6,7 +6,7 @@
     "code": "https://github.com/ragibasif/german-club-hunter",
     "category": "",
     "status": "featured",
-    "image": "./assets/screenshots/german-club-website.png",
+    "image": "./assets/screenshots/german-club-website-screenshot-dm.png",
     "tools": ["JavaScript"]
   },
   {
@@ -16,17 +16,7 @@
     "code": "https://github.com/ragibasif/audio-visualizer",
     "category": "",
     "status": "featured",
-    "image": "./assets/screenshots/audio-visualizer.png",
+    "image": "./assets/screenshots/audio-visualizer-screenshot.png",
     "tools": ["JavaScript"]
-  },
-  {
-    "title": "Gallery",
-    "description": "Description",
-    "website": "https://ragibasif.github.io/gallery/",
-    "code": "https://github.com/ragibasif/gallery",
-    "category": "",
-    "status": "featured",
-    "image": "./assets/screenshots/gallery.png",
-    "tools": ["JavaScript", "Python"]
   }
 ]
