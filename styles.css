@@ -179,11 +179,11 @@ h1 {
   text-align: center;
 }
 
-body h2 {
-  font-size: 2.5em;
-  margin: 35px 0 0 0;
+h2 {
+  font-size: 2em;
+  margin: 1rem 0 0 0;
 }
-body p {
+p {
   line-height: 1.8em;
 }
 
