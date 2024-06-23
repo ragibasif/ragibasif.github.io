@@ -170,12 +170,12 @@ a[href]:hover {
   background: var(--accent-color);
 }
 
-body h1 {
+h1 {
   margin: 1rem 0 0 0;
-  font-size: clamp(4em, 2vw, 4em);
+  font-size: clamp(3em, 2vw, 3em);
   font-weight: 400;
-  margin: 0px;
-  padding: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 0;
   text-align: center;
 }
 
@@ -402,17 +402,6 @@ mark:hover {
   filter: contrast(0%);
 }
 
-.abilities {
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  gap: 1rem;
-}
-
 @keyframes scale {
   from,
   to {
@@ -440,7 +429,7 @@ h1 > .magic {
 }
 
 h1 > .magic > .magic-star {
-  --size: clamp(20px, 1.5vw, 30px);
+  --size: clamp(15px, 1.5vw, 15px);
 
   animation: scale 700ms ease forwards;
   display: block;
@@ -471,7 +460,20 @@ h1 > .magic > .magic-text {
     var(--h1four)
   );
   background-size: 200%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
+}
+
+/* hacked text */
+#role {
+  color: white;
+  padding: 0rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
+
+#role:hover {
+  background-color: white;
+  color: black;
 }
