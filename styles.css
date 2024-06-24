@@ -767,3 +767,16 @@ button:hover .text,
 button.active .text {
   animation: text 0.66s ease-in 1 both;
 }
+
+/* cursor follower */
+.circle {
+  --circle-size: 1em;
+  position: fixed;
+  height: var(--circle-size);
+  width: var(--circle-size);
+  border: 1px solid var(--text-color);
+  border-radius: 100%;
+  top: calc(var(--circle-size) / 2 * -1);
+  left: calc(var(--circle-size) / 2 * -1);
+  pointer-events: none;
+}
