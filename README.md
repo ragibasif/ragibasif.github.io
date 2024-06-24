@@ -1,8 +1,8 @@
-# Portfolio
+# ragibasif.github.io
  
-[![Project license](https://img.shields.io/github/license/ragibasif/github-template.svg?style=flat-square)](LICENSE)
+[![Project license](https://img.shields.io/github/license/ragibasif/ragibasif.github.io.svg?style=flat-square)](LICENSE)
 
-[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/ragibasif/github-template/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/ragibasif/ragibasif.github.io/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 [![code with love by ragibasif](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-ragibasif-ff1414.svg?style=flat-square)](https://github.com/ragibasif)
 
 
@@ -45,15 +45,15 @@ Screenshots
 
 ### Built With
 
-> **[?]**
-> Please provide the technologies that are used in the project.
+- JavaScript
+- HTML
+- CSS
 
 ## Getting Started
 
 ### Prerequisites
 
-> **[?]**
-> What are the project requirements/dependencies?
+- Git
 
 ### Installation
 
