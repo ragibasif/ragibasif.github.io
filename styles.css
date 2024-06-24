@@ -5,11 +5,19 @@
   --cards-color: rgba(0, 0, 0, 0.3);
   --accent-color: #da0037;
   --box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
-
   --h1one: rgb(249, 231, 192);
   --h1two: rgb(203, 258, 193);
   --h1three: rgb(244, 243, 177);
   --h1four: rgb(244, 243, 197);
+  --home1: rgb(255, 215, 137);
+  --home2: rgb(42, 252, 152);
+  --home3: rgb(255, 123, 41);
+  --home4: rgb(41, 121, 255);
+  --wave-index: calc(1vw + 1vh);
+  --wave-transition: cubic-bezier(0.1, 0.7, 0, 1);
+}
+* {
+  box-sizing: border-box;
 }
 @font-face {
   font-family: "JetBrains Mono";
@@ -110,6 +118,7 @@ body {
   background-image: url("./assets/background/circuit-board.svg");
   color: var(--text-color);
   display: flex;
+  flex-direction: column;
 }
 
 section {
@@ -119,7 +128,6 @@ section {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  margin-top: 3rem;
 }
 
 nav {
@@ -143,12 +151,6 @@ nav {
   gap: 1rem;
 }
 
-.nav-links a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-size: 1rem;
-}
-
 .burger {
   display: none;
   cursor: pointer;
@@ -163,9 +165,10 @@ nav {
   margin: 5px;
   transition: all 0.3s ease;
 }
-
-a[href] {
+.card a,
+.nav-links a {
   color: var(--text-color);
+  font-size: 1rem;
   background: none;
   text-decoration: none;
   padding: 5px;
@@ -173,25 +176,19 @@ a[href] {
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-a[href]:hover {
+.card a:hover,
+.nav-links a:hover {
   background: var(--accent-color);
-}
-
-h1 {
-  margin: 1rem 0 0 0;
-  font-size: clamp(3em, 2vw, 3em);
-  font-weight: 400;
-  padding-top: 3rem;
-  padding-bottom: 0;
-  text-align: center;
 }
 
 h2 {
   font-size: 2em;
-  margin: 1rem 0 0 0;
+  margin: 0;
+  text-align: center;
 }
-p {
-  line-height: 1.8em;
+
+h3 {
+  margin: 0;
 }
 
 div#error {
@@ -228,7 +225,7 @@ div#error-text a {
 }
 
 @media (max-width: 768px) {
-  div#everything {
+  body {
     overflow: hidden;
     display: flex;
     max-height: 100vh;
@@ -284,37 +281,8 @@ div#error-text a {
     width: 100%;
   }
 }
-/* animation */
 
-.rotate {
-  /* animation: rotate 2s linear infinite; */
-  animation: rotate 2s linear;
-}
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* for nav */
-.slide-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideIn 1s forwards;
-}
-@keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.about-me {
-  margin-left: 20%;
-  margin-right: 20%;
-}
-.about-me,
-.projects-cards {
+#cards {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -328,8 +296,7 @@ div#error-text a {
   margin: 1rem;
   width: 200px;
   height: 350px;
-  /* width: 20rem;
-  height: 35rem; */
+  cursor: pointer;
   background: var(--cards-color);
   text-align: center;
   align-items: center;
@@ -365,18 +332,6 @@ div#error-text a {
   margin: 2px;
 }
 
-mark {
-  background: var(--primary-color);
-  color: var(--text-color);
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-mark:hover {
-  background: var(--accent-color);
-}
-
 .footer {
   display: flex;
   flex-direction: column;
@@ -407,6 +362,32 @@ mark:hover {
   filter: contrast(0%);
 }
 
+/* animation */
+
+.rotate {
+  /* animation: rotate 2s linear infinite; */
+  animation: rotate 2s linear;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* for nav */
+.slide-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s forwards;
+}
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* h1 effects */
 @keyframes scale {
   from,
   to {
@@ -417,17 +398,13 @@ mark:hover {
     transform: scale(1);
   }
 }
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(180deg);
-  }
+h1 {
+  margin: 1rem 0 0 0;
+  font-size: clamp(3em, 2vw, 3em);
+  font-weight: 400;
+  padding-top: 3rem;
+  text-align: center;
 }
-
 h1 > .magic {
   display: inline-block;
   position: relative;
@@ -472,13 +449,239 @@ h1 > .magic > .magic-text {
 }
 
 /* hacked text */
-#role {
+#hacked {
   color: white;
   padding: 0rem clamp(1rem, 2vw, 3rem);
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
 }
 
-#role:hover {
+#hacked:hover {
   background-color: white;
   color: black;
+}
+
+/* home page hover effect */
+
+@keyframes float {
+  from,
+  to {
+    transform: translateY(-0%);
+  }
+
+  50% {
+    transform: translateY(-3%);
+  }
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 1000% center;
+  }
+
+  to {
+    background-position: 0% center;
+  }
+}
+.line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.word {
+  color: var(--text-color);
+  font-weight: 400;
+  margin: 0rem;
+  text-transform: uppercase;
+  transition: opacity 250ms ease;
+  font-size: clamp(3em, 2vw, 3em);
+}
+
+a {
+  text-decoration: none;
+  padding-top: 1rem;
+}
+
+#interests:has(.fancy:hover) .word:not(.fancy:hover) {
+  opacity: 0.2;
+}
+
+.fancy span {
+  display: inline-block;
+}
+
+.fancy > .outer {
+  transition: transform 350ms ease;
+}
+
+.fancy:hover > .outer {
+  transition-duration: 800ms;
+}
+
+.fancy:hover > .outer > .inner {
+  animation: float 5s ease infinite;
+}
+
+.fancy:hover > .outer > .inner > .letter {
+  background: linear-gradient(
+    to right,
+    var(--home1),
+    var(--home2),
+    var(--home3),
+    var(--home4)
+  );
+  background-size: 1000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: background-pan 150s linear infinite;
+}
+
+.fancy:hover > .outer:nth-child(1) {
+  transform: translate(-80%, 60%) rotate(8deg);
+}
+
+.fancy:hover > .outer:nth-child(2) {
+  transform: translate(-40%, 20%) rotate(4deg);
+}
+
+.fancy:hover > .outer:nth-child(3) {
+  transform: translate(-10%, 60%) rotate(-6deg);
+}
+
+.fancy:hover > .outer:nth-child(4) {
+  transform: translate(0%, 8%) rotate(-8deg);
+}
+
+.fancy:hover > .outer:nth-child(5) {
+  transform: translate(0%, -20%) rotate(5deg);
+}
+
+.fancy:hover > .outer:nth-child(6) {
+  transform: translate(0%, 20%) rotate(-3deg);
+}
+
+.fancy:hover > .outer:nth-child(7) {
+  transform: translate(0%, -40%) rotate(-5deg);
+}
+
+.fancy:hover > .outer:nth-child(8) {
+  transform: translate(0%, 15%) rotate(10deg);
+}
+
+.fancy:hover > .outer:nth-child(9) {
+  transform: translate(0%, -50%) rotate(8deg);
+}
+
+.fancy:hover > .outer:nth-child(10) {
+  transform: translate(0%, 15%) rotate(-6deg);
+}
+
+.fancy:hover > .outer:nth-child(11) {
+  transform: translate(50%, -10%) rotate(-3deg);
+}
+
+.fancy:hover > .outer:nth-child(12) {
+  transform: translate(120%, -30%) rotate(-10deg);
+}
+
+/* card wave */
+.wave-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 90%;
+}
+
+.wave-items {
+  display: flex;
+  gap: 0.2rem;
+  perspective: calc(var(--wave-index) * 35);
+}
+
+.wave-item {
+  width: calc(var(--wave-index) * 3);
+  height: calc(var(--wave-index) * 12);
+  background-color: #222;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  filter: grayscale(1) brightness(0.5);
+  transition: transform 1.25s var(--wave-transition),
+    filter 3s var(--wave-transition), width 1.25s var(--wave-transition);
+  will-change: transform, filter, rotateY, width;
+}
+
+.wave-item::before,
+.wave-item::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 20px;
+  right: calc(var(--wave-index) * -1);
+}
+
+.wave-item::after {
+  left: calc(var(--wave-index) * -1);
+}
+
+.wave-items .wave-item:hover {
+  filter: inherit;
+  transform: translateZ(calc(var(--wave-index) * 10));
+}
+
+/*Right*/
+
+.wave-items .wave-item:hover + * {
+  filter: inherit;
+  transform: translateZ(calc(var(--wave-index) * 8.5)) rotateY(35deg);
+  z-index: -1;
+}
+
+.wave-items .wave-item:hover + * + * {
+  filter: inherit;
+  transform: translateZ(calc(var(--wave-index) * 5.6)) rotateY(40deg);
+  z-index: -2;
+}
+
+.wave-items .wave-item:hover + * + * + * {
+  filter: inherit;
+  transform: translateZ(calc(var(--wave-index) * 2.5)) rotateY(30deg);
+  z-index: -3;
+}
+
+.wave-items .wave-item:hover + * + * + * + * {
+  filter: inherit;
+  transform: translateZ(calc(var(--wave-index) * 0.6)) rotateY(15deg);
+  z-index: -4;
+}
+
+/*Left*/
+
+.wave-items .wave-item:has(+ :hover) {
+  filter: inherit;
+  transform: translateZ(calc(var(--wave-index) * 8.5)) rotateY(-35deg);
+}
+
+.wave-items .wave-item:has(+ * + :hover) {
+  filter: inherit;
+  transform: translateZ(calc(var(--wave-index) * 5.6)) rotateY(-40deg);
+}
+
+.wave-items .wave-item:has(+ * + * + :hover) {
+  filter: inherit;
+  transform: translateZ(calc(var(--wave-index) * 2.5)) rotateY(-30deg);
+}
+
+.wave-items .wave-item:has(+ * + * + * + :hover) {
+  filter: inherit;
+  transform: translateZ(calc(var(--wave-index) * 0.6)) rotateY(-15deg);
+}
+
+.wave-items .wave-item:active,
+.wave-items .wave-item:focus {
+  width: 28vw;
+  filter: inherit;
+  z-index: 100;
+  transform: translateZ(calc(var(--wave-index) * 10));
+  margin: 0 0.45vw;
 }

@@ -18,7 +18,7 @@ burger.addEventListener("click", () => {
 fetch("./projects.json")
   .then((response) => response.json())
   .then((data) => {
-    const container = document.getElementById("projects-container");
+    const container = document.getElementById("cards");
     data.forEach((item) => {
       // Create a card element
       const card = document.createElement("div");
@@ -113,7 +113,7 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let freq = null;
 
-document.getElementById("role").onmouseover = (event) => {
+document.getElementById("hacked").onmouseover = (event) => {
   let iteration = 0;
 
   clearInterval(freq);
@@ -137,3 +137,44 @@ document.getElementById("role").onmouseover = (event) => {
     iteration += 1 / 3;
   }, 30);
 };
+
+//  home page hover effect
+
+// const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+const enhance = (id) => {
+  const element = document.getElementById(id),
+    text = element.innerText.split("");
+
+  element.innerText = "";
+
+  text.forEach((value, index) => {
+    const outer = document.createElement("span");
+
+    outer.className = "outer";
+
+    const inner = document.createElement("span");
+
+    inner.className = "inner";
+
+    inner.style.animationDelay = `${rand(-5000, 0)}ms`;
+
+    const letter = document.createElement("span");
+
+    letter.className = "letter";
+
+    letter.innerText = value;
+
+    letter.style.animationDelay = `${index * 1000}ms`;
+
+    inner.appendChild(letter);
+
+    outer.appendChild(inner);
+
+    element.appendChild(outer);
+  });
+};
+
+enhance("github-link");
+enhance("linkedin-link");
+enhance("email-link");
