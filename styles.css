@@ -111,6 +111,17 @@ body {
   color: var(--text-color);
   display: flex;
 }
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 3rem;
+}
+
 nav {
   display: flex;
   text-align: center;
@@ -153,10 +164,6 @@ nav {
   transition: all 0.3s ease;
 }
 
-div#text-container {
-  text-align: center;
-  margin-top: 3rem;
-}
 a[href] {
   color: var(--text-color);
   background: none;
@@ -226,6 +233,8 @@ div#error-text a {
     display: flex;
     max-height: 100vh;
     width: 100%;
+    overflow-y: scroll;
+    flex-grow: 1;
   }
   nav {
     background: none;
@@ -252,11 +261,7 @@ div#error-text a {
   nav.nav-active {
     background-color: var(--background-color);
   }
-  div#text-container {
-    overflow-y: scroll;
-    flex-grow: 1;
-  }
-  div#text {
+  section {
     margin-left: auto;
     margin-right: auto;
     max-width: 90%;
