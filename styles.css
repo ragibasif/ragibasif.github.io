@@ -227,39 +227,6 @@ h3 {
   margin: 0;
 }
 
-div#error {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  margin: 1rem;
-}
-div#error-text {
-  overflow: hidden;
-  text-align: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: 3rem;
-  background-color: var(--cards-color);
-  box-shadow: var(--box-shadow);
-  border-top-left-radius: 5rem;
-  border-bottom-right-radius: 5rem;
-}
-div#error-text img {
-  padding: 1rem;
-}
-div#error-text a {
-  font-size: 1.5rem;
-  margin: 1rem;
-  padding: 1rem;
-  border-top-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-}
-
 @media (max-width: 768px) {
   body {
     overflow: hidden;
@@ -298,23 +265,6 @@ div#error-text a {
     margin-left: auto;
     margin-right: auto;
     max-width: 90%;
-  }
-
-  div#error {
-    overflow: hidden;
-    display: flex;
-    max-height: 100vh;
-    width: 100%;
-  }
-
-  div#error-text {
-    margin-left: auto;
-    padding: 2rem;
-    margin-right: auto;
-    max-width: 90%;
-  }
-  div#error img {
-    width: 100%;
   }
 }
 
