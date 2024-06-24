@@ -13,8 +13,42 @@
   --home2: rgb(42, 252, 152);
   --home3: rgb(255, 123, 41);
   --home4: rgb(41, 121, 255);
-  --wave-index: calc(1vw + 1vh);
-  --wave-transition: cubic-bezier(0.1, 0.7, 0, 1);
+  --glow-hue: 222deg;
+  --shadow-hue: 180deg;
+  --spring-easing: linear(
+    0,
+    0.002,
+    0.01 0.9%,
+    0.038 1.8%,
+    0.156,
+    0.312 5.8%,
+    0.789 11.1%,
+    1.015 14.2%,
+    1.096,
+    1.157,
+    1.199,
+    1.224 20.3%,
+    1.231,
+    1.231,
+    1.226,
+    1.214 24.6%,
+    1.176 26.9%,
+    1.057 32.6%,
+    1.007 35.5%,
+    0.984,
+    0.968,
+    0.956,
+    0.949 42%,
+    0.946 44.1%,
+    0.95 46.5%,
+    0.998 57.2%,
+    1.007,
+    1.011 63.3%,
+    1.012 68.3%,
+    0.998 84%,
+    1
+  );
+  --spring-duration: 1.33s;
 }
 * {
   box-sizing: border-box;
@@ -183,7 +217,7 @@ nav {
 
 h2 {
   font-size: 2em;
-  margin: 0;
+  /* margin: 0; */
   text-align: center;
 }
 
@@ -283,9 +317,11 @@ div#error-text a {
 }
 
 #cards {
+  text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -400,7 +436,7 @@ div#error-text a {
 }
 h1 {
   margin: 1rem 0 0 0;
-  font-size: clamp(3em, 2vw, 3em);
+  font-size: clamp(3rem, 2vw, 3em);
   font-weight: 400;
   padding-top: 3rem;
   text-align: center;
@@ -583,105 +619,149 @@ a {
   transform: translate(120%, -30%) rotate(-10deg);
 }
 
-/* card wave */
-.wave-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 90%;
+/* fancy button */
+
+@property --shimmer {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 33deg;
 }
 
-.wave-items {
-  display: flex;
-  gap: 0.2rem;
-  perspective: calc(var(--wave-index) * 35);
+@keyframes shimmer {
+  0% {
+    --shimmer: 0deg;
+  }
+  100% {
+    --shimmer: 360deg;
+  }
 }
 
-.wave-item {
-  width: calc(var(--wave-index) * 3);
-  height: calc(var(--wave-index) * 12);
-  background-color: #222;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  filter: grayscale(1) brightness(0.5);
-  transition: transform 1.25s var(--wave-transition),
-    filter 3s var(--wave-transition), width 1.25s var(--wave-transition);
-  will-change: transform, filter, rotateY, width;
+@keyframes shine {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes text {
+  0% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: -100% center;
+  }
 }
 
-.wave-item::before,
-.wave-item::after {
-  content: "";
+button {
+  color: var(--background-color);
+  font-weight: 600;
+  font-size: 1rem;
+  /*     background-image: linear-gradient(90deg, #fcecfe, #fbf6e7, #e6fcf5); */
+  background-image: linear-gradient(
+    315deg,
+    #ffc4ec -10%,
+    #efdbfd 50%,
+    #ffedd6 110%
+  );
+  padding: 0.8em 1.4em;
+  position: relative;
+  isolation: isolate;
+  box-shadow: 0 2px 3px 1px hsl(var(--glow-hue) 50% 20% / 50%),
+    inset 0 -10px 20px -10px hsla(var(--shadow-hue), 10%, 90%, 95%);
+  border-radius: 0.66em;
+  scale: 1;
+  transition: all var(--spring-duration) var(--spring-easing);
+}
+
+button:hover:not(:active),
+button.active {
+  transition-duration: calc(var(--spring-duration) * 0.5);
+  scale: 1.2;
+  box-shadow: 0 4px 8px -2px hsl(var(--glow-hue) 50% 20% / 50%),
+    inset 0 0 0 transparent;
+}
+button:active {
+  scale: 1.1;
+  transition-duration: calc(var(--spring-duration) * 0.5);
+}
+
+.shimmer {
   position: absolute;
-  height: 100%;
-  width: 20px;
-  right: calc(var(--wave-index) * -1);
+  inset: -40px;
+  border-radius: inherit;
+  mask-image: conic-gradient(
+    from var(--shimmer, 0deg),
+    transparent 0%,
+    transparent 10%,
+    black 36%,
+    black 45%,
+    transparent 50%,
+    transparent 60%,
+    black 85%,
+    black 95%,
+    transparent 100%
+  );
+  mask-size: cover;
+  mix-blend-mode: plus-lighter;
+  animation: shimmer 1s linear infinite both;
 }
-
-.wave-item::after {
-  left: calc(var(--wave-index) * -1);
+button:hover .shimmer::before,
+button:hover .shimmer::after,
+button.active .shimmer::before,
+button.active .shimmer::after {
+  opacity: 1;
+  animation: shine 1.2s ease-in 1 forwards;
 }
-
-.wave-items .wave-item:hover {
-  filter: inherit;
-  transform: translateZ(calc(var(--wave-index) * 10));
+.shimmer::before,
+.shimmer::after {
+  transition: all 0.5s ease;
+  opacity: 0;
+  content: "";
+  border-radius: inherit;
+  position: absolute;
+  mix-blend-mode: color;
+  inset: 40px;
+  pointer-events: none;
 }
-
-/*Right*/
-
-.wave-items .wave-item:hover + * {
-  filter: inherit;
-  transform: translateZ(calc(var(--wave-index) * 8.5)) rotateY(35deg);
+.shimmer::before {
+  box-shadow: 0 0 3px 2px hsl(var(--glow-hue) 20% 95%),
+    0 0 7px 4px hsl(var(--glow-hue) 20% 80%),
+    0 0 13px 4px hsl(var(--glow-hue) 50% 70%),
+    0 0 25px 5px hsl(var(--glow-hue) 100% 70%);
   z-index: -1;
 }
 
-.wave-items .wave-item:hover + * + * {
-  filter: inherit;
-  transform: translateZ(calc(var(--wave-index) * 5.6)) rotateY(40deg);
-  z-index: -2;
+.shimmer::after {
+  box-shadow: inset 0 0 0 1px hsl(var(--glow-hue) 70% 95%),
+    inset 0 0 2px 1px hsl(var(--glow-hue) 100% 80%),
+    inset 0 0 5px 2px hsl(var(--glow-hue) 100% 70%);
+  z-index: 2;
 }
 
-.wave-items .wave-item:hover + * + * + * {
-  filter: inherit;
-  transform: translateZ(calc(var(--wave-index) * 2.5)) rotateY(30deg);
-  z-index: -3;
+button .text {
+  color: transparent;
+  background-clip: text;
+  background-color: var(--background-color);
+  background-image: linear-gradient(
+    120deg,
+    transparent,
+    hsla(var(--glow-hue), 100%, 80%, 0.66) 40%,
+    hsla(var(--glow-hue), 100%, 90%, 0.9) 50%,
+    transparent 52%
+  );
+  background-repeat: no-repeat;
+  background-size: 300% 300%;
+  background-position: center 200%;
 }
 
-.wave-items .wave-item:hover + * + * + * + * {
-  filter: inherit;
-  transform: translateZ(calc(var(--wave-index) * 0.6)) rotateY(15deg);
-  z-index: -4;
-}
-
-/*Left*/
-
-.wave-items .wave-item:has(+ :hover) {
-  filter: inherit;
-  transform: translateZ(calc(var(--wave-index) * 8.5)) rotateY(-35deg);
-}
-
-.wave-items .wave-item:has(+ * + :hover) {
-  filter: inherit;
-  transform: translateZ(calc(var(--wave-index) * 5.6)) rotateY(-40deg);
-}
-
-.wave-items .wave-item:has(+ * + * + :hover) {
-  filter: inherit;
-  transform: translateZ(calc(var(--wave-index) * 2.5)) rotateY(-30deg);
-}
-
-.wave-items .wave-item:has(+ * + * + * + :hover) {
-  filter: inherit;
-  transform: translateZ(calc(var(--wave-index) * 0.6)) rotateY(-15deg);
-}
-
-.wave-items .wave-item:active,
-.wave-items .wave-item:focus {
-  width: 28vw;
-  filter: inherit;
-  z-index: 100;
-  transform: translateZ(calc(var(--wave-index) * 10));
-  margin: 0 0.45vw;
+button:hover .text,
+button.active .text {
+  animation: text 0.66s ease-in 1 both;
 }
