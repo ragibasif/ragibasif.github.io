@@ -5,6 +5,14 @@ const linkedin = document.getElementById("linkedin");
 const github = document.getElementById("github");
 const mail = document.getElementById("mail");
 
+const song = document.getElementById("song");
+const scrollBarContainer = document.getElementById("scroll-bar-container");
+const scrollBar = document.getElementById("scroll-bar");
+const currentTimeOfSong = document.getElementById("time");
+const durationTimeOfSong = document.getElementById("duration");
+const playBtn = document.getElementById("play");
+const muteBtn = document.getElementById("mute");
+
 function navToggler() {
   nav.classList.toggle("nav-active");
 }
@@ -178,3 +186,109 @@ const enhance = (id) => {
 enhance("github-link");
 enhance("linkedin-link");
 enhance("email-link");
+
+// music player
+let isPlaying = false;
+function playSong() {
+  playBtn.textContent = "Pause";
+  song.play();
+  isPlaying = true;
+  createOrResumeAudioContext();
+}
+
+function pauseSong() {
+  playBtn.textContent = "Play";
+  song.pause();
+  isPlaying = false;
+}
+
+function togglePlayPause() {
+  if (isPlaying) {
+    pauseSong();
+  } else {
+    playSong();
+  }
+}
+let isMuted = false;
+
+function toggleMute() {
+  if (!isMuted) {
+    song.volume = 0;
+    muteBtn.textContent = "Unmute";
+  } else {
+    song.volume = 1;
+    muteBtn.textContent = "Mute";
+  }
+  isMuted = !isMuted;
+}
+
+// scroll bar/time
+function updateScrollBar(event) {
+  if (isPlaying) {
+    const { duration, currentTime } = event.srcElement;
+    const progressPercent = (currentTime / duration) * 100;
+    scrollBar.style.width = `${progressPercent}%`;
+    const durationMinutes = Math.floor(duration / 60);
+    let durationSeconds = Math.floor(duration % 60);
+    if (durationSeconds < 10) {
+      durationSeconds = `0${durationSeconds}`;
+    }
+    if (durationSeconds) {
+      durationTimeOfSong.textContent = `${durationMinutes}:${durationSeconds}`;
+    }
+    const currentMinutes = Math.floor(currentTime / 60);
+    let currentSeconds = Math.floor(currentTime % 60);
+    if (currentSeconds < 10) {
+      currentSeconds = `0${currentSeconds}`;
+    }
+    currentTimeOfSong.textContent = `${currentMinutes}:${currentSeconds}`;
+  }
+}
+
+function changeProgress(event) {
+  const width = this.clientWidth;
+  const clickX = event.offsetX;
+  const { duration } = song;
+  song.currentTime = (clickX / width) * duration;
+  if (!isPlaying) {
+    scrollBar.style.width = `${(song.currentTime / duration) * 100}%`;
+    const durationMinutes = Math.floor(duration / 60);
+    let durationSeconds = Math.floor(duration % 60);
+    if (durationSeconds < 10) {
+      durationSeconds = `0${durationSeconds}`;
+    }
+    if (durationSeconds) {
+      durationTimeOfSong.textContent = `${durationMinutes}:${durationSeconds}`;
+    }
+    const currentMinutes = Math.floor(song.currentTime / 60);
+    let currentSeconds = Math.floor(song.currentTime % 60);
+    if (currentSeconds < 10) {
+      currentSeconds = `0${currentSeconds}`;
+    }
+    currentTimeOfSong.textContent = `${currentMinutes}:${currentSeconds}`;
+  }
+}
+
+let audioContext;
+let analyzer;
+let source;
+
+function createOrResumeAudioContext() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    analyzer = audioContext.createAnalyser();
+    source = audioContext.createMediaElementSource(song);
+    source.connect(analyzer);
+    analyzer.connect(audioContext.destination);
+    analyzer.fftSize = 256;
+  }
+  if (audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+}
+
+muteBtn.addEventListener("click", toggleMute);
+playBtn.addEventListener("click", togglePlayPause);
+song.addEventListener("timeupdate", updateScrollBar);
+song.addEventListener("ended", togglePlayPause);
+scrollBarContainer.addEventListener("click", changeProgress);
