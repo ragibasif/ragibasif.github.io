@@ -13,6 +13,9 @@
   --home2: rgb(42, 252, 152);
   --home3: rgb(255, 123, 41);
   --home4: rgb(41, 121, 255);
+  --bg-size: 400%;
+  --gradient-text1: hsl(20 245% 85%);
+  --gradient-text2: hsl(120 135% 125%);
 }
 * {
   box-sizing: border-box;
@@ -290,8 +293,6 @@ h3 {
   text-align: center;
   padding: 2rem;
   background-color: var(--background-color);
-  /* background: transparent; */
-  /* box-shadow: var(--box-shadow); */
 }
 
 .footer a {
@@ -534,4 +535,25 @@ a {
 
 .fancy:hover > .outer:nth-child(12) {
   transform: translate(120%, -30%) rotate(-10deg);
+}
+
+/* home page text gradients */
+
+.gradient-text {
+  background: linear-gradient(
+      90deg,
+      var(--gradient-text1),
+      var(--gradient-text2),
+      var(--gradient-text1)
+    )
+    0 0 / var(--bg-size) 100%;
+  animation: move-bg 8s infinite linear;
+  color: transparent;
+  background-clip: text;
+}
+
+@keyframes move-bg {
+  to {
+    background-position: var(--bg-size) 0;
+  }
 }
