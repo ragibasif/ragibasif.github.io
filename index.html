@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" href="favicon.ico" />
     <title>Ragib Asif</title>
     <link rel="stylesheet" href="/styles.css" />
     <!-- TODO: update readme -->
@@ -102,40 +102,54 @@
       <h2>Projects</h2>
       <div id="cards" class="slide-in"></div>
     </section>
-    <section id="music-player">
-      <img
-        id="song-image"
-        src="./assets/images/DavidBowieHunkyDory.jpg"
-        alt=""
-        srcset=""
-      />
-      <h2 id="song-title">Life on Mars?</h2>
-      <h3 id="song-artist">David Bowie</h3>
-      <div id="player-container">
-        <div class="controls">
-          <audio
-            id="song"
-            src="./assets/music/DavidBowieLifeOnMars.mp3"
-          ></audio>
-          <button id="play">Play</button>
-          <button id="mute">Mute</button>
+    <section id="about">
+      <div id="music" class="card">
+        <img
+          id="song-image"
+          src="./assets/images/DavidBowieHunkyDory.jpg"
+          alt=""
+          srcset=""
+        />
+        <div id="player-container">
+          <div class="controls">
+            <audio
+              id="song"
+              src="./assets/music/DavidBowieLifeOnMars.mp3"
+            ></audio>
+            <p id="song-title">Life on Mars?</p>
+            <p id="song-artist">David Bowie</p>
+            <button id="play">
+              <img src="./assets/icons/play-solid.svg" alt="Play" />
+            </button>
+            <button id="mute">
+              <img src="./assets/icons/volume-xmark-solid.svg" alt="Mute" />
+            </button>
+          </div>
+          <div id="scroll-bar-container">
+            <div id="scroll-bar"></div>
+          </div>
+          <div id="time">0:00</div>
+          <div id="duration">4:10</div>
         </div>
-        <div id="scroll-bar-container">
-          <div id="scroll-bar"></div>
-        </div>
-        <div id="time">0:00</div>
-        <div id="duration">4:10</div>
       </div>
-    </section>
-    <section id="art">
-      <img src="./assets/images/VincentvanGoghCorridorInTheAsylum.jpg" alt="" />
-      <p>
-        Title: Corridor in the Asylum \n Artist: Vincent van Gogh (Dutch,
-        Zundert 1853–1890 Auvers-sur-Oise) \n Date: September 1889 \n Medium:
-        Oil color and essence over black chalk on pink laid ("Ingres") paper \n
-        Dimensions: 25 5/8 x 19 5/16in. (65.1 x 49.1cm) \n Classification:
-        Drawings \n
-      </p>
+      <div id="art" class="card">
+        <img
+          id="art-image"
+          src="./assets/images/VincentvanGoghCorridorInTheAsylum.jpg"
+          alt=""
+        />
+        <p>Title: Corridor in the Asylum</p>
+        <p>Artist: Vincent van Gogh</p>
+      </div>
+      <div id="book" class="card">
+        <p>The Picture of Dorian Gray</p>
+        <p>Oscar Wilde</p>
+        <img
+          id="book-image"
+          src="./assets/images/OscarWildePictureofDorianGray.jpg"
+          alt=""
+        />
+      </div>
     </section>
 
     <section id="footer">

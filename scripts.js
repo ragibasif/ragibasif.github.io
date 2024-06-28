@@ -190,14 +190,14 @@ enhance("email-link");
 // music player
 let isPlaying = false;
 function playSong() {
-  playBtn.textContent = "Pause";
+  // playBtn.textContent = "Pause";
   song.play();
   isPlaying = true;
   createOrResumeAudioContext();
 }
 
 function pauseSong() {
-  playBtn.textContent = "Play";
+  // playBtn.textContent = "Play";
   song.pause();
   isPlaying = false;
 }
@@ -214,10 +214,10 @@ let isMuted = false;
 function toggleMute() {
   if (!isMuted) {
     song.volume = 0;
-    muteBtn.textContent = "Unmute";
+    // muteBtn.textContent = "Unmute";
   } else {
     song.volume = 1;
-    muteBtn.textContent = "Mute";
+    // muteBtn.textContent = "Mute";
   }
   isMuted = !isMuted;
 }
