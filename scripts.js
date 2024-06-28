@@ -241,6 +241,8 @@ function updateScrollBar(event) {
     if (currentSeconds < 10) {
       currentSeconds = `0${currentSeconds}`;
     }
+
+    durationTimeOfSong.textContent = `${durationMinutes}:${durationSeconds}`;
     currentTimeOfSong.textContent = `${currentMinutes}:${currentSeconds}`;
   }
 }
