@@ -1,4 +1,3 @@
-
 * {
   -ms-overflow-style: none; // Internet Explorer 10+
   scrollbar-width: none; // Firefox
@@ -15,7 +14,8 @@ html {
 
 body {
   margin: 0;
-  font-family: JetBrains Mono,  Consolas, Monaco, Lucida Console, Liberation Mono,monospace, sans-serif;
+  font-family: JetBrains Mono, Consolas, Monaco, Lucida Console, Liberation Mono,
+    monospace, sans-serif;
   font-feature-settings: "ss01", "cv03", "zero";
   background: var(--background-color);
   color: var(--text-color);
@@ -38,7 +38,6 @@ h2 {
   font-size: 2em;
   text-align: center;
 }
-
 
 @media (max-width: 768px) {
   body {
