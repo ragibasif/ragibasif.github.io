@@ -10,9 +10,12 @@
   <body>
     <header>
       <nav id="nav">
+        <!-- <p class="nav-links slide-in"> -->
         <p class="nav-links slide-in">
-          <a href="#home">&rarr; Home</a>
-          <a href="#projects">&rarr; Projects</a>
+          <a class="navbtn btn-border" href="#home">Home</a>
+          <a class="navbtn btn-border" href="#projects">Projects</a>
+          <a class="navbtn btn-border" href="#about">About</a>
+          <a class="navbtn btn-border" href="#contact">Contact</a>
         </p>
         <div class="burger slide-in">
           <div class="line1"></div>
@@ -108,15 +111,16 @@
           />
           <a
             href="https://ragibasif.github.io/audio-visualizer/"
-            class="demo-link"
+            class="navbtn btn-border"
             target="_blank"
-            >&rarr; Audio Visualizer</a
+            >Audio Visualizer</a
           >
           <a
             href="https://github.com/ragibasif/audio-visualizer"
-            class="code-link"
+            class="navbtn btn-border"
             target="_blank"
-            >&rarr; GitHub</a
+          >
+            GitHub</a
           >
         </div>
         <div class="project-card">
@@ -127,37 +131,56 @@
           />
           <a
             href="https://ragibasif.github.io/german-club-hunter/"
-            class="demo-link"
+            class="navbtn btn-border"
             target="_blank"
-            >&rarr; Audio Visualizer</a
+            >German Club</a
           >
           <a
             href="https://github.com/ragibasif/german-club-hunter"
-            class="code-link"
+            class="navbtn btn-border"
             target="_blank"
-            >&rarr; GitHub</a
+          >
+            GitHub</a
           >
         </div>
       </div>
     </section>
 
-    <section id="footer">
-      <footer class="footer">
-        <a href="https://www.linkedin.com/in/ragibasif" target="_blank">
-          &nearr;LinkedIn
+    <section id="about">
+      <h2>About</h2>
+    </section>
+
+    <section id="contact">
+      <div class="footer-links">
+        <a
+          class="navbtn btn-border"
+          href="https://www.linkedin.com/in/ragibasif"
+          target="_blank"
+        >
+          LinkedIn
         </a>
-        <a href="https://github.com/ragibasif" target="_blank">
-          &nearr;GitHub
+        <a
+          class="navbtn btn-border"
+          href="https://github.com/ragibasif"
+          target="_blank"
+        >
+          GitHub
         </a>
 
-        <a href="mailto:ragib.asif30@myhunter.cuny.edu" target="_blank">
-          &nearr;Email
+        <a
+          class="navbtn btn-border"
+          href="mailto:ragib.asif30@myhunter.cuny.edu"
+          target="_blank"
+        >
+          Email
         </a>
+      </div>
+      <div id="copyright">
         <p>
           &copy; <span id="copyright-year"></span> Ragib Asif. All rights
           reserved.
         </p>
-      </footer>
+      </div>
     </section>
     <script src="/scripts.js"></script>
   </body>

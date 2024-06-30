@@ -50,7 +50,6 @@ Screenshots
 - JavaScript
 - HTML
 - SCSS
-- CSS
 
 ## Getting Started
 

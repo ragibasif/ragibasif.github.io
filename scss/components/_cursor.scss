@@ -1,7 +1,7 @@
 // cursor glow and star trail effect
 .glow-point {
   position: fixed;
-  box-shadow: 1rem 1rem 1rem 0.4rem rgb(var(--glow-rgb));
+  box-shadow: 1rem 1rem 1rem 0.2rem rgb(var(--glow-rgb));
   pointer-events: none;
   z-index: 999;
 }
