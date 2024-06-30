@@ -1,0 +1,31 @@
+#projects-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.project-img {
+  width: 300px;
+  height: 200px;
+}
+
+.demo-link,
+.code-link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+#projects-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+}

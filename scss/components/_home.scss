@@ -1,0 +1,162 @@
+h1 {
+  margin: 1rem 0 0 0;
+  font-size: clamp(3rem, 2vw, 3em);
+  font-weight: 400;
+  padding-top: 3rem;
+  text-align: center;
+
+  > .magic {
+    display: inline-block;
+    position: relative;
+
+    > .magic-star {
+      --size: clamp(15px, 1.5vw, 15px);
+
+      animation: scale 700ms ease forwards;
+      display: block;
+      height: var(--size);
+      left: var(--star-left);
+      position: absolute;
+      top: var(--star-top);
+      width: var(--size);
+
+      > svg {
+        animation: rotate 1000ms linear infinite;
+        display: block;
+        opacity: 0.7;
+
+        > path {
+          fill: var(--h1two);
+        }
+      }
+    }
+
+    > .magic-text {
+      animation: background-pan 3s linear infinite;
+      background: linear-gradient(
+        to right,
+        var(--h1one),
+        var(--h1two),
+        var(--h1three),
+        var(--h1four)
+      );
+      background-size: 200%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+    }
+  }
+}
+
+#hacked {
+  color: white;
+  padding: 0rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.word {
+  color: var(--text-color);
+  font-weight: 400;
+  margin: 0rem;
+  text-transform: uppercase;
+  transition: opacity 250ms ease;
+  font-size: clamp(3em, 2vw, 3em);
+}
+
+a {
+  text-decoration: none;
+  padding-top: 1rem;
+}
+
+#interests:has(.fancy:hover) .word:not(.fancy:hover) {
+  opacity: 0.2;
+}
+
+.fancy {
+  span {
+    display: inline-block;
+  }
+
+  > .outer {
+    transition: transform 350ms ease;
+
+    &:hover {
+      transition-duration: 800ms;
+    }
+
+    &:hover > .inner {
+      animation: float 5s ease infinite;
+
+      > .letter {
+        background: linear-gradient(to right, var(--home1), var(--home2), var(--home1));
+        background-size: 1000%;
+        background-clip:text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: background-pan 10s linear infinite;
+      }
+    }
+  }
+
+  &:hover > .outer {
+    &:nth-child(1) {
+      transform: translate(-80%,60%) rotate(8deg);
+    }
+    &:nth-child(2) {
+        transform: translate(-40%, 20%) rotate(4deg);
+    }
+
+    &:nth-child(3) {
+        transform: translate(-10%, 60%) rotate(-6deg);
+    }
+
+    &:nth-child(4) {
+        transform: translate(0%, 8%) rotate(-8deg);
+    }
+
+    &:nth-child(5) {
+        transform: translate(0%, -20%) rotate(5deg);
+    }
+
+    &:nth-child(6) {
+        transform: translate(0%, 20%) rotate(-3deg);
+    }
+
+    &:nth-child(7) {
+        transform: translate(0%, -40%) rotate(-5deg);
+    }
+
+    &:nth-child(8) {
+        transform: translate(0%, 15%) rotate(10deg);
+    }
+
+    &:nth-child(9) {
+        transform: translate(0%, -50%) rotate(8deg);
+    }
+
+    &:nth-child(10) {
+        transform: translate(0%, 15%) rotate(-6deg);
+    }
+
+    &:nth-child(11) {
+        transform: translate(50%, -10%) rotate(-3deg);
+    }
+
+    &:nth-child(12) {
+        transform: translate(120%, -30%) rotate(-10deg);
+    }
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--gradient-text1), var(--gradient-text2), var(--gradient-text1)) 0 0 / var(--bg-size) 100%;
+  animation: move-bg 8s infinite linear;
+  color: transparent;
+  background-clip: text;
+}

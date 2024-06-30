@@ -1,4 +1,6 @@
 # ragibasif.github.io
+
+The portfolio website of Ragib Asif.
  
 [![Project license](https://img.shields.io/github/license/ragibasif/ragibasif.github.io.svg?style=flat-square)](LICENSE)
 
@@ -39,14 +41,15 @@ Screenshots
 > **[?]**
 > Please provide your screenshots here.
 
-|                               Home Page                               |                               Login Page                               |
-| :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="docs/images/screenshot.png" title="Home Page" width="100%"> | <img src="docs/images/screenshot.png" title="Login Page" width="100%"> |
+| Home Page                                                                                    | Other Page                                                             |
+| :-------------------------------------------------------------------:                        | :--------------------------------------------------------------------: |
+| <img src="docs/images/portfolio-website-home-screenshot.png" title="Home Page" width="100%"> | <img src="docs/images/screenshot.png" title="Login Page" width="100%"> |
 
 ### Built With
 
 - JavaScript
 - HTML
+- SCSS
 - CSS
 
 ## Getting Started

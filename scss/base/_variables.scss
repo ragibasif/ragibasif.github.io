@@ -1,0 +1,25 @@
+:root {
+  --background-color: #171717;
+  --text-color: #eeebdd;
+  --primary-color: #232323;
+  --box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+  --h1one: rgb(249, 231, 192);
+  --h1two: rgb(203, 258, 193);
+  --h1three: rgb(244, 243, 177);
+  --h1four: rgb(244, 243, 197);
+  --home1: rgb(255, 85, 73);
+  --home2: rgb(222, 2, 5);
+  --bg-size: 400%;
+  --gradient-text1: hsl(20 245% 85%);
+  --gradient-text2: hsl(120 135% 125%);
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+

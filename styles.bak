@@ -1,0 +1,458 @@
+:root {
+  --background-color: #171717;
+  --text-color: #eeebdd;
+  --primary-color: #232323;
+  --accent-color: #da0037;
+  --box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+  --h1one: rgb(249, 231, 192);
+  --h1two: rgb(203, 258, 193);
+  --h1three: rgb(244, 243, 177);
+  --h1four: rgb(244, 243, 197);
+  --home1: rgb(255, 85, 73);
+  --home2: rgb(222, 2, 5);
+  --bg-size: 400%;
+  --gradient-text1: hsl(20 245% 85%);
+  --gradient-text2: hsl(120 135% 125%);
+}
+/* Hide scrollbar for all elements */
+* {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  box-sizing: border-box;
+}
+
+/* Hide scrollbar for all elements */
+*::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0 0 0 0;
+  font-family: JetBrains Mono, monospace, Consolas, Monaco, Lucida Console,
+    Liberation Mono, sans-serif;
+  font-feature-settings: "ss01", "cv03", "zero";
+  background: var(--background-color);
+  /* background-image: url("./assets/background/circuit-board.svg"); */
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+nav {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  /* background: var(--background-color); */
+  background: transparent;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.nav-links a {
+  color: var(--text-color);
+  font-size: 1rem;
+  background: none;
+  text-decoration: none;
+  padding: 1rem;
+  font-weight: bold;
+  border-radius: 1rem;
+}
+.nav-links a:hover {
+  background: var(--primary-color);
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+  padding: 20px;
+  z-index: 20;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+h2 {
+  font-size: 2em;
+  /* margin: 0; */
+  text-align: center;
+}
+
+h3 {
+  margin: 0;
+}
+
+#projects-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.project-card {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.project-img {
+  width: 300px;
+  height: 200px;
+}
+
+.demo-link,
+.code-link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: hidden;
+    display: flex;
+    max-height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    flex-grow: 1;
+  }
+  nav {
+    background: none;
+    justify-content: space-between;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    top: 15px;
+    left: 0px;
+    background: var(--background-color);
+  }
+  .nav-links a {
+    padding: 0.4rem;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav-active .nav-links {
+    display: flex;
+  }
+
+  nav.nav-active {
+    background-color: var(--background-color);
+  }
+  section {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+  }
+  #projects-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+
+/* footer styles starts here*/
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--background-color);
+}
+
+.footer a {
+  color: var(--text-color);
+  background: none;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.footer a:hover {
+  background: none;
+}
+
+/* footer styles ends here */
+
+/* animation rules start here*/
+
+.rotate {
+  /* animation: rotate 2s linear infinite; */
+  animation: rotate 2s linear;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* for nav */
+.slide-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s forwards;
+}
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* h1 effects */
+@keyframes scale {
+  from,
+  to {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+h1 {
+  margin: 1rem 0 0 0;
+  font-size: clamp(3rem, 2vw, 3em);
+  font-weight: 400;
+  padding-top: 3rem;
+  text-align: center;
+}
+h1 > .magic {
+  display: inline-block;
+  position: relative;
+}
+
+h1 > .magic > .magic-star {
+  --size: clamp(15px, 1.5vw, 15px);
+
+  animation: scale 700ms ease forwards;
+  display: block;
+  height: var(--size);
+  left: var(--star-left);
+  position: absolute;
+  top: var(--star-top);
+  width: var(--size);
+}
+
+h1 > .magic > .magic-star > svg {
+  animation: rotate 1000ms linear infinite;
+  display: block;
+  opacity: 0.7;
+}
+
+h1 > .magic > .magic-star > svg > path {
+  fill: var(--h1two);
+}
+
+h1 > .magic > .magic-text {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--h1one),
+    var(--h1two),
+    var(--h1three),
+    var(--h1four)
+  );
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+/* hacked text */
+#hacked {
+  color: white;
+  padding: 0rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
+
+#hacked:hover {
+  background-color: white;
+  color: black;
+}
+
+/* home page hover effect */
+
+@keyframes float {
+  from,
+  to {
+    transform: translateY(-0%);
+  }
+
+  50% {
+    transform: translateY(-3%);
+  }
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 1000% center;
+  }
+
+  to {
+    background-position: 0% center;
+  }
+}
+.line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.word {
+  color: var(--text-color);
+  font-weight: 400;
+  margin: 0rem;
+  text-transform: uppercase;
+  transition: opacity 250ms ease;
+  font-size: clamp(3em, 2vw, 3em);
+}
+
+a {
+  text-decoration: none;
+  padding-top: 1rem;
+}
+
+#interests:has(.fancy:hover) .word:not(.fancy:hover) {
+  opacity: 0.2;
+}
+
+.fancy span {
+  display: inline-block;
+}
+
+.fancy > .outer {
+  transition: transform 350ms ease;
+}
+
+.fancy:hover > .outer {
+  transition-duration: 800ms;
+}
+
+.fancy:hover > .outer > .inner {
+  animation: float 5s ease infinite;
+}
+
+.fancy:hover > .outer > .inner > .letter {
+  background: linear-gradient(
+    to right,
+    var(--home1),
+    var(--home2),
+    var(--home1)
+  );
+  background-size: 1000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: background-pan 10s linear infinite;
+}
+
+.fancy:hover > .outer:nth-child(1) {
+  transform: translate(-80%, 60%) rotate(8deg);
+}
+
+.fancy:hover > .outer:nth-child(2) {
+  transform: translate(-40%, 20%) rotate(4deg);
+}
+
+.fancy:hover > .outer:nth-child(3) {
+  transform: translate(-10%, 60%) rotate(-6deg);
+}
+
+.fancy:hover > .outer:nth-child(4) {
+  transform: translate(0%, 8%) rotate(-8deg);
+}
+
+.fancy:hover > .outer:nth-child(5) {
+  transform: translate(0%, -20%) rotate(5deg);
+}
+
+.fancy:hover > .outer:nth-child(6) {
+  transform: translate(0%, 20%) rotate(-3deg);
+}
+
+.fancy:hover > .outer:nth-child(7) {
+  transform: translate(0%, -40%) rotate(-5deg);
+}
+
+.fancy:hover > .outer:nth-child(8) {
+  transform: translate(0%, 15%) rotate(10deg);
+}
+
+.fancy:hover > .outer:nth-child(9) {
+  transform: translate(0%, -50%) rotate(8deg);
+}
+
+.fancy:hover > .outer:nth-child(10) {
+  transform: translate(0%, 15%) rotate(-6deg);
+}
+
+.fancy:hover > .outer:nth-child(11) {
+  transform: translate(50%, -10%) rotate(-3deg);
+}
+
+.fancy:hover > .outer:nth-child(12) {
+  transform: translate(120%, -30%) rotate(-10deg);
+}
+
+/* home page text gradients */
+
+.gradient-text {
+  background: linear-gradient(
+      90deg,
+      var(--gradient-text1),
+      var(--gradient-text2),
+      var(--gradient-text1)
+    )
+    0 0 / var(--bg-size) 100%;
+  animation: move-bg 8s infinite linear;
+  color: transparent;
+  background-clip: text;
+}
+
+@keyframes move-bg {
+  to {
+    background-position: var(--bg-size) 0;
+  }
+}
+
+/* animation rules end here*/
