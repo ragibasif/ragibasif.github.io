@@ -19,15 +19,14 @@ nav {
 
   a {
     color: var(--text-color);
-    font-size: 1rem;
+    font-size: 1.1rem;
     background: none;
     text-decoration: none;
-    padding: 1rem;
     font-weight: bold;
     border-radius: 1rem;
 
     &:hover {
-      background: var(--primary-color);
+      color: var(--accent-color);
     }
   }
 }
@@ -61,10 +60,6 @@ nav {
     top: 15px;
     left: 0px;
     background: var(--background-color);
-
-    a {
-      padding: 0.4rem;
-    }
   }
 
   .burger {
