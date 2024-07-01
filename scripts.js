@@ -3,12 +3,30 @@
 // **********************************************************************
 const nav = document.querySelector("nav");
 const burger = document.querySelector(".burger");
+const navHome = document.getElementById("nav-home");
+const navProjects = document.getElementById("nav-projects");
+const navAbout = document.getElementById("nav-about");
+const navContact = document.getElementById("nav-contact");
 
 function navToggler() {
   nav.classList.toggle("nav-active");
 }
 
 burger.addEventListener("click", () => {
+  navToggler();
+});
+
+navHome.addEventListener("click", () => {
+  navToggler();
+});
+
+navProjects.addEventListener("click", () => {
+  navToggler();
+});
+navAbout.addEventListener("click", () => {
+  navToggler();
+});
+navContact.addEventListener("click", () => {
   navToggler();
 });
 

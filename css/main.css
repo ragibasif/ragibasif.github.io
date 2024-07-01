@@ -11,9 +11,10 @@
   --home1: rgb(255, 85, 73);
   --home2: rgb(222, 2, 5);
   --bg-size: 400%;
-  --gradient-text1: hsl(20 245% 85%);
-  --gradient-text2: hsl(120 135% 125%);
-  --glow-rgb: 101 100 100;
+  --gradient-text1: rgb(220, 220, 210);
+  --gradient-text2: rgb(255, 251, 251);
+  --glow-rgb: 255 20 90;
+  --bg-overlay: rgba(24, 24, 24, 0.6);
 }
 
 @font-face {
@@ -75,7 +76,6 @@ h2 {
   section {
     margin-left: auto;
     margin-right: auto;
-    max-width: 90%;
   }
 }
 .glow-point {
@@ -140,12 +140,10 @@ nav {
   }
   .burger {
     display: block;
+    background: transparent;
   }
   .nav-active .nav-links {
     display: flex;
-  }
-  nav.nav-active {
-    background-color: var(--background-color);
   }
 }
 .slide-in {
@@ -154,11 +152,27 @@ nav {
   animation: slideIn 1s forwards;
 }
 
+#home {
+  background-image: url("/assets/images/jr-korpa-9XngoIpxcEo-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+.background-overlay {
+  background-color: var(--bg-overlay);
+  padding: 2rem 2rem;
+  box-shadow: var(--box-shadow);
+}
+
 h1 {
   margin: 1rem 0 0 0;
   font-size: clamp(3rem, 2vw, 3em);
   font-weight: 400;
-  padding-top: 3rem;
   text-align: center;
 }
 h1 > .magic {
@@ -193,12 +207,6 @@ h1 > .magic > .magic-text {
   white-space: nowrap;
 }
 
-#hacked {
-  color: white;
-  padding: 0rem clamp(1rem, 2vw, 3rem);
-  border-radius: clamp(0.4rem, 0.75vw, 1rem);
-}
-
 .line {
   display: flex;
   justify-content: space-between;
@@ -215,7 +223,6 @@ h1 > .magic > .magic-text {
 
 a {
   text-decoration: none;
-  padding-top: 1rem;
 }
 
 #interests:has(.fancy:hover) .word:not(.fancy:hover) {
@@ -286,6 +293,11 @@ a {
   background-clip: text;
 }
 
+@media (max-width: 768px) {
+  #home {
+    font-size: 1rem;
+  }
+}
 #projects-wrapper {
   display: flex;
   flex-direction: row;
@@ -305,12 +317,6 @@ a {
   gap: 1rem;
   padding: 2rem;
   box-shadow: var(--box-shadow);
-  max-width: 90%;
-}
-
-.project-img {
-  width: 300px;
-  height: 200px;
 }
 
 @media (max-width: 768px) {
@@ -419,66 +425,6 @@ a {
   }
   50% {
     transform: translateY(-3%);
-  }
-}
-@keyframes glitch {
-  0% {
-    clip-path: var(--clip-one);
-  }
-  2%, 8% {
-    clip-path: var(--clip-two);
-    transform: translate(calc(var(--shimmy-distance) * -1%), 0);
-  }
-  6% {
-    clip-path: var(--clip-two);
-    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
-  }
-  9% {
-    clip-path: var(--clip-two);
-    transform: translate(0, 0);
-  }
-  10% {
-    clip-path: var(--clip-three);
-    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
-  }
-  13% {
-    clip-path: var(--clip-three);
-    transform: translate(0, 0);
-  }
-  14%, 21% {
-    clip-path: var(--clip-four);
-    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
-  }
-  25% {
-    clip-path: var(--clip-five);
-    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
-  }
-  30% {
-    clip-path: var(--clip-five);
-    transform: translate(calc(var(--shimmy-distance) * -1%), 0);
-  }
-  35%, 45% {
-    clip-path: var(--clip-six);
-    transform: translate(calc(var(--shimmy-distance) * -1%));
-  }
-  40% {
-    clip-path: var(--clip-six);
-    transform: translate(calc(var(--shimmy-distance) * 1%));
-  }
-  50% {
-    clip-path: var(--clip-six);
-    transform: translate(0, 0);
-  }
-  55% {
-    clip-path: var(--clip-seven);
-    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
-  }
-  60% {
-    clip-path: var(--clip-seven);
-    transform: translate(0, 0);
-  }
-  31%, 61%, 100% {
-    clip-path: var(--clip-four);
   }
 }
 

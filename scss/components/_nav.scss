@@ -56,14 +56,11 @@ nav {
 
   .burger {
     display: block;
+    background: transparent;
   }
 
   .nav-active .nav-links {
     display: flex;
-  }
-
-  nav.nav-active {
-    background-color: var(--background-color);
   }
 }
 
