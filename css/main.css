@@ -14,7 +14,6 @@
   --gradient-text1: rgb(220, 220, 210);
   --gradient-text2: rgb(255, 251, 251);
   --glow-rgb: 255 20 90;
-  --bg-overlay: rgba(24, 24, 24, 0.6);
 }
 
 @font-face {
@@ -50,6 +49,7 @@ body {
 
 section {
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -153,20 +153,8 @@ nav {
 }
 
 #home {
-  background-image: url("/assets/images/jr-korpa-9XngoIpxcEo-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
   padding: 0;
   margin: 0;
-}
-
-.background-overlay {
-  background-color: var(--bg-overlay);
-  padding: 2rem 2rem;
-  box-shadow: var(--box-shadow);
 }
 
 h1 {
@@ -319,26 +307,23 @@ a {
   box-shadow: var(--box-shadow);
 }
 
-@media (max-width: 768px) {
-  #projects-wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-  }
+#contact {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: end;
+  text-align: left;
+  bottom: 0;
+  left: 0;
 }
-.footer-links {
+
+.footer {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  padding: 2rem;
-  margin: 1rem;
-  gap: 3rem;
-  background-color: var(--background-color);
+  flex-direction: column;
+  text-align: left;
 }
-.footer-links a {
+.footer a {
   color: var(--text-color);
   background: none;
   text-decoration: none;
@@ -346,10 +331,20 @@ a {
 }
 
 @media (max-width: 768px) {
-  .footer-links {
-    width: 90%;
+  #contact {
     display: flex;
     flex-direction: column;
+    justify-content: end;
+    text-align: left;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .footer {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 }
 .navbtn {
@@ -361,6 +356,10 @@ a {
   border-radius: 1rem;
   cursor: pointer;
   margin: 2rem;
+}
+.navbtn:hover {
+  color: var(--background-color);
+  background-color: var(--accent-color);
 }
 
 .btn-border::before, .btn-border::after {

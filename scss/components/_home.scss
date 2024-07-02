@@ -1,19 +1,8 @@
 #home {
-  background-image: url("/assets/images/jr-korpa-9XngoIpxcEo-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
   padding: 0;
   margin: 0;
 }
 
-.background-overlay {
-  background-color: var(--bg-overlay);
-  padding: 2rem 2rem;
-  box-shadow: var(--box-shadow);
-}
 h1 {
   margin: 1rem 0 0 0;
   font-size: clamp(3rem, 2vw, 3em);
