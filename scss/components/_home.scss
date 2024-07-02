@@ -76,11 +76,13 @@ h1 {
 
 a {
   text-decoration: none;
-  // padding-top: 1rem;
 }
 
 #interests:has(.fancy:hover) .word:not(.fancy:hover) {
   opacity: 0.2;
+}
+
+#social-links {
 }
 
 .fancy {

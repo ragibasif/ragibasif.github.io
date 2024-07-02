@@ -4,12 +4,12 @@
   min-height: 100vh;
   justify-content: end;
   text-align: left;
-  // padding: 2rem;
-  // margin: 2rem;
+  padding: 1.3rem;
   bottom: 0;
   left: 0;
 }
 .footer {
+  font-size: 1rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
   text-align: left;
   // justify-content: flex-start;
   // padding: 2rem;
-  // margin: 1rem;
+  // margin: 0.1rem;
   // gap: 1rem;
   // background-color: var(--background-color);
 
@@ -25,7 +25,9 @@
     color: var(--text-color);
     background: none;
     text-decoration: none;
-    font-size: 1rem;
+    &:hover {
+      color: var(--accent-color);
+    }
   }
 }
 

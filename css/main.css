@@ -4,15 +4,15 @@
   --primary-color: #232323;
   --accent-color: #ffc7c7;
   --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  --h1one: rgb(249, 231, 192);
-  --h1two: rgb(203, 258, 193);
-  --h1three: rgb(244, 243, 177);
-  --h1four: rgb(244, 243, 197);
+  --h1one: rgb(255, 100, 100);
+  --h1two: rgb(100, 255, 100);
+  --h1three: rgb(100, 100, 255);
+  --h1four: rgb(200, 200, 200);
   --home1: rgb(255, 85, 73);
   --home2: rgb(222, 2, 5);
   --bg-size: 400%;
-  --gradient-text1: rgb(220, 220, 210);
-  --gradient-text2: rgb(255, 251, 251);
+  --gradient-text1: rgb(255, 160, 160);
+  --gradient-text2: rgb(255, 100, 100);
   --glow-rgb: 255 20 90;
 }
 
@@ -313,11 +313,13 @@ a {
   min-height: 100vh;
   justify-content: end;
   text-align: left;
+  padding: 1.3rem;
   bottom: 0;
   left: 0;
 }
 
 .footer {
+  font-size: 1rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -327,7 +329,9 @@ a {
   color: var(--text-color);
   background: none;
   text-decoration: none;
-  font-size: 1rem;
+}
+.footer a:hover {
+  color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
