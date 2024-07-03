@@ -310,12 +310,7 @@ a {
 #contact {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  justify-content: end;
-  text-align: left;
   padding: 1.3rem;
-  bottom: 0;
-  left: 0;
 }
 
 .footer {
@@ -323,7 +318,10 @@ a {
   width: 100%;
   display: flex;
   flex-direction: column;
-  text-align: left;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 1rem;
 }
 .footer a {
   color: var(--text-color);
@@ -334,23 +332,6 @@ a {
   color: var(--accent-color);
 }
 
-@media (max-width: 768px) {
-  #contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    text-align: left;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-  .footer {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-}
 .navbtn {
   position: relative;
   padding: 0.3rem 3rem;
