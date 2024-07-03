@@ -1,23 +1,24 @@
 #projects-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  gap: 1rem;
+  padding: 1rem;
   align-items: center;
   text-align: center;
   justify-content: center;
+  // border: 2px solid var(--accent-color);
+  // background-color: var(--primary-color);
+  // box-shadow: var(--box-shadow);
+  width: 95%;
 }
 
-.project-card {
-  background-color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 2rem;
-  box-shadow: var(--box-shadow);
-  // max-width: 90%;
+.project-button {
+  text-decoration: none;
+  color: var(--text-color);
+  &:hover {
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+  }
 }
 
 @media (max-width: 768px) {
