@@ -15,6 +15,16 @@
   --gradient-text2: rgb(250, 200, 200);
   --glow-rgb: 255 20 90;
   --command-color: rgba(100, 255, 100, 1);
+  gruvbox-green-hex: #8ec07c;
+  gruvbox-blue-hex: #458588;
+  gruvbox-yellow-hex: #d79921;
+  gruvbox-red-hex: #cc241d;
+  gruvbox-black-hex: #3c3836;
+  gruvbox-green-rgb: rgb(142, 192, 124);
+  gruvbox-blue-rgb: rgb(69, 133, 136);
+  gruvbox-yellow-rgb: rgb(215, 153, 33);
+  gruvbox-red-rgb: rgb(204, 36, 29);
+  gruvbox-black-rgb: rgb(60, 56, 54);
 }
 
 @font-face {
@@ -289,14 +299,18 @@ a {
 #projects-wrapper {
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
   justify-content: center;
 }
 
 .project-card {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--accent-color);
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid var(--accent-color);
 }
 
 .project-button {
@@ -314,14 +328,14 @@ a {
   #projects-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
     text-align: center;
     align-items: center;
     justify-content: center;
   }
   .project-card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 }
@@ -397,6 +411,7 @@ a {
 .terminal-window {
   box-shadow: var(--box-shadow);
   border-radius: 0 0 0.1rem 0.1rem;
+  max-width: 90%;
 }
 
 .terminal-body {
