@@ -44,3 +44,17 @@
     transform: translateY(-3%);
   }
 }
+
+// about me terminal animations
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

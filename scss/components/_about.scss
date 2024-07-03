@@ -1,0 +1,23 @@
+.terminal-window {
+  box-shadow: var(--box-shadow);
+  border-radius: 0 0 0.1rem 0.1rem;
+  //   min-width: 80vw;
+}
+
+.terminal-body {
+  text-align: left;
+  padding: 1rem;
+  margin: 0rem;
+  background: var(--primary-color);
+  border: 2px solid var(--accent-color);
+  pre {
+    margin: 0;
+  }
+  .pulse {
+    animation: pulse 1s ease-in-out infinite;
+  }
+}
+
+.command {
+  color: var(--command-color);
+}
