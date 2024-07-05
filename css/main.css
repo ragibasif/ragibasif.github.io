@@ -436,6 +436,25 @@ a {
   color: var(--gruvbox-green-hex);
 }
 
+#skills #skills-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+  gap: 2rem;
+}
+#skills #skills-wrapper div {
+  padding: 1rem;
+}
+#skills #skills-wrapper div ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+#skills #skills-wrapper div ul li {
+  line-height: 1.5rem;
+}
+
 @keyframes slideIn {
   to {
     opacity: 1;

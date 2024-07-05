@@ -113,10 +113,6 @@
       {
         "books": [
           {
-            "author": "oscar wilde",
-            "book": "the picture of dorian gray"
-          },
-          {
             "author": "mark twain",
             "book": "the adventures of tom sawyer"
           }
