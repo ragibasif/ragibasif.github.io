@@ -1,23 +1,37 @@
-.terminal-window {
-  box-shadow: var(--box-shadow);
-  border-radius: 0 0 0.1rem 0.1rem;
-  max-width: 90%;
+//   gruvbox-green-hex: #8ec07c;
+//   gruvbox-blue-hex: #458588;
+//   gruvbox-yellow-hex: #d79921;
+//   gruvbox-red-hex: #cc241d;
+//   gruvbox-black-hex: #3c3836;
+//   gruvbox-green-rgb: rgba(142, 192, 124, 1);
+//   gruvbox-blue-rgb: rgba(69, 133, 136, 1);
+//   gruvbox-yellow-rgb: rgba(215, 153, 33, 1);
+//   gruvbox-red-rgb: rgba(204, 36, 29, 1);
+//   gruvbox-black-rgb: rgba(60, 56, 54, 1);
+#about {
+  background-color: var(--gruvbox-black-hex);
 }
 
-.terminal-body {
+.about-body {
   text-align: left;
   padding: 1rem;
   margin: 0rem;
-  background: var(--primary-color);
-  border: 2px solid var(--accent-color);
-  pre {
-    margin: 0;
-  }
   .pulse {
     animation: pulse 1s ease-in-out infinite;
   }
 }
 
+.git {
+  color: var(--gruvbox-red-hex);
+}
+
+.key {
+  color: var(--gruvbox-yellow-hex);
+}
+.value {
+  color: var(--gruvbox-blue-hex);
+}
+
 .command {
-  color: var(--command-color);
+  color: var(--gruvbox-green-hex);
 }
