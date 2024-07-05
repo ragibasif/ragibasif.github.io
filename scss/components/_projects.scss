@@ -31,15 +31,26 @@
     .pulse {
       animation: pulse 1s ease-in-out infinite;
     }
+    .project {
+      padding-bottom: 1rem;
 
-    .project-name {
-      color: var(--gruvbox-yellow-hex);
-    }
-    .demo {
-      color: var(--gruvbox-red-hex);
-    }
-    .code {
-      color: var(--gruvbox-blue-hex);
+      .project-name {
+        color: var(--gruvbox-yellow-hex);
+      }
+      .demo {
+        color: var(--gruvbox-red-hex);
+        &:hover {
+          background-color: var(--gruvbox-red-rgb);
+          color: var(--text-color);
+        }
+      }
+      .code {
+        color: var(--gruvbox-blue-hex);
+        &:hover {
+          background-color: var(--gruvbox-blue-rgb);
+          color: var(--text-color);
+        }
+      }
     }
   }
 }

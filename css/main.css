@@ -21,9 +21,9 @@
   --gruvbox-red-hex: #cc241d;
   --gruvbox-black-hex: #3c3836;
   --gruvbox-green-rgb: rgba(142, 192, 124, 1);
-  --gruvbox-blue-rgb: rgba(69, 133, 136, 1);
+  --gruvbox-blue-rgb: rgba(69, 133, 136, 0.5);
   --gruvbox-yellow-rgb: rgba(215, 153, 33, 1);
-  --gruvbox-red-rgb: rgba(204, 36, 29, 1);
+  --gruvbox-red-rgb: rgba(204, 36, 29, 0.5);
   --gruvbox-black-rgb: rgba(60, 56, 54, 1);
 }
 
@@ -317,14 +317,25 @@ a {
 #projects-wrapper .project-card .pulse {
   animation: pulse 1s ease-in-out infinite;
 }
-#projects-wrapper .project-card .project-name {
+#projects-wrapper .project-card .project {
+  padding-bottom: 1rem;
+}
+#projects-wrapper .project-card .project .project-name {
   color: var(--gruvbox-yellow-hex);
 }
-#projects-wrapper .project-card .demo {
+#projects-wrapper .project-card .project .demo {
   color: var(--gruvbox-red-hex);
 }
-#projects-wrapper .project-card .code {
+#projects-wrapper .project-card .project .demo:hover {
+  background-color: var(--gruvbox-red-rgb);
+  color: var(--text-color);
+}
+#projects-wrapper .project-card .project .code {
   color: var(--gruvbox-blue-hex);
+}
+#projects-wrapper .project-card .project .code:hover {
+  background-color: var(--gruvbox-blue-rgb);
+  color: var(--text-color);
 }
 
 #contact {
