@@ -431,29 +431,6 @@ a {
   line-height: 1.5rem;
 }
 
-.icon-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: center;
-  bottom: 0;
-  left: 0;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  position: fixed;
-}
-.icon-container a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-.icon-container a:hover {
-  color: var(--accent-color);
-}
-.icon-container i {
-  font-size: 2em;
-}
-
 @keyframes slideIn {
   to {
     opacity: 1;
