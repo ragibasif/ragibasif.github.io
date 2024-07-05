@@ -94,7 +94,7 @@ h2 {
   z-index: 999;
 }
 
-nav {
+#nav {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -130,7 +130,7 @@ nav {
 }
 
 @media (max-width: 768px) {
-  nav {
+  #nav {
     background: none;
     justify-content: space-between;
   }
@@ -407,33 +407,9 @@ a {
     margin-top: 0.9rem;
   }
 }
-#about {
-  background-color: var(--gruvbox-black-hex);
-}
-
-.about-body {
-  text-align: left;
+#about .about-body {
   padding: 1rem;
-  margin: 0rem;
-}
-.about-body .pulse {
-  animation: pulse 1s ease-in-out infinite;
-}
-
-.git {
-  color: var(--gruvbox-red-hex);
-}
-
-.key {
-  color: var(--gruvbox-yellow-hex);
-}
-
-.value {
-  color: var(--gruvbox-blue-hex);
-}
-
-.command {
-  color: var(--gruvbox-green-hex);
+  text-align: left;
 }
 
 #skills #skills-wrapper {
@@ -453,6 +429,29 @@ a {
 }
 #skills #skills-wrapper div ul li {
   line-height: 1.5rem;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  position: fixed;
+}
+.icon-container a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+.icon-container a:hover {
+  color: var(--accent-color);
+}
+.icon-container i {
+  font-size: 2em;
 }
 
 @keyframes slideIn {

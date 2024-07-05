@@ -1,4 +1,4 @@
-nav {
+#nav {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -35,7 +35,7 @@ nav {
 }
 
 @media (max-width: 768px) {
-  nav {
+  #nav {
     background: none;
     justify-content: space-between;
   }
