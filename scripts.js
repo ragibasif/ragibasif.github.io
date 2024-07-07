@@ -6,7 +6,7 @@ const burger = document.querySelector(".burger");
 const navHome = document.getElementById("nav-home");
 const navProjects = document.getElementById("nav-projects");
 const navAbout = document.getElementById("nav-about");
-const navContact = document.getElementById("nav-contact");
+// const navContact = document.getElementById("nav-contact");
 const navSkills = document.getElementById("nav-skills");
 
 function navToggler() {
@@ -27,9 +27,9 @@ navProjects.addEventListener("click", () => {
 navAbout.addEventListener("click", () => {
   navToggler();
 });
-navContact.addEventListener("click", () => {
-  navToggler();
-});
+// navContact.addEventListener("click", () => {
+//   navToggler();
+// });
 navSkills.addEventListener("click", () => {
   navToggler();
 });
