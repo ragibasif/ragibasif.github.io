@@ -8,7 +8,6 @@ h1 {
   margin: 1rem 0 0 0;
   font-size: clamp(3rem, 2vw, 3em);
   font-weight: 400;
-  // padding-top: 3rem;
   text-align: center;
 
   > .magic {
@@ -32,20 +31,14 @@ h1 {
         opacity: 0.7;
 
         > path {
-          fill: var(--h1two);
+          fill: var(--text-color);
         }
       }
     }
 
     > .magic-text {
       animation: background-pan 3s linear infinite;
-      background: linear-gradient(
-        to right,
-        var(--h1one),
-        var(--h1two),
-        var(--h1three),
-        var(--h1four)
-      );
+      background-color: var(--text-color);
       background-size: 200%;
       background-clip: text;
       -webkit-background-clip: text;
@@ -89,7 +82,7 @@ a {
 .fancy {
   span {
     display: inline-block;
-    color: var(--fancy-links);
+    color: var(--text-color);
   }
 
   > .outer {
@@ -103,12 +96,7 @@ a {
       animation: float 5s ease infinite;
 
       > .letter {
-        background: linear-gradient(
-          to right,
-          var(--fancy-links-hover1),
-          var(--fancy-links-hover2),
-          var(--fancy-links-hover1)
-        );
+        background-color: var(--text-color);
         background-size: 1000%;
         background-clip: text;
         -webkit-background-clip: text;
@@ -169,13 +157,7 @@ a {
 }
 
 .gradient-text {
-  background: linear-gradient(
-      90deg,
-      var(--gradient-text1),
-      var(--gradient-text2),
-      var(--gradient-text1)
-    )
-    0 0 / var(--bg-size) 100%;
+  background-color: var(--text-color);
   animation: move-bg 8s infinite linear;
   color: transparent;
   background-clip: text;
