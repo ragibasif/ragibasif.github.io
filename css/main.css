@@ -8,11 +8,12 @@
   --h1two: rgb(150, 255, 150);
   --h1three: rgb(150, 150, 255);
   --h1four: rgb(250, 200, 200);
-  --home1: rgb(255, 85, 73);
-  --home2: rgb(222, 2, 5);
+  --fancy-links: rgb(250, 100, 100);
+  --fancy-links-hover1: rgb(255, 255, 73);
+  --fancy-links-hover2: rgb(222, 2, 5);
   --bg-size: 400%;
-  --gradient-text1: rgb(100, 150, 250);
-  --gradient-text2: rgb(250, 050, 100);
+  --gradient-text1: rgb(100, 250, 250);
+  --gradient-text2: rgb(250, 250, 100);
   --glow-rgb: 255 20 90;
   --command-color: rgba(100, 255, 100, 1);
   --gruvbox-green-hex: #8ec07c;
@@ -229,6 +230,7 @@ a {
 
 .fancy span {
   display: inline-block;
+  color: var(--fancy-links);
 }
 .fancy > .outer {
   transition: transform 350ms ease;
@@ -240,12 +242,12 @@ a {
   animation: float 5s ease infinite;
 }
 .fancy > .outer:hover > .inner > .letter {
-  background: linear-gradient(to right, var(--home1), var(--home2), var(--home1));
+  background: linear-gradient(to right, var(--fancy-links-hover1), var(--fancy-links-hover2), var(--fancy-links-hover1));
   background-size: 1000%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: background-pan 10s linear infinite;
+  animation: background-pan 5s linear infinite;
 }
 .fancy:hover > .outer:nth-child(1) {
   transform: translate(-80%, 60%) rotate(8deg);
@@ -352,7 +354,6 @@ a {
   align-items: center;
   text-align: center;
   justify-content: center;
-  gap: 1rem;
 }
 .footer a {
   color: var(--text-color);
@@ -409,7 +410,15 @@ a {
 }
 #about .about-body {
   padding: 1rem;
-  text-align: left;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+#about .about-body div {
+  width: 50%;
 }
 
 #skills #skills-wrapper {

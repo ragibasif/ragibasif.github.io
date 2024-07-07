@@ -89,6 +89,7 @@ a {
 .fancy {
   span {
     display: inline-block;
+    color: var(--fancy-links);
   }
 
   > .outer {
@@ -104,15 +105,15 @@ a {
       > .letter {
         background: linear-gradient(
           to right,
-          var(--home1),
-          var(--home2),
-          var(--home1)
+          var(--fancy-links-hover1),
+          var(--fancy-links-hover2),
+          var(--fancy-links-hover1)
         );
         background-size: 1000%;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        animation: background-pan 10s linear infinite;
+        animation: background-pan 5s linear infinite;
       }
     }
   }
