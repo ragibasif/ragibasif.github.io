@@ -1,0 +1,64 @@
+:root {
+  --background-color: #171717;
+  --text-color: #eeebdd;
+  --accent-color: #ffc7c7;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2") format("woff2"), url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: JetBrains Mono, Consolas, Monaco, Lucida Console, Liberation Mono, monospace, sans-serif;
+  font-feature-settings: "ss01", "cv03", "zero";
+  background: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    overflow-y: scroll;
+    flex-grow: 1;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
