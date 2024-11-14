@@ -59,7 +59,7 @@ a:hover {
   width: 100%;
   margin: auto;
   padding: 2rem;
-  background-color: wheat;
+  /* background-color: darkgrey; */
 }
 
 /* Hero Section */
@@ -133,4 +133,10 @@ section h2 {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+/* TODO */
+#projects,
+#about {
+  display: none;
 }
