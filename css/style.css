@@ -62,15 +62,6 @@ header {
   /* text-align: center; */
 }
 
-#project li {
-  list-style: none;
-  padding: 1rem;
-}
-
-#project li a {
-  padding-left: 1rem;
-}
-
 footer {
   height: 100%;
   width: 100%;
@@ -83,6 +74,38 @@ footer {
   align-items: center;
   bottom: 0;
   left: 0;
+}
+
+/* PROJECT STYLES */
+
+.project {
+  display: flex;
+  flex-direction: column;
+  /* border-style: dotted;
+  border-width: 2px;
+  border-color: red; */
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.project-title {
+}
+.project-description {
+}
+.project-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.project-link {
+  text-decoration: none;
+}
+
+.project-link:hover {
+  color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
