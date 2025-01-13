@@ -84,8 +84,8 @@ footer {
   /* border-style: dotted;
   border-width: 2px;
   border-color: red; */
-  height: 100%;
-  width: 100%;
+  height: 50%;
+  width: 50%;
   padding: 1rem;
   gap: 1rem;
   margin: 1rem;
@@ -117,5 +117,9 @@ footer {
     flex-grow: 1;
     margin-left: auto;
     margin-right: auto;
+  }
+  .project {
+    height: 100%;
+    width: 100%;
   }
 }
