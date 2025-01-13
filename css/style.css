@@ -27,6 +27,11 @@ body {
   color: var(--text-color);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem;
 }
 
 a {
@@ -38,38 +43,46 @@ a:hover {
   color: var(--accent-color);
 }
 
-/* Hero Section */
-#hero {
+header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  background-color: var(--background-color);
-  height: 100vh;
-  width: 100vw;
+  margin: 1rem;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
 }
 
-#hero nav a {
-  color: var(--text-color);
-  text-decoration: none;
-  margin: 0 1rem;
-  transition: color 0.3s;
+#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* text-align: center; */
 }
 
-#hero nav a:hover {
-  color: var(--accent-color);
+#project li {
+  list-style: none;
+  padding: 1rem;
+}
+
+#project li a {
+  padding-left: 1rem;
 }
 
 footer {
+  height: 100%;
   width: 100%;
+  margin: 1rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
-  position: fixed;
   bottom: 0;
+  left: 0;
 }
 
 @media (max-width: 768px) {
