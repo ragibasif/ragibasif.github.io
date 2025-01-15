@@ -37,10 +37,10 @@ function makeProjects() {
         listItem.innerHTML = `
         <h3>${project.name}</h3>
         <a href="${
-          project.demo
+          project.primary
         }" target="_blank" rel="noopener noreferrer">&rarrhk;Demo</a>
         <a href="${
-          project.code
+          project.secondary
         }" target="_blank" rel="noopener noreferrer">&rarrhk;Code</a>
         <p>${project.description}</p>
         <p class="technologies">Technologies: ${project.technologies.join(
@@ -53,6 +53,28 @@ function makeProjects() {
     .catch((error) => console.error("Error fetching projects:", error));
 }
 
+function makePresentations() {
+  // Fetch the JSON file with the projects information
+  fetch("../assets/data/presentations.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const presentationsList = document.querySelector(".presentations");
+
+      // Populate the projects list
+      data.presentations.forEach((presentation) => {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `
+        <h3>${presentation.name}</h3>
+        <a href="${presentation.slides}" target="_blank" rel="noopener noreferrer">&rarrhk;Slides</a>
+        <p>${presentation.description}</p>
+      `;
+        presentationsList.appendChild(listItem);
+      });
+    })
+    .catch((error) => console.error("Error fetching presentations:", error));
+}
+
 makeCopyright();
 makeSocials();
 makeProjects();
+makePresentations();

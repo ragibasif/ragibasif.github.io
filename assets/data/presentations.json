@@ -1,0 +1,10 @@
+{
+    "presentations": [
+      {
+        "name": "Animate.css",
+        "description": "A demonstration of how and when developers can use Animate.css, a cross-browser animation library, in their web applications.",
+        "slides": "https://animate-css-demo-slides.netlify.app/1"
+      }
+    ]
+  }
+  

@@ -17,12 +17,46 @@
   display: none;
 }
 
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../assets/fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf")
+    format("truetype");
+  font-weight: 400; /* Regular */
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../assets/fonts/Space_Grotesk/static/SpaceGrotesk-Bold.ttf")
+    format("truetype");
+  font-weight: 700; /* Bold */
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("../assets/fonts/Space_Mono/SpaceMono-Regular.ttf")
+    format("truetype");
+  font-weight: 400; /* Regular */
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("../assets/fonts/Space_Mono/SpaceMono-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+}
+
+/* H1 */
+@font-face {
+  font-family: "Cinzel";
+  src: url("../assets/fonts/Cinzel/static/Cinzel-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: monospace, Monaco, Lucida Console, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   background: var(--background-color);
   color: var(--text-color);
   display: flex;
@@ -32,8 +66,29 @@ body {
   padding: 2rem;
   width: 100vw;
 }
+h1 {
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: "Space Mono", sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Space Mono", sans-serif;
+  font-weight: 400;
+}
 
 a {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
   text-decoration: none;
   color: var(--text-color);
 }
@@ -45,7 +100,7 @@ a:hover {
 header {
   display: flex;
   flex-direction: column;
-  /* padding: 1rem; */
+  padding-top: 2rem;
   height: 50%;
   width: 50%;
 }
@@ -53,12 +108,14 @@ header {
 main {
   display: flex;
   flex-direction: column;
-  /* padding: 1rem; */
+  justify-content: space-evenly;
   height: 50%;
   width: 50%;
+  gap: 2rem;
 }
 
-.projects {
+.projects,
+.presentations {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -68,7 +125,6 @@ main {
 footer {
   height: 50%;
   width: 50%;
-  /* padding: 1rem; */
   gap: 1rem;
   display: flex;
   flex-direction: column;
@@ -87,7 +143,7 @@ footer {
     display: flex;
     width: 100%;
     overflow-y: scroll;
-    /* flex-grow: 1; */
+    flex-grow: 1;
     margin-left: auto;
     margin-right: auto;
   }
@@ -95,11 +151,6 @@ footer {
     height: 100%;
     width: 100%;
   }
-  .card {
-    height: 100%;
-    width: 100%;
-  }
-
   footer {
     height: 100%;
     width: 100%;

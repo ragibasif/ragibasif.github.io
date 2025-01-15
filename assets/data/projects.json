@@ -3,22 +3,22 @@
       {
         "name": "Music Visualizer",
         "description": "This website allows users to play songs with an engaging visualizer.  It offers intuitive controls for playing, pausing, and navigating through songs. The design is aesthetically pleasing, easy to navigate, and fully responsive across all devices.",
-        "demo": "https://deutschmusik.netlify.app/",
-        "code": "https://github.com/ragibasif/music-visualizer",
+        "primary": "https://deutschmusik.netlify.app/",
+        "secondary": "https://github.com/ragibasif/music-visualizer",
         "technologies": ["JavaScript", "HTML", "CSS"]
       },
       {
         "name": "German Club",
         "description": "The soon-to-be official German Club at CUNY Hunter College website!  This project serves as a central hub for sharing information about the club, upcoming events, and resources for members. It is built for simplicity and ease of use.",
-        "demo": "https://deutschklub.netlify.app/",
-        "code": "https://github.com/ragibasif/german-club",
+        "primary": "https://deutschklub.netlify.app/",
+        "secondary": "https://github.com/ragibasif/german-club",
         "technologies": ["JavaScript", "HTML", "CSS"]
       },
       {
         "name": "Portfolio Website",
         "description": "A personal portfolio showcasing projects, blogs, and contact information.",
-        "demo": "https://ragibasif.github.io/",
-        "code": "https://github.com/ragibasif/ragibasif.github.io",
+        "primary": "https://ragibasif.github.io/",
+        "secondary": "https://github.com/ragibasif/ragibasif.github.io",
         "technologies": ["JavaScript", "HTML", "CSS"]
       }
     ]
