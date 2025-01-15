@@ -1,0 +1,15 @@
+{
+  "skills": {
+    "programming_languages": ["JavaScript", "Python", "C++", "C"],
+    "web_technologies": ["HTML", "CSS", "Tailwind CSS", "Next.js"],
+    "frameworks_and_libraries": ["React", "Express", "Node.js", "D3.js"],
+    "databases": ["MongoDB", "PostgreSQL", "SQLite"],
+    "tools_and_platforms": ["Git", "GitHub", "Vercel", "Netlify", "Docker"],
+    "soft_skills": [
+      "Problem-solving",
+      "Teamwork",
+      "Communication",
+      "Critical Thinking"
+    ]
+  }
+}

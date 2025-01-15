@@ -17,7 +17,7 @@ function makeSocials() {
       data.socials.forEach((social) => {
         const listItem = document.createElement("li");
         listItem.innerHTML = `
-      <a href="${social.url}" target="_blank" rel="noopener noreferrer">&rarrhk;${social.name}</a>`;
+      <a href="${social.url}" target="_blank" rel="noopener noreferrer">${social.name}</a>`;
         socialsList.appendChild(listItem);
       });
     })
@@ -38,10 +38,10 @@ function makeProjects() {
         <h3>${project.name}</h3>
         <a href="${
           project.primary
-        }" target="_blank" rel="noopener noreferrer">&rarrhk;Demo</a>
+        }" target="_blank" rel="noopener noreferrer">Demo</a>
         <a href="${
           project.secondary
-        }" target="_blank" rel="noopener noreferrer">&rarrhk;Code</a>
+        }" target="_blank" rel="noopener noreferrer">Code</a>
         <p>${project.description}</p>
         <p class="technologies">Technologies: ${project.technologies.join(
           ", "
@@ -65,7 +65,7 @@ function makePresentations() {
         const listItem = document.createElement("li");
         listItem.innerHTML = `
         <h3>${presentation.name}</h3>
-        <a href="${presentation.slides}" target="_blank" rel="noopener noreferrer">&rarrhk;Slides</a>
+        <a href="${presentation.slides}" target="_blank" rel="noopener noreferrer">Slides</a>
         <p>${presentation.description}</p>
       `;
         presentationsList.appendChild(listItem);
@@ -78,3 +78,45 @@ makeCopyright();
 makeSocials();
 makeProjects();
 makePresentations();
+
+// TODO
+// // Fetch the JSON file
+// fetch('skills.json')
+// .then(response => {
+//   if (!response.ok) {
+//     throw new Error('Failed to fetch skills.json');
+//   }
+//   return response.json();
+// })
+// .then(data => {
+//   renderSkills(data.skills);
+// })
+// .catch(error => {
+//   console.error('Error fetching skills.json:', error);
+// });
+
+// // Function to render skills
+// function renderSkills(skills) {
+// const container = document.getElementById('skills-container');
+// for (const category in skills) {
+//   const categoryDiv = document.createElement('div');
+//   categoryDiv.classList.add('skills-category');
+
+//   // Add category title
+//   const title = document.createElement('h3');
+//   title.textContent = category.replace(/_/g, ' ').toUpperCase();
+//   categoryDiv.appendChild(title);
+
+//   // Add skills list
+//   const list = document.createElement('ul');
+//   list.classList.add('skills-list');
+//   skills[category].forEach(skill => {
+//     const listItem = document.createElement('li');
+//     listItem.textContent = skill;
+//     list.appendChild(listItem);
+//   });
+//   categoryDiv.appendChild(list);
+
+//   container.appendChild(categoryDiv);
+// }
+// }
