@@ -81,9 +81,6 @@ footer {
 .card {
   display: flex;
   flex-direction: column;
-  /* border-style: dotted;
-  border-width: 2px;
-  border-color: red; */
   height: 50%;
   width: 50%;
   padding: 1rem;
@@ -106,6 +103,16 @@ footer {
 
 .card-link:hover {
   color: var(--accent-color);
+}
+
+#socials {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+#socials li {
+  display: inline-block;
 }
 
 @media (max-width: 768px) {

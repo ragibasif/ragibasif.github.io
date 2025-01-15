@@ -2,19 +2,15 @@
     "socials": [
       {
         "name": "GitHub",
-        "url": "https://github.com/yourusername",
-        "icon": "https://cdn-icons-png.flaticon.com/512/733/733553.png"
+        "url": "https://github.com/ragibasif"
       },
       {
         "name": "LinkedIn",
-        "url": "https://linkedin.com/in/yourusername",
-        "icon": "https://cdn-icons-png.flaticon.com/512/174/174857.png"
+        "url": "https://linkedin.com/in/ragibasif"
       },
       {
         "name": "Email",
-        "url": "https://twitter.com/yourusername",
-        "icon": "https://cdn-icons-png.flaticon.com/512/733/733579.png"
+        "url": "mailto:ragib.asif30@myhunter.cuny.edu"
       }
     ]
   }
-  
