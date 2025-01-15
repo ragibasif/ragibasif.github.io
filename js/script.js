@@ -3,7 +3,7 @@ function makeCopyright() {
   const copyrightOwner = "Ragib Asif";
   const currentYear = new Date().getFullYear();
   const copyrightText = document.getElementById("copyright");
-  copyrightText.innerHTML = `&copy; ${currentYear} ${copyrightOwner}. All rights reserved.`;
+  copyrightText.innerHTML = `<p>&copy; ${currentYear} ${copyrightOwner}. All rights reserved.</p>`;
 }
 
 function makeSocials() {
@@ -15,7 +15,7 @@ function makeSocials() {
 
       // Populate the socials list
       data.socials.forEach((social) => {
-        const listItem = document.createElement("p");
+        const listItem = document.createElement("li");
         listItem.innerHTML = `
       <a href="${social.url}" target="_blank" rel="noopener noreferrer">&rarrhk;${social.name}</a>`;
         socialsList.appendChild(listItem);
