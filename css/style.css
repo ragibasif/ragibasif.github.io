@@ -32,6 +32,7 @@ body {
   height: 100vh;
   width: 100vw;
   padding: 2rem;
+  margin: 1rem;
 }
 
 a {
