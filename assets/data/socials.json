@@ -1,0 +1,20 @@
+{
+    "socials": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/yourusername",
+        "icon": "https://cdn-icons-png.flaticon.com/512/733/733553.png"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/yourusername",
+        "icon": "https://cdn-icons-png.flaticon.com/512/174/174857.png"
+      },
+      {
+        "name": "Email",
+        "url": "https://twitter.com/yourusername",
+        "icon": "https://cdn-icons-png.flaticon.com/512/733/733579.png"
+      }
+    ]
+  }
+  

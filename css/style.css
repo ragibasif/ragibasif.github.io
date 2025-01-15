@@ -78,7 +78,7 @@ footer {
 
 /* PROJECT STYLES */
 
-.project {
+.card {
   display: flex;
   flex-direction: column;
   /* border-style: dotted;
@@ -91,20 +91,20 @@ footer {
   margin: 1rem;
 }
 
-.project-title {
+.card-title {
 }
-.project-description {
+.card-description {
 }
-.project-links {
+.card-links {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-.project-link {
+.card-link {
   text-decoration: none;
 }
 
-.project-link:hover {
+.card-link:hover {
   color: var(--accent-color);
 }
 
@@ -118,7 +118,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
-  .project {
+  .card {
     height: 100%;
     width: 100%;
   }
