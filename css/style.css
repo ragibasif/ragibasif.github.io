@@ -71,23 +71,19 @@ h1 {
   font-weight: 700;
 }
 
-h2 {
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 700;
-}
-
+h2,
 h3 {
-  font-family: "Space Mono", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
 }
 
 p {
-  font-family: "Space Mono", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 400;
 }
 
 a {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Space Mono", sans-serif;
   font-weight: 400;
   text-decoration: none;
   color: var(--text-color);
@@ -112,13 +108,21 @@ main {
   gap: 2rem;
 }
 
-.projects,
-.presentations {
+.projects {
   list-style: none;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   gap: 1rem;
   padding: 2rem 0;
+}
+
+.projects li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0.5rem 0;
+  gap: 0.5rem;
 }
 
 footer {

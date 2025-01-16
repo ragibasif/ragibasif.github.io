@@ -1,12 +1,14 @@
 // Dynamically update the copyright year to be the current year.
-function makeCopyright() {
+function renderCopyright() {
   const copyrightOwner = "Ragib Asif";
   const currentYear = new Date().getFullYear();
-  const copyrightText = document.getElementById("copyright");
-  copyrightText.innerHTML = `<p>&copy; ${currentYear} ${copyrightOwner}. All rights reserved.</p>`;
+  const copyrightContainer = document.getElementById("copyright");
+  const copyrightText = document.createElement("p");
+  copyrightText.innerHTML = `&copy; ${currentYear} ${copyrightOwner}. All rights reserved.`;
+  copyrightContainer.append(copyrightText);
 }
 
-function makeSocials() {
+function renderSocials() {
   // Fetch the JSON file containing the socials information and links
   fetch("../assets/data/socials.json")
     .then((response) => response.json())
@@ -15,16 +17,20 @@ function makeSocials() {
 
       // Populate the socials list
       data.socials.forEach((social) => {
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `
-      <a href="${social.url}" target="_blank" rel="noopener noreferrer">${social.name}</a>`;
-        socialsList.appendChild(listItem);
+        const list = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = `${social.url}`;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.innerHTML = `${social.name}`;
+        list.appendChild(link);
+        socialsList.appendChild(list);
       });
     })
     .catch((error) => console.error("Error fetching socials:", error));
 }
 
-function makeProjects() {
+function renderProjects() {
   // Fetch the JSON file with the projects information
   fetch("../assets/data/projects.json")
     .then((response) => response.json())
@@ -33,90 +39,37 @@ function makeProjects() {
 
       // Populate the projects list
       data.projects.forEach((project) => {
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `
-        <h3>${project.name}</h3>
-        <a href="${
-          project.primary
-        }" target="_blank" rel="noopener noreferrer">Demo</a>
-        <a href="${
-          project.secondary
-        }" target="_blank" rel="noopener noreferrer">Code</a>
-        <p>${project.description}</p>
-        <p class="technologies">Technologies: ${project.technologies.join(
+        const list = document.createElement("li");
+        const header = document.createElement("h3");
+        const demo = document.createElement("a");
+        const code = document.createElement("a");
+        const description = document.createElement("p");
+        const technologies = document.createElement("p");
+        header.innerText = `${project.name}`;
+        demo.href = `${project.primary}`;
+        demo.target = "_blank";
+        demo.rel = "noopener norefferrer";
+        demo.innerText = "Demo";
+        code.href = `${project.secondary}`;
+        code.target = "_blank";
+        code.rel = "noopener norefferrer";
+        code.innerText = "Code";
+        description.innerText = `${project.description}`;
+        technologies.innerText = `Technologies: ${project.technologies.join(
           ", "
-        )}</p>
-      `;
-        projectsList.appendChild(listItem);
+        )}`;
+        list.appendChild(header);
+        list.appendChild(demo);
+        list.appendChild(code);
+        list.appendChild(description);
+        list.appendChild(technologies);
+
+        projectsList.appendChild(list);
       });
     })
     .catch((error) => console.error("Error fetching projects:", error));
 }
 
-function makePresentations() {
-  // Fetch the JSON file with the projects information
-  fetch("../assets/data/presentations.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const presentationsList = document.querySelector(".presentations");
-
-      // Populate the projects list
-      data.presentations.forEach((presentation) => {
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `
-        <h3>${presentation.name}</h3>
-        <a href="${presentation.slides}" target="_blank" rel="noopener noreferrer">Slides</a>
-        <p>${presentation.description}</p>
-      `;
-        presentationsList.appendChild(listItem);
-      });
-    })
-    .catch((error) => console.error("Error fetching presentations:", error));
-}
-
-makeCopyright();
-makeSocials();
-makeProjects();
-makePresentations();
-
-// TODO
-// // Fetch the JSON file
-// fetch('skills.json')
-// .then(response => {
-//   if (!response.ok) {
-//     throw new Error('Failed to fetch skills.json');
-//   }
-//   return response.json();
-// })
-// .then(data => {
-//   renderSkills(data.skills);
-// })
-// .catch(error => {
-//   console.error('Error fetching skills.json:', error);
-// });
-
-// // Function to render skills
-// function renderSkills(skills) {
-// const container = document.getElementById('skills-container');
-// for (const category in skills) {
-//   const categoryDiv = document.createElement('div');
-//   categoryDiv.classList.add('skills-category');
-
-//   // Add category title
-//   const title = document.createElement('h3');
-//   title.textContent = category.replace(/_/g, ' ').toUpperCase();
-//   categoryDiv.appendChild(title);
-
-//   // Add skills list
-//   const list = document.createElement('ul');
-//   list.classList.add('skills-list');
-//   skills[category].forEach(skill => {
-//     const listItem = document.createElement('li');
-//     listItem.textContent = skill;
-//     list.appendChild(listItem);
-//   });
-//   categoryDiv.appendChild(list);
-
-//   container.appendChild(categoryDiv);
-// }
-// }
+renderCopyright();
+renderSocials();
+renderProjects();
