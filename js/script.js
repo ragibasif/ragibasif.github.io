@@ -7,6 +7,7 @@ const CONTAINERS = {
   header: "header-container",
   nav: "navigation-container",
   projects: "projects-container",
+  notes: "notes-container",
   copyright: "copyright-container",
   socials: "socials-container",
   footer: "footer-container",
@@ -51,6 +52,10 @@ function renderNav() {
       id: CONTAINERS.projects,
     },
     {
+      title: "Notes",
+      id: CONTAINERS.notes,
+    },
+    {
       title: "Contact",
       id: CONTAINERS.footer,
     },
@@ -86,20 +91,17 @@ function renderProjects() {
       data.projects.forEach((project) => {
         const listItem = document.createElement("li");
         const header = document.createElement("h3");
-        const primary = document.createElement("a");
-        const secondary = document.createElement("a");
+        const link = document.createElement("a");
         const description = document.createElement("p");
         const technologies = document.createElement("p");
-        header.innerText = `${project.name}`;
-        externalLink(primary, project.primary, "Demo");
-        externalLink(secondary, project.secondary, "Code");
+        externalLink(link, project.link, project.name);
+        header.appendChild(link);
         description.innerText = `${project.description}`;
-        technologies.innerText = `Technologies: ${project.technologies.join(
+        technologies.innerText = `${project.technologies.join(
           ", "
         )}`;
+        technologies.style.fontStyle = "Italic";
         listItem.appendChild(header);
-        listItem.appendChild(primary);
-        listItem.appendChild(secondary);
         listItem.appendChild(description);
         listItem.appendChild(technologies);
 
