@@ -44,13 +44,6 @@
   font-weight: 700; /* Bold */
 }
 
-/* H1 */
-@font-face {
-  font-family: "Cinzel";
-  src: url("../assets/fonts/Cinzel/static/Cinzel-Bold.ttf") format("truetype");
-  font-weight: 700; /* Bold */
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -66,8 +59,9 @@ body {
   padding: 2rem;
   width: 100vw;
 }
+
 h1 {
-  font-family: "Cinzel", serif;
+  font-family: "Space Mono", sans-serif;
   font-weight: 700;
 }
 
@@ -131,7 +125,7 @@ footer {
   flex-direction: column;
 }
 
-.socials {
+.nav-links {
   list-style: none;
   padding: 0;
   display: flex;

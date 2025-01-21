@@ -10,6 +10,14 @@ const CONTAINERS = {
   footer: "footer-container",
 };
 
+function externalLink(item, url, text) {
+  item.href = url;
+  item.target = "_blank";
+  item.rel = "noopener noreferrer";
+  item.innerText = text;
+  return item;
+}
+
 function renderLayout() {
   renderTitle(NAME);
   renderHeader(NAME);
@@ -47,13 +55,14 @@ function renderNav() {
   ];
   const navigationContainer = document.getElementById(CONTAINERS.nav);
   const allLinksList = document.createElement("ul");
+  allLinksList.classList.add("nav-links");
   pageLinks.forEach((link) => {
-    const itemLi = document.createElement("li");
+    const listItem = document.createElement("li");
     const itemA = document.createElement("a");
     itemA.href = `#${link.id}`;
     itemA.innerText = `${link.title}`;
-    itemLi.appendChild(itemA);
-    allLinksList.appendChild(itemLi);
+    listItem.appendChild(itemA);
+    allLinksList.appendChild(listItem);
   });
   navigationContainer.appendChild(allLinksList);
 }
@@ -73,32 +82,26 @@ function renderProjects() {
     .then((data) => {
       // Populate the projects list
       data.projects.forEach((project) => {
-        const list = document.createElement("li");
+        const listItem = document.createElement("li");
         const header = document.createElement("h3");
         const demo = document.createElement("a");
         const code = document.createElement("a");
         const description = document.createElement("p");
         const technologies = document.createElement("p");
         header.innerText = `${project.name}`;
-        demo.href = `${project.primary}`;
-        demo.target = "_blank";
-        demo.rel = "noopener norefferrer";
-        demo.innerText = "Demo";
-        code.href = `${project.secondary}`;
-        code.target = "_blank";
-        code.rel = "noopener norefferrer";
-        code.innerText = "Code";
+        externalLink(demo, project.primary, "Demo");
+        externalLink(code, project.secondary, "Code");
         description.innerText = `${project.description}`;
         technologies.innerText = `Technologies: ${project.technologies.join(
           ", "
         )}`;
-        list.appendChild(header);
-        list.appendChild(demo);
-        list.appendChild(code);
-        list.appendChild(description);
-        list.appendChild(technologies);
+        listItem.appendChild(header);
+        listItem.appendChild(demo);
+        listItem.appendChild(code);
+        listItem.appendChild(description);
+        listItem.appendChild(technologies);
 
-        projectsList.appendChild(list);
+        projectsList.appendChild(listItem);
       });
     })
     .catch((error) => console.error("Error fetching projects:", error));
@@ -107,21 +110,18 @@ function renderProjects() {
 function renderSocials() {
   const socialsContainer = document.getElementById(CONTAINERS.socials);
   const socialsList = document.createElement("ul");
-  socialsList.classList.add("socials");
+  socialsList.classList.add("nav-links");
   // Fetch the JSON file containing the socials information and links
   fetch("../assets/data/socials.json")
     .then((response) => response.json())
     .then((data) => {
       // Populate the socials list
       data.socials.forEach((social) => {
-        const list = document.createElement("li");
+        const listItem = document.createElement("li");
         const link = document.createElement("a");
-        link.href = `${social.url}`;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        link.innerHTML = `${social.name}`;
-        list.appendChild(link);
-        socialsList.appendChild(list);
+        externalLink(link, social.url, social.name);
+        listItem.appendChild(link);
+        socialsList.appendChild(listItem);
       });
     })
     .catch((error) => console.error("Error fetching socials:", error));
