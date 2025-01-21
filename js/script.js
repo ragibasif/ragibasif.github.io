@@ -5,6 +5,8 @@ const CONTAINERS = {
   header: "header-container",
   nav: "navigation-container",
   projects: "projects-container",
+  copyright: "copyright-container",
+  socials: "socials-container",
   footer: "footer-container",
 };
 
@@ -102,23 +104,14 @@ function renderProjects() {
     .catch((error) => console.error("Error fetching projects:", error));
 }
 
-// Dynamically update the copyright year to be the current year.
-function renderCopyright(name, year) {
-  const copyrightOwner = name;
-  const currentYear = year;
-  const copyrightContainer = document.getElementById("copyright");
-  const copyrightText = document.createElement("p");
-  copyrightText.innerHTML = `&copy; ${currentYear} ${copyrightOwner}. All rights reserved.`;
-  copyrightContainer.append(copyrightText);
-}
-
 function renderSocials() {
+  const socialsContainer = document.getElementById(CONTAINERS.socials);
+  const socialsList = document.createElement("ul");
+  socialsList.classList.add("socials");
   // Fetch the JSON file containing the socials information and links
   fetch("../assets/data/socials.json")
     .then((response) => response.json())
     .then((data) => {
-      const socialsList = document.querySelector(".socials");
-
       // Populate the socials list
       data.socials.forEach((social) => {
         const list = document.createElement("li");
@@ -132,17 +125,20 @@ function renderSocials() {
       });
     })
     .catch((error) => console.error("Error fetching socials:", error));
+  socialsContainer.appendChild(socialsList);
+}
+
+// Dynamically update the copyright year to be the current year.
+function renderCopyright(name, year) {
+  const copyrightOwner = name;
+  const currentYear = year;
+  const copyrightText = document.createElement("p");
+  copyrightText.innerHTML = `&copy; ${currentYear} ${copyrightOwner}. All rights reserved.`;
+  const copyrightContainer = document.getElementById(CONTAINERS.copyright);
+  copyrightContainer.append(copyrightText);
 }
 
 function renderFooter() {
-  const footerContainer = document.getElementById(CONTAINERS.footer);
-  const socials = document.createElement("ul");
-  socials.classList.add("socials");
-  const copyright = document.createElement("div");
-  copyright.id = "copyright";
-  footerContainer.appendChild(socials);
-  footerContainer.appendChild(copyright);
-
   renderSocials();
   renderCopyright(NAME, YEAR);
 }
