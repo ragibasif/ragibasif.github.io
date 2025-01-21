@@ -41,7 +41,7 @@ function renderHeader(name) {
 }
 
 function renderNav() {
-  const pageLinks = [
+  const navLinks = [
     {
       title: "Home",
       id: CONTAINERS.header,
@@ -58,7 +58,7 @@ function renderNav() {
   const navigationContainer = document.getElementById(CONTAINERS.nav);
   const allLinksList = document.createElement("ul");
   allLinksList.classList.add("nav-links");
-  pageLinks.forEach((link) => {
+  navLinks.forEach((link) => {
     const listItem = document.createElement("li");
     const itemA = document.createElement("a");
     itemA.href = `#${link.id}`;
