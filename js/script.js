@@ -1,5 +1,7 @@
 const NAME = "Ragib Asif";
 const YEAR = new Date().getFullYear();
+const SOCIALS = "../assets/data/socials.json";
+const PROJECTS = "../assets/data/projects.json";
 const CONTAINERS = {
   title: "title-container",
   header: "header-container",
@@ -77,27 +79,27 @@ function renderProjects() {
   projectsContainer.appendChild(projectsHeader);
   projectsContainer.appendChild(projectsList);
   // Fetch the JSON file with the projects information
-  fetch("../assets/data/projects.json")
+  fetch(PROJECTS)
     .then((response) => response.json())
     .then((data) => {
       // Populate the projects list
       data.projects.forEach((project) => {
         const listItem = document.createElement("li");
         const header = document.createElement("h3");
-        const demo = document.createElement("a");
-        const code = document.createElement("a");
+        const primary = document.createElement("a");
+        const secondary = document.createElement("a");
         const description = document.createElement("p");
         const technologies = document.createElement("p");
         header.innerText = `${project.name}`;
-        externalLink(demo, project.primary, "Demo");
-        externalLink(code, project.secondary, "Code");
+        externalLink(primary, project.primary, "Demo");
+        externalLink(secondary, project.secondary, "Code");
         description.innerText = `${project.description}`;
         technologies.innerText = `Technologies: ${project.technologies.join(
           ", "
         )}`;
         listItem.appendChild(header);
-        listItem.appendChild(demo);
-        listItem.appendChild(code);
+        listItem.appendChild(primary);
+        listItem.appendChild(secondary);
         listItem.appendChild(description);
         listItem.appendChild(technologies);
 
@@ -112,7 +114,7 @@ function renderSocials() {
   const socialsList = document.createElement("ul");
   socialsList.classList.add("nav-links");
   // Fetch the JSON file containing the socials information and links
-  fetch("../assets/data/socials.json")
+  fetch(SOCIALS)
     .then((response) => response.json())
     .then((data) => {
       // Populate the socials list
