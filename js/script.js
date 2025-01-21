@@ -1,5 +1,5 @@
 const NAME = "Ragib Asif";
-const YEAR = new Date().getFullYear();
+const YEAR = new Date().getFullYear(); // 2025
 const SOCIALS = "../assets/data/socials.json";
 const PROJECTS = "../assets/data/projects.json";
 const CONTAINERS = {
