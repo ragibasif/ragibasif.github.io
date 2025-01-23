@@ -7,7 +7,6 @@ const CONTAINERS = {
   header: "header-container",
   nav: "navigation-container",
   projects: "projects-container",
-  notes: "notes-container",
   copyright: "copyright-container",
   socials: "socials-container",
   footer: "footer-container",
@@ -50,10 +49,6 @@ function renderNav() {
     {
       title: "Projects",
       id: CONTAINERS.projects,
-    },
-    {
-      title: "Notes",
-      id: CONTAINERS.notes,
     },
     {
       title: "Contact",
