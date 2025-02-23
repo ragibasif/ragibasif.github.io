@@ -1,7 +1,53 @@
+// Constants
 const NAME = "Ragib Asif";
-const YEAR = new Date().getFullYear(); // 2025
-const SOCIALS = "../assets/data/socials.json";
-const PROJECTS = "../assets/data/projects.json";
+const YEAR = new Date().getFullYear();
+const SOCIALS = [
+  {
+    name: "GitHub",
+    url: "https://github.com/ragibasif",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/ragibasif",
+  },
+  {
+    name: "Email",
+    url: "mailto:ragib.asif30@myhunter.cuny.edu",
+  },
+];
+
+const PROJECTS = [
+  {
+    name: "NYC Motor Vehicle Crash Analysis",
+    description:
+      "This project is an analysis of NYC vehicle crash data, focusing on the trend of crashes over time. Using Python and powerful data visualization libraries, this project aims to uncover patterns in crash occurrences and identify key insights.",
+    link: "https://nyc-car-crashes.netlify.app/",
+    technologies: [
+      "Python",
+      "Pandas",
+      "Seaborn",
+      "Matplotlib",
+      "JavaScript",
+      "HTML",
+      "CSS",
+    ],
+  },
+  {
+    name: "Music Visualizer",
+    description:
+      "An audio visualizer for a small selection of German songs. This website allows users to play songs with an engaging visualizer. It offers intuitive controls for playing, pausing, and navigating through songs. The design is aesthetically pleasing, easy to navigate, and fully responsive across all devices.",
+    link: "https://deutschmusik.netlify.app/",
+    technologies: ["JavaScript", "HTML", "CSS"],
+  },
+  {
+    name: "German Club",
+    description:
+      "The webpage for the soon-to-be official German Club at CUNY Hunter College. This project serves as a central hub for sharing information about the club, upcoming events, and resources for members. It is built with HTML, CSS, and JavaScript for simplicity and ease of use.",
+    link: "https://deutschklub.netlify.app/",
+    technologies: ["JavaScript", "HTML", "CSS"],
+  },
+];
+
 const CONTAINERS = {
   title: "title-container",
   header: "header-container",
@@ -17,26 +63,19 @@ function externalLink(item, url, text) {
   item.target = "_blank";
   item.rel = "noopener noreferrer";
   item.innerText = text;
+  item.classList.add("hover-lines");
   return item;
 }
 
-function renderLayout() {
-  renderTitle(NAME);
-  renderHeader(NAME);
-  renderNav();
-  renderProjects();
-  renderFooter();
-}
-
-function renderTitle(title) {
+function renderTitle() {
   const titleContainer = document.getElementById(CONTAINERS.title);
-  titleContainer.innerText = title;
+  titleContainer.innerText = NAME;
 }
 
-function renderHeader(name) {
+function renderHeader() {
   const headerContainer = document.getElementById(CONTAINERS.header);
   const mainHeader = document.createElement("h1");
-  mainHeader.innerText = name;
+  mainHeader.innerText = NAME;
   headerContainer.appendChild(mainHeader);
 }
 
@@ -63,6 +102,7 @@ function renderNav() {
     const itemA = document.createElement("a");
     itemA.href = `#${link.id}`;
     itemA.innerText = `${link.title}`;
+    itemA.classList.add("hover-lines");
     listItem.appendChild(itemA);
     allLinksList.appendChild(listItem);
   });
@@ -78,68 +118,58 @@ function renderProjects() {
   projectsList.classList.add("projects");
   projectsContainer.appendChild(projectsHeader);
   projectsContainer.appendChild(projectsList);
-  // Fetch the JSON file with the projects information
-  fetch(PROJECTS)
-    .then((response) => response.json())
-    .then((data) => {
-      // Populate the projects list
-      data.projects.forEach((project) => {
-        const listItem = document.createElement("li");
-        const header = document.createElement("h3");
-        const link = document.createElement("a");
-        const description = document.createElement("p");
-        const technologies = document.createElement("p");
-        externalLink(link, project.link, project.name);
-        header.appendChild(link);
-        description.innerText = `${project.description}`;
-        technologies.innerText = `${project.technologies.join(
-          ", "
-        )}`;
-        technologies.style.fontStyle = "Italic";
-        listItem.appendChild(header);
-        listItem.appendChild(description);
-        listItem.appendChild(technologies);
+  // Populate the projects list
+  PROJECTS.forEach((project) => {
+    const listItem = document.createElement("li");
+    const header = document.createElement("h3");
+    const link = document.createElement("a");
+    const description = document.createElement("p");
+    const technologies = document.createElement("p");
+    externalLink(link, project.link, project.name);
+    header.appendChild(link);
+    description.innerText = `${project.description}`;
+    technologies.innerText = `${project.technologies.join(", ")}`;
+    technologies.style.fontStyle = "Italic";
+    listItem.appendChild(header);
+    listItem.appendChild(description);
+    listItem.appendChild(technologies);
 
-        projectsList.appendChild(listItem);
-      });
-    })
-    .catch((error) => console.error("Error fetching projects:", error));
+    projectsList.appendChild(listItem);
+  });
 }
 
 function renderSocials() {
   const socialsContainer = document.getElementById(CONTAINERS.socials);
   const socialsList = document.createElement("ul");
   socialsList.classList.add("nav-links");
-  // Fetch the JSON file containing the socials information and links
-  fetch(SOCIALS)
-    .then((response) => response.json())
-    .then((data) => {
-      // Populate the socials list
-      data.socials.forEach((social) => {
-        const listItem = document.createElement("li");
-        const link = document.createElement("a");
-        externalLink(link, social.url, social.name);
-        listItem.appendChild(link);
-        socialsList.appendChild(listItem);
-      });
-    })
-    .catch((error) => console.error("Error fetching socials:", error));
+  // Populate the socials list
+  SOCIALS.forEach((social) => {
+    const listItem = document.createElement("li");
+    const link = document.createElement("a");
+    externalLink(link, social.url, social.name);
+    listItem.appendChild(link);
+    socialsList.appendChild(listItem);
+  });
   socialsContainer.appendChild(socialsList);
 }
 
 // Dynamically update the copyright year to be the current year.
-function renderCopyright(name, year) {
-  const copyrightOwner = name;
-  const currentYear = year;
+function renderCopyright() {
+  const copyrightOwner = NAME;
+  const currentYear = YEAR;
   const copyrightText = document.createElement("p");
   copyrightText.innerHTML = `&copy; ${currentYear} ${copyrightOwner}. All rights reserved.`;
   const copyrightContainer = document.getElementById(CONTAINERS.copyright);
   copyrightContainer.append(copyrightText);
 }
 
-function renderFooter() {
+function renderLayout() {
+  renderTitle();
+  renderHeader();
+  renderNav();
+  renderProjects();
   renderSocials();
-  renderCopyright(NAME, YEAR);
+  renderCopyright();
 }
 
 renderLayout();
