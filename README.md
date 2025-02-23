@@ -13,7 +13,7 @@ Welcome to the repository for my personal website! This project showcases my por
 ## Technologies Used
 
 - **Languages**: HTML, CSS, JavaScript
-- **Typography**: [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk), [Space Mono](https://fonts.google.com/specimen/Space+Mono), [Cinzel](https://fonts.google.com/specimen/Cinzel)
+- **Typography**: [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk), [Space Mono](https://fonts.google.com/specimen/Space+Mono)
 - **Deployment**: [GitHub Pages](https://pages.github.com/)
 
 ## Features
