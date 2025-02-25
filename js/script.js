@@ -39,13 +39,6 @@ const PROJECTS = [
     link: "https://deutschmusik.netlify.app/",
     technologies: ["JavaScript", "HTML", "CSS"],
   },
-  {
-    name: "German Club",
-    description:
-      "The webpage for the soon-to-be official German Club at CUNY Hunter College. This project serves as a central hub for sharing information about the club, upcoming events, and resources for members. It is built with HTML, CSS, and JavaScript for simplicity and ease of use.",
-    link: "https://deutschklub.netlify.app/",
-    technologies: ["JavaScript", "HTML", "CSS"],
-  },
 ];
 
 const CONTAINERS = {
@@ -67,12 +60,7 @@ function externalLink(item, url, text) {
   return item;
 }
 
-function renderTitle() {
-  const titleContainer = document.getElementById(CONTAINERS.title);
-  titleContainer.innerText = NAME;
-}
-
-function renderHeader() {
+function renderMainHeader() {
   const headerContainer = document.getElementById(CONTAINERS.header);
   const mainHeader = document.createElement("h1");
   mainHeader.innerText = NAME;
@@ -164,8 +152,7 @@ function renderCopyright() {
 }
 
 function renderLayout() {
-  renderTitle();
-  renderHeader();
+  renderMainHeader();
   renderNav();
   renderProjects();
   renderSocials();
