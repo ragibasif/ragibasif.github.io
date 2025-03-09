@@ -21,7 +21,7 @@ const PROJECTS = [
     name: "NYC Motor Vehicle Crash Analysis",
     description:
       "This project is an analysis of NYC vehicle crash data, focusing on the trend of crashes over time. Using Python and powerful data visualization libraries, this project aims to uncover patterns in crash occurrences and identify key insights.",
-    link: "https://nyc-car-crashes.netlify.app/",
+    link: "https://ragibasif.github.io/NYC-mvc-crashes/",
     technologies: [
       "Python",
       "Pandas",
@@ -36,7 +36,7 @@ const PROJECTS = [
     name: "Music Visualizer",
     description:
       "An audio visualizer for a small selection of German songs. This website allows users to play songs with an engaging visualizer. It offers intuitive controls for playing, pausing, and navigating through songs. The design is aesthetically pleasing, easy to navigate, and fully responsive across all devices.",
-    link: "https://deutschmusik.netlify.app/",
+    link: "https://ragibasif.github.io/music-visualizer/",
     technologies: ["JavaScript", "HTML", "CSS"],
   },
 ];
