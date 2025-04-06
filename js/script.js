@@ -18,6 +18,13 @@ const SOCIALS = [
 
 const PROJECTS = [
   {
+    name: "C Memory Debugger",
+    description:
+      "A minimal memory debugger to detect memory leaks for C projects. Designed to be as light as possible for fast debugging.",
+    link: "https://github.com/ragibasif/xdbg",
+    technologies: ["C"],
+  },
+  {
     name: "NYC Motor Vehicle Crash Analysis",
     description:
       "This project is an analysis of NYC vehicle crash data, focusing on the trend of crashes over time. Using Python and powerful data visualization libraries, this project aims to uncover patterns in crash occurrences and identify key insights.",
