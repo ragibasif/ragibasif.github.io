@@ -4,18 +4,7 @@
   --accent-color: #ffc7c7;
 }
 
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  box-sizing: border-box;
-}
 
-*::-webkit-scrollbar {
-  display: none;
-}
 
 @font-face {
   font-family: "Space Grotesk";
@@ -159,12 +148,14 @@ footer {
 
 .hover-lines::after,
 .hover-lines::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
   /* background: linear-gradient(to right, #ff0000, #00ffff); */
-  background: linear-gradient(to right, var(--accent-color), var(--accent-color));
+  background: linear-gradient(to right,
+      var(--accent-color),
+      var(--accent-color));
   bottom: -5px;
   left: 0;
   transform: scaleX(0);
