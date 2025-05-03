@@ -43,6 +43,19 @@ body {
   width: 100vw;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+
+h3 {
+  font-size: 1.5rem;
+}
+
 h1,
 h2,
 h3 {
@@ -51,6 +64,7 @@ h3 {
 }
 
 p {
+  font-size: 1.2rem;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 400;
 }
@@ -105,6 +119,7 @@ footer {
 }
 
 .nav-links {
+  font-size: 1.1rem;
   list-style: none;
   padding: 0;
   display: flex;
@@ -140,8 +155,6 @@ footer {
 /* Animations */
 
 .hover-lines {
-  /* font-size: 2rem; */
-  /* color: #ffffff; */
   position: relative;
   display: inline-block;
 }

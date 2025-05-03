@@ -20,7 +20,7 @@ const PROJECTS = [
   {
     name: "C Memory Debugger",
     description:
-      "A minimal memory debugger to detect memory leaks for C projects. Designed to be as light as possible for fast debugging.",
+      "A minimal memory debugger to detect memory leaks for C/C++ projects. Designed to be as light as possible for fast debugging.",
     link: "https://github.com/ragibasif/xdbg",
     technologies: ["C"],
   },
