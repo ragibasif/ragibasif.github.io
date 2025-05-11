@@ -48,12 +48,12 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 h1,
@@ -64,7 +64,7 @@ h3 {
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 400;
 }
@@ -119,7 +119,7 @@ footer {
 }
 
 .nav-links {
-  font-size: 1.1rem;
+  font-size: 1rem;
   list-style: none;
   padding: 0;
   display: flex;
