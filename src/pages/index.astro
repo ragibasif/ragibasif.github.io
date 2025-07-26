@@ -1,17 +1,14 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Greeting from '../components/Greeting.jsx';
+import Base from "../layouts/Base.astro";
 const pageTitle = "Ragib Asif";
-const messages = ['Hello', 'Hi', 'Welcome', 'Greetings'];
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-    <h2>My awesome blog subtitle.</h2>
-    <Greeting client:load messages={messages} />
-    <p>Computer Scientist and Mathematician.</p>
-    <p>B.A. Computer Science @ Hunter College.</p>
-    <p>
+<Base pageTitle={pageTitle}>
+  <h1>Ragib Asif</h1>
+  <p>Computer Scientist and Mathematician.</p>
+  <p>B.A. Computer Science @ Hunter College.</p>
+  <p>
     Interested in software development, operating systems, programming
     languages, cybersecurity, computer networking, and open source software.
-    </p>
-</BaseLayout>
+  </p>
+</Base>

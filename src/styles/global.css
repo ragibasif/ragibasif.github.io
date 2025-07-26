@@ -34,8 +34,14 @@ body {
   max-width: 80ch;
 }
 
-h1 {
-  color: var(--dark-text);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-heading);
+  font-weight: bold;
 }
 
 p {
@@ -85,13 +91,4 @@ footer ul {
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-html.dark {
-  background-color: #0d0950;
-  color: #fff;
-}
-
-.dark .nav-links a {
-  color: #fff;
 }
