@@ -8,7 +8,7 @@ import HeaderLink from "./HeaderLink.astro";
     <a href="/" class="site-title">{SITE_TITLE}</a>
     <div class="nav-links">
       <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/software">Software</HeaderLink>
+      <HeaderLink href="/work">Work</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
     </div>
@@ -19,7 +19,6 @@ import HeaderLink from "./HeaderLink.astro";
   nav {
     width: 100%;
     padding: 1rem 0;
-    margin-bottom: 2rem;
   }
 
   .nav-content {
@@ -67,11 +66,11 @@ import HeaderLink from "./HeaderLink.astro";
   @media (max-width: 640px) {
     .nav-content {
       flex-direction: column;
-      align-items: flex-start;
+      justify-content: center;
     }
 
-    .nav-links {
-      justify-content: flex-start;
+    .site-title {
+      display: none;
     }
   }
 </style>

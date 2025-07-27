@@ -46,17 +46,12 @@ const { title, pubDate } = Astro.props;
   }
 
   .date {
-    font-size: var(--font-size-s);
-    color: var(--gray);
     font-variant-numeric: tabular-nums;
-    letter-spacing: var(--spacing-s);
   }
 
   .post-content {
     font-family: "Atkinson", var(--sans);
-    font-size: var(--font-size-m);
     line-height: 1.75;
-    color: var(--text);
     overflow-wrap: break-word;
     word-break: break-word;
     margin: 0 auto;
@@ -69,7 +64,6 @@ const { title, pubDate } = Astro.props;
   .post-content h3,
   .post-content h4 {
     font-weight: 500;
-    color: var(--white);
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
@@ -84,7 +78,6 @@ const { title, pubDate } = Astro.props;
 
   .post-content p,
   .post-content li {
-    color: var(--gray);
     margin-bottom: 1rem;
   }
 
@@ -99,59 +92,12 @@ const { title, pubDate } = Astro.props;
   }
 
   .post-content a {
-    color: var(--blue);
     text-decoration: underline;
   }
 
-  .post-content blockquote {
-    border-left: 4px solid var(--blue);
-    padding-left: 1rem;
-    margin: 1.5rem 0;
-    color: var(--gray);
-    font-style: italic;
-  }
-
-  .post-content code {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 0.2rem 0.4rem;
-    border-radius: 0.25rem;
-    font-family: var(--mono);
-    font-size: 0.9em;
-    color: var(--green);
-  }
-
-  .post-content pre {
-    background-color: var(--black);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    overflow-x: auto;
-    font-size: 0.9rem;
-    margin: 1.5rem 0;
-  }
-
   .post-content pre code {
-    color: var(--white);
     background: none;
     padding: 0;
   }
 
-  .post-content img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 2rem auto;
-    border-radius: 0.5rem;
-    object-fit: contain;
-    overflow: hidden;
-    box-shadow: 0 0 0 1px var(--gray);
-    transition:
-      transform 0.2s ease-in-out,
-      box-shadow 0.2s ease;
-  }
-
-  .post-content table {
-    display: block;
-    overflow-x: auto;
-    max-width: 100%;
-  }
 </style>
