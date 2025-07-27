@@ -14,6 +14,7 @@ const linkedin = "https://linkedin.com/in/ragibasif";
     <div class="social-links">
       <ExternalLink href={github}>GitHub</ExternalLink>
       <ExternalLink href={linkedin}>LinkedIn</ExternalLink>
+      <ExternalLink href="/rss.xml">RSS</ExternalLink>
     </div>
   </div>
 </footer>
@@ -39,7 +40,8 @@ const linkedin = "https://linkedin.com/in/ragibasif";
 
   .social-links {
     display: flex;
-    gap: 1.25rem;
+    flex-direction: row;
+    gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -52,11 +54,13 @@ const linkedin = "https://linkedin.com/in/ragibasif";
 
   @media (min-width: 640px) {
     .footer-content {
-      flex-direction: row;
+      display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      text-align: left;
+      text-align: center;
       max-width: var(--content-width);
       margin: 0 auto;
+      align-items: center;
     }
   }
 </style>
