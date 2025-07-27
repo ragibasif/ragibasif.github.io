@@ -9,7 +9,9 @@ import HeaderLink from "./HeaderLink.astro";
       <h1><a href="/">{SITE_TITLE}</a></h1>
     </div>
     <div class="nav-links">
+      <HeaderLink href="/software">Software</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
     </div>
   </div>
 </nav>
@@ -19,6 +21,13 @@ import HeaderLink from "./HeaderLink.astro";
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 1rem;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
   }
   .nav-links a {
     border-bottom: 4px solid transparent;

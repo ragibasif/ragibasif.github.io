@@ -32,13 +32,12 @@ const linkedin = "https://www.linkedin.com/in/ragibasif";
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     width: 100%;
   }
 
-  .copyright,
-  .powered-by {
+  .copyright {
     white-space: nowrap;
   }
 
@@ -46,13 +45,11 @@ const linkedin = "https://www.linkedin.com/in/ragibasif";
     opacity: 1;
   }
 
-  footer a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.2s ease-out;
-  }
-
-  footer a:hover {
-    color: var(--text-primary);
+  .social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
   }
 </style>
