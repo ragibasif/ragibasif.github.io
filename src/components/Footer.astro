@@ -2,18 +2,18 @@
 import ExternalLink from "./ExternalLink.astro";
 const date = new Date().getFullYear();
 
-const github = "https://www.github.com/ragibasif";
-const linkedin = "https://www.linkedin.com/in/ragibasif";
+const github = "https://github.com/ragibasif";
+const linkedin = "https://linkedin.com/in/ragibasif";
 ---
 
 <footer>
   <div class="footer-content">
-    <div class="copyright">
+    <p class="copyright">
       &copy; {date} Ragib Asif. All rights reserved.
-    </div>
+    </p>
     <div class="social-links">
-      <ExternalLink href=`${github}`>GitHub</ExternalLink>
-      <ExternalLink href=`${linkedin}`>LinkedIn</ExternalLink>
+      <ExternalLink href={github}>GitHub</ExternalLink>
+      <ExternalLink href={linkedin}>LinkedIn</ExternalLink>
     </div>
   </div>
 </footer>
@@ -22,34 +22,41 @@ const linkedin = "https://www.linkedin.com/in/ragibasif";
   footer {
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-light);
-    line-height: 1.75;
-    color: var(--text-secondary);
+    color: var(--gray);
     opacity: 0.75;
+    padding: 2rem 1rem 4rem;
+    text-align: center;
     margin-top: 4rem;
+    width: 100%;
   }
 
   .footer-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-direction: column;
-    flex-wrap: nowrap;
-    width: 100%;
-  }
-
-  .copyright {
-    white-space: nowrap;
-  }
-
-  .copyright .date {
-    opacity: 1;
+    align-items: center;
+    gap: 1rem;
   }
 
   .social-links {
     display: flex;
-    flex-direction: row;
+    gap: 1.25rem;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 1em;
-    margin-top: 1em;
+  }
+
+  .social-links a {
+    color: var(--blue);
+    text-decoration: underline;
+    font-weight: var(--font-weight-bold);
+  }
+
+  @media (min-width: 640px) {
+    .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+      max-width: var(--content-width);
+      margin: 0 auto;
+    }
   }
 </style>

@@ -1,39 +1,73 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ExternalLink from "../components/ExternalLink.astro";
+
+const projects = [
+  {
+    name: "Watchdog",
+    description:
+      "Watchdog is a minimal and thread safe C library for tracking memory allocations, reallocations, and frees to detect memory leaks, buffer overflows, and double frees.",
+    link: "https://github.com/ragibasif/watchdog",
+  },
+  {
+    name: "Bitter Interpreter",
+    description:
+      "An interpreter for the Bitter esoteric programming language written in C.",
+    link: "https://github.com/ragibasif/bitter",
+  },
+];
 ---
 
 <Layout>
-<main>
-  <section class="intro">
-    <h1>Hey, I'm Ragib</h1>
-    <p>I'm passionate about building impactful software. Here’s a peek into my work and interests.</p>
-  </section>
+  <main>
+    <section class="intro">
+      <h1>Hey, I'm Ragib</h1>
+      <p>
+        I'm passionate about building impactful software. Here’s a peek into my
+        work and interests.
+      </p>
+    </section>
 
-  <section class="projects">
-    <h2>Projects</h2>
-    <div class="card-grid">
-      <article class="card">
-        <h3>SimOS</h3>
-        <p>A simulated operating system in C++ for learning how processes, memory, and scheduling work.</p>
-        <a href="https://github.com/yourname/simos" target="_blank" rel="noopener noreferrer">View Project</a>
-      </article>
-      <article class="card">
-        <h3>Pillar</h3>
-        <p>A minimal productivity app with a Pomodoro timer and task manager — focused on deep work.</p>
-        <a href="https://github.com/yourname/pillar" target="_blank" rel="noopener noreferrer">View Project</a>
-      </article>
-    </div>
-  </section>
+    <section class="projects">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        {
+          projects.map((project) => (
+            <li class="project-item">
+              <h3>{project.name}</h3>
+              <p>{project.description}</p>
+              <ExternalLink href={project.link}>View Project</ExternalLink>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
 
-  <section class="interests">
-    <h2>Interests</h2>
-    <ul>
-      <li>Low-level systems programming</li>
-      <li>Typography and minimal UI design</li>
-      <li>Learning through building</li>
-      <li>Accessible and inclusive tech</li>
-    </ul>
-  </section>
-</main>
-
+    <section class="interests">
+      <h2>Interests</h2>
+      <ul>
+        <li>Low-level systems programming</li>
+        <li>Typography and minimal UI design</li>
+        <li>Learning through building</li>
+        <li>Accessible and inclusive tech</li>
+      </ul>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  .project-list {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+    list-style: none;
+    padding: 0;
+  }
+
+  .project-item {
+    border: 1px solid var(--border-color, #333);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background: var(--card-bg, #111);
+  }
+</style>

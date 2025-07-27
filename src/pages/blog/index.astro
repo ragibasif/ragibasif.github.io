@@ -11,7 +11,7 @@ const posts = (await getCollection("blog")).sort(
 
 <Layout>
   <main>
-    <section>
+    <section class="post-list">
       <ul>
         {
           posts.map((post) => (
@@ -33,6 +33,10 @@ const posts = (await getCollection("blog")).sort(
 </Layout>
 
 <style>
+.post-list {
+	margin-top: 1rem;
+}
+
   ul {
     padding: 0;
     margin: 0;

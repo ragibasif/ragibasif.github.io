@@ -1,10 +1,66 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ExternalLink from "../components/ExternalLink.astro";
 ---
 
 <Layout>
-  <main>
-    <h2>404</h2>
-    <p>Page Not Found...</p>
+  <main class="not-found">
+    <h1>404 — Not Found</h1>
+    <p>Sorry, the page you're looking for doesn’t exist.</p>
+    <a href="/" class="home-link">Go back home →</a>
+
+    <div class="hint">
+      Or visit my
+      <ExternalLink href="https://github.com/ragibasif">GitHub</ExternalLink> or
+      <ExternalLink href="https://www.linkedin.com/in/ragibasif"
+        >LinkedIn</ExternalLink
+      >
+    </div>
   </main>
+
+  <style>
+    .not-found {
+      text-align: center;
+      padding: 5rem 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .not-found h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .not-found p {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .home-link {
+      display: inline-block;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--border-color, #444);
+      border-radius: 0.5rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .home-link:hover {
+      background: var(--hover-bg, #222);
+    }
+
+    .hint {
+      margin-top: 3rem;
+      font-size: 0.95rem;
+      opacity: 0.75;
+    }
+
+    .hint a {
+      margin: 0 0.25em;
+    }
+  </style>
 </Layout>

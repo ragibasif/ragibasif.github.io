@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <main>
+    <section class="about">
+      <h1>About Me</h1>
+      <p>
+        I'm a systems-oriented developer exploring the intersection of low-level
+        software, minimal UI, and purposeful design.
+      </p>
+      <p>
+        Currently studying Computer Science. I build software to better
+        understand how systems really work — from the ground up.
+      </p>
+      <p>
+        I care deeply about accessibility, clarity, and technology that empowers
+        rather than distracts.
+      </p>
+      <p>
+        If any of that resonates, feel free to <a href="mailto:you@example.com"
+          >reach out</a
+        >.
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .about {
+    max-width: var(--content-width);
+    margin: 4rem auto;
+  }
+
+  .about a {
+    color: var(--blue);
+    text-decoration: underline;
+  }
+</style>

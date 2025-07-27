@@ -27,8 +27,8 @@ const { title, pubDate } = Astro.props;
 
 <style>
   .post {
-    width: 100%;
     max-width: var(--content-width);
+    width: 100%;
   }
 
   .post-header {
@@ -36,6 +36,8 @@ const { title, pubDate } = Astro.props;
   }
 
   .post-title {
+    max-width: var(--content-width);
+    width: 100%;
     font-size: 2rem;
     font-weight: 700;
     font-family: "Atkinson", var(--sans);
@@ -55,6 +57,12 @@ const { title, pubDate } = Astro.props;
     font-size: var(--font-size-m);
     line-height: 1.75;
     color: var(--text);
+    overflow-wrap: break-word;
+    word-break: break-word;
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: var(--content-width);
+    width: 100%;
   }
 
   .post-content h2,
@@ -125,5 +133,25 @@ const { title, pubDate } = Astro.props;
     color: var(--white);
     background: none;
     padding: 0;
+  }
+
+  .post-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    border-radius: 0.5rem;
+    object-fit: contain;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px var(--gray);
+    transition:
+      transform 0.2s ease-in-out,
+      box-shadow 0.2s ease;
+  }
+
+  .post-content table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
   }
 </style>
