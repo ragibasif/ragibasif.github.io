@@ -27,17 +27,18 @@ import Link from "@components/Link.astro";
   }
 
   .nav-links a {
+    color: var(--text);
     text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: border-color 0.4s ease;
   }
 
   .nav-links a:hover {
-    border-bottom-color: var(--blue1);
+    border-bottom-color: var(--blue);
   }
 
   .nav-links a.active {
-    border-bottom-color: var(--blue1);
+    border-bottom-color: var(--blue);
     font-weight: bold;
   }
 

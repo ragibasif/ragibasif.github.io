@@ -62,7 +62,6 @@ const posts = (await getCollection("blog")).sort(
     }
 
     ul:hover a:hover .date {
-      color: var(--text-secondary);
       opacity: 1;
     }
   }
@@ -99,9 +98,7 @@ const posts = (await getCollection("blog")).sort(
 
   .date {
     margin: 0;
-    color: var(--text-secondary);
     opacity: 0.75;
-    letter-spacing: var(--spacing-s);
     flex-shrink: 0;
     white-space: nowrap;
   }
