@@ -1,35 +1,46 @@
 ---
-import ExternalLink from "./ExternalLink.astro";
-const date = new Date().getFullYear();
+import Link from "@components/Link.astro";
+const YEAR = new Date().getFullYear();
 
-const github = "https://github.com/ragibasif";
-const linkedin = "https://linkedin.com/in/ragibasif";
+import Container from "@components/Container.astro";
+import { SITE } from "@consts";
+import { SOCIALS } from "@consts";
+
 const rss = "/rss.xml";
 ---
 
 <footer>
-  <div class="footer-content">
+  <Container class="footer-content">
     <p class="copyright">
-      &copy; {date} Ragib Asif. All rights reserved.
+      &copy; {YEAR}
+      <span>{SITE.NAME}</span>. All rights reserved.
     </p>
     <div class="social-links">
-      <ExternalLink href={github}>GitHub</ExternalLink>
-      <ExternalLink href={linkedin}>LinkedIn</ExternalLink>
-      <ExternalLink href={rss}>RSS</ExternalLink>
+      {
+        SOCIALS.map(({ HREF, NAME }) => (
+          <Link external={true} href={HREF}>
+            {NAME}
+          </Link>
+        ))
+      }
+      <Link external={true} href={rss}>RSS</Link>
     </div>
-  </div>
+  </Container>
 </footer>
 
 <style>
   footer {
-    font-size: var(--font-size-s);
-    font-weight: var(--font-weight-light);
-    color: var(--gray);
+    color: var(--gray1);
     opacity: 0.75;
     padding: 2rem 1rem 4rem;
     text-align: center;
     margin-top: 4rem;
+    max-width: var(--content-width);
     width: 100%;
+  }
+
+  .copyright span {
+    font-weight: bold;
   }
 
   .footer-content {
@@ -48,9 +59,8 @@ const rss = "/rss.xml";
   }
 
   .social-links a {
-    color: var(--blue);
+    color: var(--blue1);
     text-decoration: underline;
-    font-weight: var(--font-weight-bold);
   }
 
   @media (min-width: 640px) {

@@ -1,9 +1,11 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+type Props = {
+  href: string;
+  class?: string;
+  external?: boolean;
+};
 
-type Props = HTMLAttributes<"a">;
-
-const { href, class: className, ...props } = Astro.props;
+const { href, class: className, external = false, ...rest } = Astro.props;
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
@@ -11,10 +13,10 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 
 <a
   href={href}
-  target="_blank"
-  rel="noopener noreferrer"
+  target={external ? "_blank" : "_self"}
+  rel={external ? "noopener noreferrer" : ""}
   class:list={[className, { active: isActive }]}
-  {...props}
+  {...rest}
 >
   <slot />
 </a>

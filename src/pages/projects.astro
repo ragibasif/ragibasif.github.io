@@ -1,6 +1,6 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ExternalLink from "../components/ExternalLink.astro";
+import Layout from "@layouts/Layout.astro";
+import Link from "@components/Link.astro";
 
 const projects = [
   {
@@ -16,32 +16,24 @@ const projects = [
     link: "https://github.com/ragibasif/bitter",
   },
 ];
+import { PROJECTS } from "@consts";
 ---
 
-<Layout>
-  <main>
-    <section class="intro">
-      <p>
-        I'm passionate about building impactful software. Here’s a peek into my
-        work.
-      </p>
-    </section>
-
-    <section class="projects">
-      <h2>Projects</h2>
-      <ul class="project-list">
-        {
-          projects.map((project) => (
-            <li class="project-item">
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <ExternalLink href={project.link}>View Project</ExternalLink>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-  </main>
+<Layout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
+  <section class="projects">
+    <h1>Projects</h1>
+    <ul class="project-list">
+      {
+        projects.map((project) => (
+          <li class="project-item">
+            <h3>{project.name}</h3>
+            <p>{project.description}</p>
+            <Link href={project.link}>View Project</Link>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </Layout>
 
 <style>

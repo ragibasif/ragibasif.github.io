@@ -1,31 +1,30 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { HOME } from "@consts";
 ---
 
-<Layout>
-  <main>
+<Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+  <Container>
     <section class="intro">
       <h1>Hi, I’m Ragib.</h1>
-      <h2>I solve problems.</h2>
+      <section class="about">
+        <p>Passionate about building software that solves real problems.</p>
+        <p>Currently studying Computer Science in NYC.</p>
+        <p>Interested in UNIX, Vim, Cybersecurity, and Systems Programming.</p>
+      </section>
       <p>
-        <a href="/blog">Read my blog</a> or <a href="/software"
-          >explore my work</a
-        >.
+        <Link href="/blog">Read my blog</Link> or
+        <Link href="/projects">explore my work</Link>.
       </p>
     </section>
-  </main>
+  </Container>
+
+  <style>
+    .intro a {
+      color: var(--blue1);
+      font-weight: bold;
+    }
+  </style>
 </Layout>
-
-<style>
-  .intro {
-    text-align: center;
-    margin-top: 4rem;
-    max-width: var(--content-width);
-  }
-
-  .intro a {
-    color: var(--blue);
-    font-weight: var(--font-weight-bold);
-    text-decoration: underline;
-  }
-</style>

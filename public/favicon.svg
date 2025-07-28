@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <defs>
     <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="#264653" />
-      <stop offset="16.6%" stop-color="#2a9d8f" />
-      <stop offset="33.3%" stop-color="#e9c46a" />
-      <stop offset="50%" stop-color="#f4a261" />
-      <stop offset="66.6%" stop-color="#e76f51" />
-      <stop offset="83.3%" stop-color="#606c38" />
-      <stop offset="100%" stop-color="#006d77" />
+      <stop offset="0%"   stop-color="#ff7b00" />
+      <stop offset="16.6%" stop-color="#ffea00" />
+      <stop offset="33.3%" stop-color="#ff8800" />
+      <stop offset="50%" stop-color="#ffdd00" />
+      <stop offset="66.6%" stop-color="#ff9500" />
+      <stop offset="83.3%" stop-color="#ffc300" />
+      <stop offset="100%" stop-color="#ffa200" />
     </linearGradient>
   </defs>
 

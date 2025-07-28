@@ -1,23 +1,21 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ExternalLink from "../components/ExternalLink.astro";
+import Layout from "@layouts/Layout.astro";
+import Link from "@components/Link.astro";
+import Container from "@components/Container.astro";
 ---
 
-<Layout>
-  <main class="not-found">
+<Layout title="404" description="404 Not Found">
+  <Container class="not-found">
     <h1>404 — Not Found</h1>
     <p>Sorry, the page you're looking for doesn’t exist.</p>
     <a href="/" class="home-link">Go back home →</a>
 
     <div class="hint">
       Or visit my
-      <ExternalLink href="https://github.com/ragibasif">GitHub</ExternalLink> or
-      <ExternalLink href="https://www.linkedin.com/in/ragibasif"
-        >LinkedIn</ExternalLink
-      >
+      <Link href="https://github.com/ragibasif">GitHub</Link> or
+      <Link href="https://www.linkedin.com/in/ragibasif">LinkedIn</Link>
     </div>
-  </main>
-
+</Container>
   <style>
     .not-found {
       text-align: center;

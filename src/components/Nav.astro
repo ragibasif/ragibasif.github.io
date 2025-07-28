@@ -1,18 +1,14 @@
 ---
-import { SITE_TITLE } from "../consts";
-import HeaderLink from "./HeaderLink.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
 ---
 
 <nav>
-  <div class="nav-content">
-    <a href="/" class="site-title">{SITE_TITLE}</a>
-    <div class="nav-links">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/work">Work</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
-    </div>
-  </div>
+  <Container class="nav-content nav-links">
+    <Link href="/">Home</Link>
+    <Link href="/projects">Projects</Link>
+    <Link href="/blog">Blog</Link>
+  </Container>
 </nav>
 
 <style>
@@ -20,57 +16,34 @@ import HeaderLink from "./HeaderLink.astro";
     width: 100%;
     padding: 1rem 0;
   }
-
   .nav-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    flex-direction: row;
     align-items: center;
     max-width: var(--content-width);
     margin: 0 auto;
-    flex-wrap: wrap;
     gap: 1rem;
   }
 
-  .site-title {
-    font-size: 1.125rem;
-    font-weight: var(--font-weight-bold);
-    letter-spacing: var(--spacing-s);
-    color: var(--text);
-    text-decoration: none;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-
   .nav-links a {
-    font-size: var(--font-size-m);
-    font-weight: var(--font-weight-regular);
-    color: var(--text);
     text-decoration: none;
     border-bottom: 2px solid transparent;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.4s ease;
   }
 
   .nav-links a:hover {
-    border-bottom-color: var(--blue);
+    border-bottom-color: var(--blue1);
   }
 
   .nav-links a.active {
-    border-bottom-color: var(--blue);
-    font-weight: var(--font-weight-bold);
+    border-bottom-color: var(--blue1);
+    font-weight: bold;
   }
 
   @media (max-width: 640px) {
     .nav-content {
-      flex-direction: column;
       justify-content: center;
-    }
-
-    .site-title {
-      display: none;
     }
   }
 </style>

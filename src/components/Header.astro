@@ -1,17 +1,49 @@
 ---
-import Nav from "./Nav.astro";
+import Link from "@components/Link.astro";
+import Nav from "@components/Nav.astro";
+import Container from "@components/Container.astro";
+import { SITE } from "@consts";
 ---
 
 <header>
-  <div class="header-content">
+  <Container class="header-content">
+    <Link href="/" class="site-title">
+      {SITE.NAME}
+    </Link>
     <Nav />
-  </div>
+  </Container>
 </header>
 
 <style>
   header {
+    max-width: var(--content-width);
     width: 100%;
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .site-title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--content-width);
+    width: 100%;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+  @media (max-width: 640px) {
+    .header-content {
+      /* justify-content: center; */
+    }
+    .site-title {
+      /* display: none; */
+    }
   }
 </style>

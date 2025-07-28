@@ -1,20 +1,21 @@
 ---
-import Layout from "./Layout.astro";
 import type { CollectionEntry } from "astro:content";
-import FormattedDate from "../components/FormattedDate.astro";
+import Layout from "@layouts/Layout.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import Container from "@components/Container.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, pubDate } = Astro.props;
+const { title, description, date } = Astro.props;
 ---
 
-<Layout>
-  <main>
+<Layout title={title} description={description}>
+  <Container>
     <article class="post">
       <div class="post-header">
         <h1 class="post-title">{title}</h1>
         <div class="date">
-          <FormattedDate date={pubDate} />
+          <FormattedDate date={date} />
         </div>
         <hr />
       </div>
@@ -22,7 +23,7 @@ const { title, pubDate } = Astro.props;
         <slot />
       </section>
     </article>
-  </main>
+  </Container>
 </Layout>
 
 <style>
@@ -55,9 +56,6 @@ const { title, pubDate } = Astro.props;
     overflow-wrap: break-word;
     word-break: break-word;
     margin: 0 auto;
-    padding: 1rem;
-    max-width: var(--content-width);
-    width: 100%;
   }
 
   .post-content h2,
@@ -99,5 +97,4 @@ const { title, pubDate } = Astro.props;
     background: none;
     padding: 0;
   }
-
 </style>
