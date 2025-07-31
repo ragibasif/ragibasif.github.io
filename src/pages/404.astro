@@ -1,6 +1,5 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Link from "@components/Link.astro";
 import Container from "@components/Container.astro";
 ---
 
@@ -8,20 +7,17 @@ import Container from "@components/Container.astro";
   <Container class="not-found">
     <h1>404 — Not Found</h1>
     <p>Sorry, the page you're looking for doesn’t exist.</p>
-    <a href="/" class="home-link">Go back home →</a>
-
-    <div class="hint">
-      Or visit my
-      <Link href="https://github.com/ragibasif">GitHub</Link> or
-      <Link href="https://www.linkedin.com/in/ragibasif">LinkedIn</Link>
-    </div>
-</Container>
+  </Container>
   <style>
     .not-found {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 5rem 1rem;
-      max-width: 600px;
-      margin: 0 auto;
+      max-width: var(--content-width);
+      width: 100%;
+      margin: 2rem auto;
     }
 
     .not-found h1 {
@@ -32,33 +28,7 @@ import Container from "@components/Container.astro";
 
     .not-found p {
       font-size: 1.25rem;
-      color: var(--text-secondary);
-      margin-bottom: 2rem;
-    }
-
-    .home-link {
-      display: inline-block;
-      font-weight: 600;
-      padding: 0.75rem 1.5rem;
-      border: 1px solid var(--border-color, #444);
-      border-radius: 0.5rem;
-      color: var(--text-primary);
-      text-decoration: none;
-      transition: background 0.2s ease;
-    }
-
-    .home-link:hover {
-      background: var(--hover-bg, #222);
-    }
-
-    .hint {
-      margin-top: 3rem;
-      font-size: 0.95rem;
-      opacity: 0.75;
-    }
-
-    .hint a {
-      margin: 0 0.25em;
+      margin-bottom: 1rem;
     }
   </style>
 </Layout>

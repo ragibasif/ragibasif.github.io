@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-import FormattedDate from "@components/FormattedDate.astro";
+import FormatDate from "@components/FormatDate.astro";
 import Container from "@components/Container.astro";
 import { BLOG } from "@consts";
 
@@ -12,6 +12,7 @@ const posts = (await getCollection("blog")).sort(
 
 <Layout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
   <Container class="post-title">
+    <h1>Blog</h1>
     <ul>
       {
         posts.map((post) => (
@@ -20,7 +21,7 @@ const posts = (await getCollection("blog")).sort(
               <div class="post-item">
                 <h4 class="title">{post.data.title}</h4>
                 <p class="date">
-                  <FormattedDate date={post.data.date} />
+                  <FormatDate date={post.data.date} />
                 </p>
               </div>
             </a>

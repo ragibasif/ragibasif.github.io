@@ -1,27 +1,12 @@
-@import url("reset.css");
-
 :root {
   /* colors */
-  --seasalt: #f8f9faff;
-  --french-gray: #ced4daff;
-  --eerie-black: #212529ff;
-  --red-pantone: #ef233cff;
-  --powder-blue: #a1b5d8ff;
-  --tea-green: #c2d8b9ff;
-
-  --black: var(--eerie-black);
-  --white: var(--seasalt);
-  --gray: var(--french-gray);
-  --red: var(--red-pantone);
-  --blue: var(--powder-blue);
-  --green: var(--tea-green);
+  --white: #f8f9faff;
+  --black: #212529ff;
+  --blue: #a1b5d8ff;
 
   --bg: var(--black);
   --text: var(--white);
-  --heading: var(--white);
-  --link: var(--blue);
-  --code: var(--blue);
-  --blockquote: var(--blue);
+  --accent: var(--blue);
 
   /* Min Content Width */
   --content-width: 35rem;
@@ -90,16 +75,13 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  color: var(--heading);
-}
-
-p {
+h6,
+p,
+a {
   color: var(--text);
 }
 
 a {
-  color: var(--link);
   text-decoration: none;
 }
 
@@ -129,7 +111,6 @@ a {
 .date {
   margin: 0;
   font-weight: light;
-  color: var(--gray);
   opacity: 0.75;
   flex-shrink: 0;
   font-variant-numeric: tabular-nums;
@@ -165,7 +146,7 @@ img {
   border-radius: 0.5rem;
   object-fit: cover;
   overflow: hidden;
-  box-shadow: 0 0 0 1px var(--gray);
+  box-shadow: 0 0 0 1px var(--accent);
   transition:
     transform 0.2s ease-in-out,
     box-shadow 0.2s ease;
@@ -173,7 +154,7 @@ img {
 
 img:hover {
   transform: scale(1.01);
-  box-shadow: 0 0 0 2px var(--gray);
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 main img {
@@ -210,15 +191,14 @@ li {
 }
 
 blockquote {
-  border-left: 4px solid var(--blockquote);
+  border-left: 4px solid var(--accent);
   padding-left: 1rem;
   margin: 1.5rem 0;
-  color: var(--blockquote);
   font-style: italic;
 }
 
 code {
-  background-color: var(--code);
+  background-color: var(--accent);
   color: var(--bg);
   overflow-wrap: break-word;
   word-break: break-word;
@@ -231,7 +211,7 @@ code {
 }
 
 pre {
-  background-color: var(--code);
+  background-color: var(--accent);
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
@@ -241,15 +221,28 @@ pre {
 }
 
 pre code {
-  color: var(--code);
   background: none;
   padding: 0;
 }
 
-
-
 table {
-  display: block;
   overflow-x: auto;
-  max-width: 100%;
+  max-width: var(--content-width);
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+th,
+td {
+  border: .1px solid var(--accent);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead {
+  font-weight: 600;
 }

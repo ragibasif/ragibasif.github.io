@@ -1,6 +1,8 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import Post from "@layouts/Post.astro";
+import Layout from "@layouts/Layout.astro";
+import FormatDate from "@components/FormatDate.astro";
+import Container from "@components/Container.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -9,12 +11,99 @@ export async function getStaticPaths() {
     props: post,
   }));
 }
+
 type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Post {...post.data}>
-  <Content />
-</Post>
+<Layout title={post.data.title} description={post.data.description}>
+  <Container>
+    <article class="post">
+      <div class="post-header">
+        <h1 class="post-title">{post.data.title}</h1>
+        <div class="date">
+          <FormatDate date={post.data.date} />
+        </div>
+        <hr />
+      </div>
+      <section class="post-content">
+        <Content />
+      </section>
+    </article>
+  </Container>
+</Layout>
+
+<style>
+  .post {
+    max-width: var(--content-width);
+    width: 100%;
+  }
+
+  .post-header {
+    margin-bottom: 2rem;
+  }
+
+  .post-title {
+    max-width: var(--content-width);
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Atkinson", var(--sans);
+    margin-bottom: 0.5rem;
+    color: var(--white);
+  }
+
+  .date {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .post-content {
+    font-family: "Atkinson", var(--sans);
+    line-height: 1.75;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    margin: 0 auto;
+  }
+
+  .post-content h2,
+  .post-content h3,
+  .post-content h4 {
+    font-weight: 500;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .post-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .post-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .post-content p,
+  .post-content li {
+    margin-bottom: 1rem;
+  }
+
+  .post-content ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+
+  .post-content ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
+  }
+
+  .post-content a {
+    text-decoration: underline;
+  }
+
+  .post-content pre code {
+    background: none;
+    padding: 0;
+  }
+</style>
