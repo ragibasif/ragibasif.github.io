@@ -1,13 +1,30 @@
 ---
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
+
+const navItems = [
+  {
+    path: "/",
+    label: "Home",
+  },
+  {
+    path: "/projects",
+    label: "Projects",
+  },
+  {
+    path: "/blog",
+    label: "Blog",
+  },
+];
 ---
 
 <nav>
   <Container class="nav-content nav-links">
-    <Link href="/">Home</Link>
-    <Link href="/projects">Projects</Link>
-    <Link href="/blog">Blog</Link>
+    {
+      navItems.map((item) => {
+        return <Link href={item.path}>{item.label}</Link>;
+      })
+    }
   </Container>
 </nav>
 
