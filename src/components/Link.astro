@@ -15,8 +15,20 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
   href={href}
   target={external ? "_blank" : "_self"}
   rel={external ? "noopener noreferrer" : ""}
-  class:list={[className, { active: isActive }]}
+  class:list={[className, { active: isActive }, "blur"]}
   {...rest}
 >
   <slot />
 </a>
+
+<style>
+  .blur {
+    text-decoration: none;
+    transition: all ease-in-out 300ms;
+  }
+
+  .blur:hover {
+    filter: blur(0.1rem);
+    transition: ease-in-out 300ms;
+  }
+</style>
