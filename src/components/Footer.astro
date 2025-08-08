@@ -1,30 +1,21 @@
 ---
-import Link from "@components/Link.astro";
+import Link from "src/components/Link.astro";
 const YEAR = new Date().getFullYear();
 
-import Container from "@components/Container.astro";
-import { SITE } from "@consts";
-import { SOCIALS } from "@consts";
-
-const rss = "/rss.xml";
+import Container from "src/components/Container.astro";
+import { SITE } from "src/consts";
 ---
 
 <footer>
   <Container class="footer-content">
     <p class="copyright">
       &copy; {YEAR}
-      <span>{SITE.NAME}</span>. All rights reserved.
+      <span>
+        <Link href="/" class="site-title">
+          {SITE.NAME}
+        </Link>
+      </span>. All rights reserved.
     </p>
-    <div class="social-links">
-      {
-        SOCIALS.map(({ HREF, NAME }) => (
-          <Link external={true} href={HREF}>
-            {NAME}
-          </Link>
-        ))
-      }
-      <Link external={true} href={rss}>RSS</Link>
-    </div>
   </Container>
 </footer>
 
@@ -33,7 +24,7 @@ const rss = "/rss.xml";
     color: var(--gray);
     opacity: 0.75;
     padding: 2rem 1rem 4rem;
-    text-align: center;
+    text-align: left;
     margin-top: 4rem;
     max-width: var(--content-width);
     width: 100%;
@@ -41,37 +32,5 @@ const rss = "/rss.xml";
 
   .copyright span {
     font-weight: bold;
-  }
-
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .social-links {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .social-links a {
-    color: var(--link);
-    text-decoration: underline;
-  }
-
-  @media (min-width: 640px) {
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
-      max-width: var(--content-width);
-      margin: 0 auto;
-      align-items: center;
-    }
   }
 </style>

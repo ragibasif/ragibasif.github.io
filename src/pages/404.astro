@@ -1,9 +1,9 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/Container.astro";
+import Base from "src/layouts/Base.astro";
+import Container from "src/components/Container.astro";
 ---
 
-<Layout title="404" description="404 Not Found">
+<Base>
   <Container class="not-found">
     <h1>404 — Not Found</h1>
     <p>Sorry, the page you're looking for doesn’t exist.</p>
@@ -31,4 +31,4 @@ import Container from "@components/Container.astro";
       margin-bottom: 1rem;
     }
   </style>
-</Layout>
+</Base>

@@ -1,28 +1,20 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Container from "@components/Container.astro";
-import Link from "@components/Link.astro";
-import { HOME } from "@consts";
+import Base from "src/layouts/Base.astro";
+import Container from "src/components/Container.astro";
+import Link from "src/components/Link.astro";
+import { SOCIALS } from "src/consts";
 ---
 
-<Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+<Base>
   <Container>
-    <section class="intro">
-      <h1>Hi, I’m Ragib.</h1>
-      <section class="about">
-        <p>Computer Scientist and Mathematician.</p>
-        <p>Interested in UNIX, Vim, and Systems Programming.</p>
-      </section>
-      <p>
-        <Link href="/blog">Read my blog</Link> or
-        <Link href="/projects">explore my work</Link>.
-      </p>
-    </section>
+    <div class="social-links">
+      {
+        SOCIALS.map(({ HREF, NAME }) => (
+          <Link external={true} href={HREF}>
+            {NAME}
+          </Link>
+        ))
+      }
+    </div>
   </Container>
-
-  <style>
-    .intro a {
-      font-weight: bold;
-    }
-  </style>
-</Layout>
+</Base>
