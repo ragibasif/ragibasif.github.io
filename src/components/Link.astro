@@ -14,7 +14,7 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 <a
   href={href}
   target={external ? "_blank" : "_self"}
-  rel={external ? "noopener noreferrer" : ""}
+  rel="noopener noreferrer"
   class:list={[className, { active: isActive }, "blur"]}
   {...rest}
 >
