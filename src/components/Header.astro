@@ -5,37 +5,9 @@ import { SITE } from "src/consts";
 ---
 
 <header>
-  <Container class="header-content">
-      <Link href="/" class="site-title">
-        {SITE.NAME}
-      </Link>
+  <Container>
+    <Link href="/">
+      {SITE.NAME}
+    </Link>
   </Container>
 </header>
-
-<style>
-  header {
-    max-width: var(--content-width);
-    width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .site-title {
-    color: var(--text);
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .header-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    max-width: var(--content-width);
-    width: 100%;
-    margin: 0 auto;
-    gap: 1rem;
-  }
-</style>

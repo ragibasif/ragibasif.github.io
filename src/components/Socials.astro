@@ -1,0 +1,15 @@
+---
+import Container from "src/components/Container.astro";
+import Link from "src/components/Link.astro";
+import { SOCIALS } from "src/consts";
+---
+
+<Container>
+  {
+    SOCIALS.map(({ HREF, NAME }) => (
+      <Link external={true} href={HREF}>
+        {NAME}
+      </Link>
+    ))
+  }
+</Container>

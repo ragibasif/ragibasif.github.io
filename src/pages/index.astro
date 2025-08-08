@@ -1,20 +1,11 @@
 ---
 import Base from "src/layouts/Base.astro";
 import Container from "src/components/Container.astro";
-import Link from "src/components/Link.astro";
-import { SOCIALS } from "src/consts";
+import Socials from "src/components/Socials.astro";
 ---
 
 <Base>
   <Container>
-    <div class="social-links">
-      {
-        SOCIALS.map(({ HREF, NAME }) => (
-          <Link external={true} href={HREF}>
-            {NAME}
-          </Link>
-        ))
-      }
-    </div>
+    <Socials />
   </Container>
 </Base>

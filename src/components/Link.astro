@@ -10,6 +10,7 @@ const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 ---
+
 <a
   href={href}
   target={external ? "_blank" : "_self"}
@@ -19,15 +20,3 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 >
   <slot />
 </a>
-
-<style>
-  .blur {
-    text-decoration: none;
-    transition: all ease-in-out 300ms;
-  }
-
-  .blur:hover {
-    filter: blur(0.1rem);
-    transition: ease-in-out 300ms;
-  }
-</style>

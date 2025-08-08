@@ -38,13 +38,18 @@ body {
   max-width: var(--content-width);
   width: 100%;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   overscroll-behavior-y: contain;
   transition: background-color 0.2s ease-out;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 4rem;
+  /* border: red;
+  border-width: 2px;
+  border-style: solid; */
 }
 
 main {
@@ -53,6 +58,9 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
+  /* border: red;
+  border-width: 2px;
+  border-style: solid; */
 }
 
 h1,
@@ -95,21 +103,7 @@ a {
 }
 
 
-.date {
-  margin: 0;
-  font-weight: light;
-  opacity: 0.75;
-  flex-shrink: 0;
-  font-variant-numeric: tabular-nums;
-  font-feature-settings:
-    'tnum' 1,
-    'zero' 0,
-    'cv01' 1,
-    'cv02' 1,
-    'calt' 1,
-    'ss03' 1,
-    'ordn' 1;
-}
+
 
 .sr-only {
   border: 0;
@@ -125,34 +119,10 @@ a {
   white-space: nowrap;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 2rem auto;
-  border-radius: 0.5rem;
-  object-fit: cover;
-  overflow: hidden;
-  box-shadow: 0 0 0 1px var(--accent);
-  transition:
-    transform 0.2s ease-in-out,
-    box-shadow 0.2s ease;
-}
-
-img:hover {
-  transform: scale(1.01);
-  box-shadow: 0 0 0 2px var(--accent);
-}
-
-main img {
-  max-width: var(--content-width);
-  width: 100%;
-}
-
 h1,
 h2,
 h3 {
-  font-family: "Atkinson", var(--sans);
+  font-family: var(--sans);
   margin-bottom: 0.5rem;
 }
 
@@ -177,59 +147,22 @@ li {
   margin-bottom: 1rem;
 }
 
-blockquote {
-  border-left: 4px solid var(--accent);
-  padding-left: 1rem;
-  margin: 1.5rem 0;
-  font-style: italic;
+footer {
+  color: var(--gray);
+  max-width: var(--content-width);
+  width: 100%;
 }
 
-code {
-  background-color: var(--accent);
-  color: var(--bg);
-  overflow-wrap: break-word;
-  word-break: break-word;
-  white-space: pre-wrap;
-  padding: 0.2rem 0.4rem;
-  border-radius: 0.25rem;
-  font-family: var(--mono);
-  font-size: 0.9em;
+span {
   font-weight: bold;
 }
 
-pre {
-  background-color: var(--accent);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  overflow-x: auto;
-  max-width: 100%;
-  font-size: 0.9rem;
-  margin: 1.5rem 0;
+.blur {
+  text-decoration: none;
+  transition: all ease-in-out 300ms;
 }
 
-pre code {
-  background: none;
-  padding: 0;
-}
-
-table {
-  overflow-x: auto;
-  max-width: var(--content-width);
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-th,
-td {
-  border: .1px solid var(--accent);
-  padding: 0.75rem 1rem;
-  text-align: left;
-  vertical-align: top;
-}
-
-thead {
-  font-weight: 600;
+.blur:hover {
+  filter: blur(0.1rem);
+  transition: ease-in-out 300ms;
 }

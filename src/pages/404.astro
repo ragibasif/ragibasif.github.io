@@ -1,34 +1,15 @@
 ---
-import Base from "src/layouts/Base.astro";
-import Container from "src/components/Container.astro";
+import { Fragment } from "astro/jsx-runtime";
 ---
 
-<Base>
-  <Container class="not-found">
-    <h1>404 — Not Found</h1>
-    <p>Sorry, the page you're looking for doesn’t exist.</p>
-  </Container>
-  <style>
-    .not-found {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      max-width: var(--content-width);
-      width: 100%;
-      margin: 2rem auto;
-    }
-
-    .not-found h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .not-found p {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-    }
-  </style>
-</Base>
+<html lang="en">
+  <head>
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      window.location.href = "/";
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to home…</p>
+  </body>
+</html>

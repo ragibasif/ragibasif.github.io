@@ -7,30 +7,14 @@ import { SITE } from "src/consts";
 ---
 
 <footer>
-  <Container class="footer-content">
-    <p class="copyright">
+  <Container>
+    <p>
       &copy; {YEAR}
       <span>
-        <Link href="/" class="site-title">
+        <Link href="/">
           {SITE.NAME}
         </Link>
       </span>. All rights reserved.
     </p>
   </Container>
 </footer>
-
-<style>
-  footer {
-    color: var(--gray);
-    opacity: 0.75;
-    padding: 2rem 1rem 4rem;
-    text-align: left;
-    margin-top: 4rem;
-    max-width: var(--content-width);
-    width: 100%;
-  }
-
-  .copyright span {
-    font-weight: bold;
-  }
-</style>
