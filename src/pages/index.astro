@@ -1,11 +1,10 @@
 ---
-import Base from "src/layouts/Base.astro";
-import Container from "src/components/Container.astro";
-import Socials from "src/components/Socials.astro";
+import Base from "@/layouts/Base.astro";
+import { SITE } from "@/consts/consts";
 ---
 
-<Base>
-  <Container>
-    <Socials />
-  </Container>
+<Base title={SITE.NAME} description={SITE.DESCRIPTION}>
+  <h1>Hello, World!</h1>
+  <p>Computer Science and Mathematics</p>
+  <p>Interested in systems programming, Vim, Unix, and algorithms.</p>
 </Base>

@@ -5,7 +5,7 @@ type Props = {
   external?: boolean;
 };
 
-const { href, class: className, external = false, ...rest } = Astro.props;
+const { href, class: className, external = false, ...props } = Astro.props;
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
@@ -15,8 +15,6 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
   href={href}
   target={external ? "_blank" : "_self"}
   rel="noopener noreferrer"
-  class:list={[className, { active: isActive }, "blur"]}
-  {...rest}
+  class:list={[className, { active: isActive }]}
+  {...props}><slot /></a
 >
-  <slot />
-</a>

@@ -1,13 +1,32 @@
 ---
-import Link from "src/components/Link.astro";
-import Container from "src/components/Container.astro";
-import { SITE } from "src/consts";
+import { SITE, NAV } from "@/consts/consts";
+import Link from "@/components/Link.astro";
 ---
 
 <header>
-  <Container>
-    <Link href="/">
-      {SITE.NAME}
-    </Link>
-  </Container>
+  <nav>
+    <Link href="/">{SITE.NAME}</Link>
+    <div class="internal-links">
+      {
+        NAV.map(({ NAME, HREF }) => (
+          <Link href={HREF}>
+            <span class="sr-only">{NAME}</span>
+            {NAME}
+          </Link>
+        ))
+      }
+    </div>
+  </nav>
 </header>
+
+<style>
+  .internal-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .internal-links a.active {
+    font-weight: bolder;
+  }
+</style>

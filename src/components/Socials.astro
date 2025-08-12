@@ -1,15 +1,33 @@
 ---
-import Container from "src/components/Container.astro";
-import Link from "src/components/Link.astro";
-import { SOCIALS } from "src/consts";
+import Link from "@/components/Link.astro";
+import { SOCIALS } from "@/consts/consts";
 ---
 
-<Container>
+<div class="socials">
   {
-    SOCIALS.map(({ HREF, NAME }) => (
-      <Link external={true} href={HREF}>
+    SOCIALS.map(({ NAME, HREF }) => (
+      <Link href={HREF} external={true}>
+        <span class="sr-only">{NAME}</span>
         {NAME}
       </Link>
     ))
   }
-</Container>
+</div>
+
+<style>
+  .socials {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .socials {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+import Post from "@/layouts/Post.astro";
+import Link from "@/components/Link.astro";
+import { PROJECTS } from "@/consts/consts";
+---
+
+<Post
+  title="Projects"
+  description="A page to show my projects."
+  pubDate={new Date("August 08 2025")}
+  updatedDate={new Date("August 11 2025")}
+  featured={false}
+>
+  <div class="projects">
+      {
+        PROJECTS.map(({ NAME, DESCRIPTION, REPO, DEMO }) => (
+          <h3>{NAME}</h3>
+          <p>{DESCRIPTION}</p>
+          <Link href={REPO}>
+            <span class="sr-only">Repo</span>
+            Repo
+          </Link>
+          <Link href={DEMO}>
+          <span class="sr-only">Demo</span>
+          Demo
+        </Link>
+      ))
+    }
+  </div>
+</Post>

@@ -1,20 +1,16 @@
 ---
-import Link from "src/components/Link.astro";
+import Link from "@/components/Link.astro";
+import { SITE } from "@/consts/consts";
+import Socials from "@/components/Socials.astro";
 const YEAR = new Date().getFullYear();
-
-import Container from "src/components/Container.astro";
-import { SITE } from "src/consts";
 ---
 
 <footer>
-  <Container>
+  <div>
     <p>
       &copy; {YEAR}
-      <span>
-        <Link href="/">
-          {SITE.NAME}
-        </Link>
-      </span>. All rights reserved.
+      <span><Link href="/">{SITE.NAME}</Link></span>. All rights reserved.
     </p>
-  </Container>
+    <Socials />
+  </div>
 </footer>

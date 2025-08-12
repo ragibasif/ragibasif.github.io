@@ -1,32 +1,37 @@
+@import "@/styles/reset.css";
+@import "@/styles/typography.css";
+
 :root {
   /* colors */
-  --white: #f8f9faff;
   --black: #212529ff;
+  --white: #f8f9faff;
   --blue: #a1b5d8ff;
+  --pink: #FF6663FF;
+  --gray: #817F75FF;
 
   --bg: var(--black);
   --text: var(--white);
   --accent: var(--blue);
 
-  /* Min Content Width */
-  --content-width: 35rem;
-
   /* Typography */
   --sans: sans-serif;
   --serif: serif;
   --mono: monospace;
-}
 
+  --border-radius: .5rem;
+
+  --content-width: 35rem;
+}
 
 html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   overscroll-behavior-y: contain;
   -webkit-overflow-scrolling: touch;
+  text-align: left;
 }
 
 body {
-  font-family: var(--sans);
   background-color: var(--bg);
   color: var(--text);
   text-rendering: optimizeLegibility;
@@ -38,29 +43,23 @@ body {
   max-width: var(--content-width);
   width: 100%;
   margin: 0 auto;
-  padding: 4rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   overscroll-behavior-y: contain;
   transition: background-color 0.2s ease-out;
-  align-items: center;
-  text-align: center;
+  text-align: left;
   justify-content: center;
-  font-size: 4rem;
-  /* border: red;
-  border-width: 2px;
-  border-style: solid; */
+  font-size: 1rem;
 }
 
+
+
 main {
-  max-width: var(--content-width);
   width: 100%;
   flex: 1;
   display: flex;
   flex-direction: column;
-  /* border: red;
-  border-width: 2px;
-  border-style: solid; */
 }
 
 h1,
@@ -70,11 +69,13 @@ h4,
 h5,
 h6,
 p,
-a {
+a,
+button {
   color: var(--text);
 }
 
-a {
+a,
+button {
   text-decoration: none;
 }
 
@@ -102,9 +103,6 @@ a {
   }
 }
 
-
-
-
 .sr-only {
   border: 0;
   padding: 0;
@@ -119,50 +117,144 @@ a {
   white-space: nowrap;
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--sans);
-  margin-bottom: 0.5rem;
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background-color: #1a1a1a;
 }
 
-h1 {
-  font-size: 2rem;
-  font-weight: 700;
+th,
+td {
+  border: 1px solid #333;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
 }
 
-h2 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-top: 2rem;
+thead {
+  background-color: #222;
+  font-weight: 600;
 }
 
-h3 {
-  font-size: 1.125rem;
-  font-weight: 500;
+tbody tr:nth-child(odd) {
+  background-color: #1f1f1f;
 }
 
-p,
-li {
-  margin-bottom: 1rem;
+tbody tr:nth-child(even) {
+  background-color: #151515;
 }
 
-footer {
-  color: var(--gray);
-  max-width: var(--content-width);
+header {
+  margin: 0;
+  padding: 1rem 0;
   width: 100%;
 }
 
-span {
-  font-weight: bold;
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.blur {
+footer {
+  margin-top: 3rem;
+}
+
+
+blockquote {
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+cite {
+  font-style: normal;
+  letter-spacing: 0.01em;
+  display: inline-block;
+  margin-left: 0.25em;
+  vertical-align: baseline;
+  transition: background 0.2s;
+}
+
+sup {
+  font-size: 0.85em;
+  vertical-align: super;
+  padding: .1rem;
+  line-height: 1;
+}
+
+
+abbr[title] {
+  border-bottom: 1px dotted var(--accent);
+  cursor: help;
   text-decoration: none;
-  transition: all ease-in-out 300ms;
+  transition: border-color 0.2s;
 }
 
-.blur:hover {
-  filter: blur(0.1rem);
-  transition: ease-in-out 300ms;
+abbr[title]:hover {
+  border-bottom: 1px solid var(--accent);
+}
+
+sub {
+  font-size: 0.85em;
+  vertical-align: sub;
+  line-height: 1;
+  padding: .1rem;
+}
+
+sup {
+  font-size: 0.85em;
+  vertical-align: super;
+  padding: .1rem;
+  line-height: 1;
+}
+
+
+pre {
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+
+kbd,
+mark,
+code {
+  background-color: var(--accent);
+  color: var(--black);
+  padding: .1rem .2rem;
+  margin: .2rem;
+  border-radius: .2rem;
+  font-weight: 600;
+}
+
+pre code {
+  text-decoration: none;
+  font-style: normal;
+  background-color: transparent;
+  padding: 0rem;
+  margin: 0rem;
+  font-weight: normal;
+}
+
+hr {
+  margin-top: .2rem;
+  margin-bottom: .2rem;
+}
+
+article a {
+  border: 2px solid var(--accent);
+  padding: .2rem;
+  border-radius: .2rem;
+}
+
+article a:hover {
+  background-color: var(--accent);
+  color: var(--bg);
 }

@@ -1,0 +1,114 @@
+---
+
+---
+
+<script>
+  // Show button after scrolling down a bit
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("back-to-top");
+    if (!btn) return;
+
+    // Show/hide button based on scroll position
+    const toggleVisibility = () => {
+      if (window.scrollY > 200) {
+        btn.classList.add("visible");
+      } else {
+        btn.classList.remove("visible");
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Initial check
+    toggleVisibility();
+  });
+</script>
+
+<!--
+  The button is positioned slightly up and to the left from the bottom right,
+  so it sits just next to the text (e.g., above the footer or away from the edge).
+-->
+<div class="back-to-top-container">
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 19V5M5 12L12 5L19 12"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </button>
+</div>
+
+<style>
+  .back-to-top-container {
+    position: fixed;
+    /* Move up and to the left from the bottom right corner */
+    bottom: 4.5rem; /* adjust as needed to sit above footer/text */
+    right: 4.5rem; /* adjust as needed to sit left of edge */
+    width: auto;
+    height: auto;
+    z-index: 1000;
+    pointer-events: none; /* allow only the button to be clickable */
+  }
+
+  .back-to-top {
+    width: 48px;
+    height: 48px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    pointer-events: auto; /* make button clickable */
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .back-to-top:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow:
+      0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 10px 10px -5px rgb(0 0 0 / 0.04);
+  }
+
+  .back-to-top:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .back-to-top-container {
+      bottom: 3.5rem;
+      right: 3.5rem;
+    }
+    .back-to-top {
+      width: 44px;
+      height: 44px;
+    }
+  }
+</style>
