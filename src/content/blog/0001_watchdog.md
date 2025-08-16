@@ -13,7 +13,7 @@ By the tenth time, I decided I needed a better way to see what was going on unde
 
 ## What Is It?
 
-[**Watchdog**](https://github.com/ragibasif/watchdog) is a dynamic memory debugger for C. It tracks memory allocations and deallocations in heap memory. Specifically, tracks all calls to `malloc`, `realloc`, `calloc`, and `free`.
+[Watchdog](https://github.com/ragibasif/watchdog) is a dynamic memory debugger for C. It tracks memory allocations and deallocations in heap memory. Specifically, tracks all calls to `malloc`, `realloc`, `calloc`, and `free`.
 
 ## But Why?
 

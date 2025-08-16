@@ -43,7 +43,7 @@ const allTags = [
           <div class="post-item" data-tags={(post.data.tags ?? []).join(",")}>
             <div>
               <h3>
-                <Link href={`/blog/${post.id}/`}>{post.data.title}</Link>
+                <Link href={`/blog/${post.slug}/`}>{post.data.title}</Link>
               </h3>
               <FormattedDate date={post.data.pubDate} />
             </div>
