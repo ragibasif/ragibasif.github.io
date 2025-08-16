@@ -626,15 +626,6 @@ nav {
 
 /* ---------------- Article & Sectioning ---------------- */
 
-article {
-  background: var(--surface0-bg);
-  color: var(--text-primary);
-  padding: 2rem;
-  border-radius: 0.75rem;
-  border: 1px solid var(--overlay0-color);
-  margin: 2rem 0;
-}
-
 header,
 footer {
   padding: 1rem 0;
@@ -662,15 +653,15 @@ tbody tr {
 }
 
 tbody tr:nth-child(even) {
-  background-color: var(--surface0-bg);
+  background-color: var(--crust-bg);
 }
 
 tbody tr:nth-child(odd) {
-  background-color: var(--bg);
+  background-color: var(--mantle-bg);
 }
 
 tbody tr:hover {
-  background-color: var(--surface1-bg);
+  background-color: var(--surface2-bg);
 }
 
 th,
@@ -703,7 +694,7 @@ hr {
 blockquote {
   margin: 1.5rem 0;
   padding: 1rem 1.5rem;
-  background: var(--surface1-bg);
+  background: var(--mantle-bg);
   border-left: 4px solid var(--accent);
   color: var(--text-secondary);
   font-style: italic;
