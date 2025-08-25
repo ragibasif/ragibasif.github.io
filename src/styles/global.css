@@ -116,18 +116,17 @@ em {
 }
 
 button {
-  font-weight: 500;
-  background-color: var(--accent);
-  color: var(--mantle-bg);
+  font-weight: 400;
+  color: var(--accent);
   border: none;
-  padding: 0.1rem 1rem;
+  padding: 0.1rem .1rem;
   border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
-  background-color: var(--highlight);
+  color: var(--highlight);
 }
 
 main {

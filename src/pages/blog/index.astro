@@ -42,9 +42,9 @@ const allTags = [
         sortedPosts.map((post) => (
           <div class="post-item" data-tags={(post.data.tags ?? []).join(",")}>
             <div>
-              <h3>
-                <Link href={`/blog/${post.slug}/`}>{post.data.title}</Link>
-              </h3>
+              <Link href={`/blog/${post.slug}/`}>{post.data.title}</Link>
+            </div>
+            <div class="date">
               <FormattedDate date={post.data.pubDate} />
             </div>
           </div>
@@ -61,9 +61,14 @@ const allTags = [
     flex-wrap: wrap;
     gap: 1rem;
     width: 100%;
+    margin-bottom: 1rem;
   }
   .post-item {
     transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
   }
 
   .post-item.hidden {
@@ -72,6 +77,12 @@ const allTags = [
 
   .active {
     font-weight: bolder;
+  }
+
+  @media (max-width: 768px) {
+    .date {
+      display: none;
+    }
   }
 </style>
 

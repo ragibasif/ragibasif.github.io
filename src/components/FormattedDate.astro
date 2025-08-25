@@ -11,11 +11,22 @@ const isoString = isValidDate ? dateObject.toISOString() : undefined;
 
 <time datetime={isoString}>
   {
+    // You can customize the date format using the options below:
+    // - year: "numeric" | "2-digit"
+    // - month: "numeric" | "2-digit" | "long" | "short" | "narrow"
+    // - day: "numeric" | "2-digit"
+    // - weekday: "long" | "short" | "narrow"
+    // - hour: "numeric" | "2-digit"
+    // - minute: "numeric" | "2-digit"
+    // - second: "numeric" | "2-digit"
+    // - timeZoneName: "short" | "long"
+    // - hour12: true | false
+    // Example: { year: "numeric", month: "long", day: "2-digit", weekday: "short" }
     isValidDate
       ? dateObject.toLocaleDateString("en-us", {
           year: "numeric",
-          month: "short",
-          day: "numeric",
+          month: "long",
+          day: "2-digit",
         })
       : String(date)
   }
