@@ -36,7 +36,7 @@ export const SOCIALS: Socials[] = [
     },
     {
         NAME: "Email",
-        HREF: "mailto:ragib.asif30@myhunter.cuny.edu",
+        HREF: "mailto:ragibasif@tuta.io",
     },
     {
         NAME: 'RSS',
