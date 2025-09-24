@@ -1,0 +1,326 @@
+/* ============================================================================ */
+/* RESET */
+/* ============================================================================ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Remove default margin, padding and reset fonts */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* Body improvements */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Lists reset */
+ol,
+ul {
+    list-style: none;
+}
+
+/* Quote reset */
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+/* Table reset */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Form elements reset */
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Button reset */
+button {
+    background: none;
+    cursor: pointer;
+}
+
+/* Media elements */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Remove animations for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* ============================================================================ */
+/* CATPPUCCIN COLORS */
+/* CATPPUCCIN MOCHA - DARK MODE */
+/* ============================================================================ */
+
+/* ---------------- Color Variables ---------------- */
+:root {
+    --rosewater: #f5e0dc;
+    --flamingo: #f2cdcd;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
+    --sky: #89dceb;
+    --sapphire: #74c7ec;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+
+    --text: #cdd6f4;
+    --subtext1: #bac2de;
+    --subtext0: #a6adc8;
+    --overlay2: #9399b2;
+    --overlay1: #7f849c;
+    --overlay0: #6c7086;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --surface0: #313244;
+    --base: #1e1e2e;
+    --mantle: #181825;
+    --crust: #11111b;
+
+    --bg: var(--base);
+    --mantle-bg: var(--mantle);
+    --crust-bg: var(--crust);
+    --surface0-bg: var(--surface0);
+    --surface1-bg: var(--surface1);
+    --surface2-bg: var(--surface2);
+    --overlay0-color: var(--overlay0);
+    --overlay1-color: var(--overlay1);
+    --overlay2-color: var(--overlay2);
+
+    --text-primary: var(--text);
+    --text-secondary: var(--subtext0);
+    --text-tertiary: var(--subtext1);
+
+    --accent: var(--blue);
+    --highlight: var(--peach);
+    --success: var(--green);
+    --error: var(--red);
+    --warning: var(--yellow);
+    --info: var(--sky);
+    --muted: var(--overlay1);
+}
+
+/* ============================================================================ */
+/* Global */
+/* ============================================================================ */
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3rem;
+    line-height: 1.7;
+
+    text-rendering: optimizeLegibility;
+    font-display: swap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    min-height: 100vh;
+    max-width: 30rem;
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    overscroll-behavior-y: contain;
+
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--accent);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    color: var(--highlight);
+}
+
+
+@media (max-width: 768px) {
+    body {
+        overflow: hidden;
+        display: flex;
+        width: 100%;
+        overflow-y: scroll;
+        flex-grow: 1;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
