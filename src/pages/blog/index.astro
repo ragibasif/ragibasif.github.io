@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import Base from "@/layouts/Base.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
-import { SITE } from "@/consts/consts";
+import { SITE } from "@/consts/site";
 import Link from "@/components/Link.astro";
 
 const posts = await getCollection("blog");
