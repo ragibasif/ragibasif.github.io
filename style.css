@@ -33,12 +33,6 @@ html::-webkit-scrollbar {
     /* Chrome, Safari, Opera */
 }
 
-b {
-    border-width: 1px;
-    border-style: solid;
-    border-color: var(--red);
-}
-
 body {
     background-color: var(--bg);
     color: var(--text);
@@ -62,4 +56,31 @@ h1,
 a,
 p {
     font-size: 2rem;
+}
+
+.text {
+    place-self: center;
+    background: linear-gradient(90deg, var(--blue), var(--aqua), var(--blue)) -100%/ 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font: 900 clamp(2em, 10vw, 2rem) exo, sans-serif;
+    animation: shimmer 2s linear infinite
+}
+
+.text:hover {
+    place-self: center;
+    background: linear-gradient(90deg, var(--red), var(--purple), var(--red)) -100%/ 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font: 900 clamp(2em, 10vw, 2rem) exo, sans-serif;
+    animation: shimmer 2s linear infinite
+}
+
+
+@keyframes shimmer {
+    to {
+        background-position: 100%
+    }
 }
