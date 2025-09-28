@@ -1,160 +1,112 @@
-import React from "react";
+import Link from "next/link";
 
-interface FooterProps {
-  className?: string;
-}
-
-const Footer: React.FC<FooterProps> = ({ className = "" }) => {
-  const currentYear = new Date().getFullYear();
-
+export default function Footer() {
   return (
-    <footer
-      className={`flex justify-center w-full px-4 py-12 bg-transparent ${className}`}
-    >
-      <div
-        className="w-full max-w-5xl rounded-2xl border p-10 transition-colors duration-300"
-        style={{
-          borderColor: "var(--color-border)",
-          backgroundColor: "var(--color-bg-alt)",
-        }}
-      >
+    <footer className="flex justify-center w-full px-4 py-12 bg-transparent">
+      <div className="w-full max-w-5xl rounded-2xl border border-neutral-800 bg-neutral-900 p-10">
         {/* Top content */}
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-3 mb-10">
           {/* Company Section */}
           <div className="space-y-3">
-            <h3
-              className="text-lg font-semibold"
-              style={{ color: "var(--color-text)" }}
-            >
-              Company
-            </h3>
+            <h3 className="text-lg font-semibold text-white">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
+                <Link
                   href="#about"
-                  className="transition-colors duration-200 hover:underline"
-                  style={{ color: "var(--color-text-alt)" }}
+                  className="text-neutral-400 hover:text-white transition-colors"
                 >
-                  About Me
-                </a>
+                  About Us
+                </Link>
               </li>
               <li>
-                <a
-                  href="#projects"
-                  className="transition-colors duration-200 hover:underline"
-                  style={{ color: "var(--color-text-alt)" }}
+                <Link
+                  href="#services"
+                  className="text-neutral-400 hover:text-white transition-colors"
                 >
-                  Projects
-                </a>
+                  Services
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#contact"
-                  className="transition-colors duration-200 hover:underline"
-                  style={{ color: "var(--color-text-alt)" }}
+                  className="text-neutral-400 hover:text-white transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Quick Links Section */}
           <div className="space-y-3">
-            <h3
-              className="text-lg font-semibold"
-              style={{ color: "var(--color-text)" }}
-            >
-              Quick Links
-            </h3>
+            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href="#home"
-                  className="transition-colors duration-200 hover:underline"
-                  style={{ color: "var(--color-text-alt)" }}
+                <Link
+                  href="#portfolio"
+                  className="text-neutral-400 hover:text-white transition-colors"
                 >
-                  Home
-                </a>
+                  Portfolio
+                </Link>
               </li>
               <li>
-                <a
-                  href="#privacy"
-                  className="transition-colors duration-200 hover:underline"
-                  style={{ color: "var(--color-text-alt)" }}
+                <Link
+                  href="#"
+                  className="text-neutral-400 hover:text-white transition-colors"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#terms"
-                  className="transition-colors duration-200 hover:underline"
-                  style={{ color: "var(--color-text-alt)" }}
+                <Link
+                  href="#"
+                  className="text-neutral-400 hover:text-white transition-colors"
                 >
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Connect Section */}
           <div className="space-y-3">
-            <h3
-              className="text-lg font-semibold"
-              style={{ color: "var(--color-text)" }}
-            >
-              Connect
-            </h3>
+            <h3 className="text-lg font-semibold text-white">Connect</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="mailto:ragibasif@tuta.io"
-                  className="transition-colors duration-200 hover:underline"
-                  style={{ color: "var(--color-text-alt)" }}
+                  href="mailto:hello@company.com"
+                  className="text-neutral-400 hover:text-white transition-colors"
                 >
-                  ragibasif@tuta.io
+                  hello@company.com
                 </a>
               </li>
               <li>
                 <a
-                  href="https://github.com/ragibasif"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors duration-200 hover:underline"
-                  style={{ color: "var(--color-text-alt)" }}
+                  href="tel:+15551234567"
+                  className="text-neutral-400 hover:text-white transition-colors"
                 >
-                  GitHub
+                  +1 (555) 123-4567
                 </a>
               </li>
               <li>
-                <a
-                  href="https://www.linkedin.com/in/ragibasif"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors duration-200 hover:underline"
-                  style={{ color: "var(--color-text-alt)" }}
+                <Link
+                  href="#"
+                  className="text-neutral-400 hover:text-white transition-colors"
                 >
-                  LinkedIn
-                </a>
+                  Follow Us
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom text */}
-        <div
-          className="pt-6 border-t text-center text-sm transition-colors duration-300"
-          style={{
-            borderColor: "var(--color-border)",
-            color: "var(--color-text-alt)",
-          }}
-        >
-          <p>&copy; {currentYear} Ragib Asif. All rights reserved.</p>
+        <div className="pt-6 border-t border-neutral-800 text-center text-sm text-neutral-500">
+          <p>
+            &copy; {new Date().getFullYear()} Ragib Asif. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
