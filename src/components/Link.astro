@@ -1,0 +1,29 @@
+---
+export interface Props {
+  href: string;
+  name: string;
+  external?: boolean;
+  mailto?: boolean;
+  class?: string;
+}
+
+const {
+  href,
+  name,
+  external = false,
+  mailto = false,
+  class: className,
+} = Astro.props;
+
+// Determine if it's an external link based on props or URL
+const isExternal =
+  external ||
+  (!mailto && (href.startsWith("http://") || href.startsWith("https://")));
+const finalHref = mailto ? `mailto:${href}` : href;
+const target = isExternal ? "_blank" : undefined;
+const rel = isExternal ? "noopener noreferrer" : undefined;
+---
+
+<a href={finalHref} target={target} rel={rel} class={className}>
+  {name}
+</a>

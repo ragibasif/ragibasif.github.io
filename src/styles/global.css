@@ -1,98 +1,179 @@
-/* ============================================================================ */
-/* GLOBAL STYLES */
-/* ============================================================================ */
+/**
+  Global styles for the site.
+  Using TailwindCSS for utility classes, but you can add custom global styles here.
 
-/* Base styles */
-html {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
+  All colors should use CSS variables defined in :root for consistency and easy theming.
+*/
+
+/* Import Tailwind base styles, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/** 
+  Define Gruvbox color variables for easy theming and maintenance.
+*/
+:root {
+    /* Gruvbox Light Mode Colors */
+    --color-bg: #fbf1c7;
+    /* gruvbox-light0 */
+    --color-bg-alt: #ebdbb2;
+    /* gruvbox-light1 */
+    --color-text: #3c3836;
+    /* gruvbox-dark0 */
+    --color-text-alt: #504945;
+    /* gruvbox-dark1 */
+    --color-accent: #b16286;
+    /* gruvbox-purple */
+    --color-accent-alt: #d3869b;
+    /* gruvbox-purple-light */
+    --color-link: #076678;
+    /* gruvbox-blue */
+    --color-link-hover: #458588;
+    /* gruvbox-blue-light */
+    --color-border: #d5c4a1;
+    /* gruvbox-light2 */
+    --color-success: #98971a;
+    /* gruvbox-green */
+    --color-warning: #d79921;
+    /* gruvbox-yellow */
+    --color-error: #cc241d;
+    /* gruvbox-red */
 }
 
+[data-theme="dark"] {
+    /* Gruvbox Dark Mode Colors */
+    --color-bg: #282828;
+    /* gruvbox-dark0 */
+    --color-bg-alt: #3c3836;
+    /* gruvbox-dark1 */
+    --color-text: #ebdbb2;
+    /* gruvbox-light1 */
+    --color-text-alt: #d5c4a1;
+    /* gruvbox-light2 */
+    --color-accent: #d3869b;
+    /* gruvbox-purple-light */
+    --color-accent-alt: #b16286;
+    /* gruvbox-purple */
+    --color-link: #83a598;
+    /* gruvbox-blue-light */
+    --color-link-hover: #458588;
+    /* gruvbox-blue */
+    --color-border: #504945;
+    /* gruvbox-dark1 */
+    --color-success: #b8bb26;
+    /* gruvbox-green-light */
+    --color-warning: #fabd2f;
+    /* gruvbox-yellow-light */
+    --color-error: #fb4934;
+    /* gruvbox-red-light */
+}
+
+/* Custom global styles */
+html,
 body {
+    height: 100%;
+    min-height: 100%;
+    font-family: 'Inter', system-ui, sans-serif;
     background-color: var(--color-bg);
     color: var(--color-text);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    text-align: center;
+    scroll-behavior: smooth;
 }
 
-/* Typography */
-h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: var(--color-text);
-}
-
-p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-/* Links */
 a {
-    color: var(--color-accent);
+    color: inherit;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.2s;
 }
 
-a:hover {
-    color: var(--color-accent-hover);
+a:hover,
+a:focus {
+    color: var(--color-link-hover);
     text-decoration: underline;
 }
 
-/* Theme toggle button */
-.theme-toggle {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    background: var(--color-toggle-bg);
-    border: 2px solid var(--color-toggle-border);
-    border-radius: 2rem;
-    width: 4rem;
-    height: 2rem;
+* {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+}
+
+/* Remove default margin for headings and paragraphs */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    font-weight: inherit;
+}
+
+/* Selection color */
+::selection {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
+::-moz-selection {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
+/* Responsive images */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Button reset */
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
     cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    padding: 0.25rem;
-    z-index: 1000;
 }
 
-.theme-toggle:hover {
-    border-color: var(--color-accent);
+/* Input and textarea reset */
+input,
+textarea {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
 }
 
-.theme-toggle-thumb {
-    width: 1.5rem;
-    height: 1.5rem;
-    background: var(--color-toggle-thumb);
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-    box-shadow: 0 2px 4px var(--color-shadow);
-}
-
-[data-theme="dark"] .theme-toggle-thumb {
-    transform: translateX(2rem);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .theme-toggle {
-        top: 1rem;
-        right: 1rem;
-    }
+/* Focus ring for accessibility */
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
 }
