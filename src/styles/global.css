@@ -2,10 +2,6 @@
 /* GLOBAL STYLES */
 /* ============================================================================ */
 
-/* Import theme colors */
-@import './reset.css';
-@import './colors.css';
-
 /* Base styles */
 html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

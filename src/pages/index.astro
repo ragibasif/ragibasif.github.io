@@ -1,48 +1,29 @@
 ---
+import Base from "../layouts/Base.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
+import ExternalLink from "../components/ExternalLink.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Ragib Asif</title>
-    <link rel="stylesheet" href="/src/styles/reset.css" />
-    <link rel="stylesheet" href="/src/styles/global.css" />
-  </head>
-  <body>
-    <ThemeToggle />
+<Base
+  title="Ragib Asif"
+  description="Personal website of Ragib Asif - Software Engineer"
+>
+  <ThemeToggle />
 
-    <h1>Ragib Asif</h1>
-    <p>
-      <a
-        href="https://github.com/ragibasif"
-        target="_blank"
-        rel="noopener noreferrer">GitHub</a
-      >
-    </p>
-    <p>
-      <a
-        href="https://www.linkedin.com/in/ragibasif"
-        target="_blank"
-        rel="noopener noreferrer">LinkedIn</a
-      >
-    </p>
-    <p>
-      <a
-        href="https://www.youtube.com/@ragib_asif"
-        target="_blank"
-        rel="noopener noreferrer">YouTube</a
-      >
-    </p>
-    <p>
-      <a
-        href="mailto:ragibasif@tuta.io"
-        target="_blank"
-        rel="noopener noreferrer">Email</a
-      >
-    </p>
-  </body>
-</html>
+  <h1>Ragib Asif</h1>
+  <p>
+    <ExternalLink href="https://github.com/ragibasif" name="GitHub" />
+  </p>
+  <p>
+    <ExternalLink
+      href="https://www.linkedin.com/in/ragibasif"
+      name="Linkedin"
+    />
+  </p>
+  <p>
+    <ExternalLink href="https://www.youtube.com/@ragib_asif" name="YouTube" />
+  </p>
+  <p>
+    <ExternalLink href="mailto:ragibasif@tuta.io" name="Email" />
+  </p>
+</Base>
