@@ -2,7 +2,7 @@
 title: The Power of Minimal Design
 description: Why less is often more when it comes to web design and user experience.
 date: 2025-12-21
-id: 0000
+id: 1
 ---
 
 Minimal design is not about removing features or functionality. It's about focusing on what matters most and removing everything else.

@@ -2,7 +2,7 @@
 title: Why Markdown is Perfect for Blogging
 description: How Markdown simplifies content creation and keeps you focused on writing.
 date: 2025-12-25
-id: 0002
+id: 3
 ---
 
 Markdown has become the standard format for blogging and content creation. Here's why it's such a great choice.
@@ -13,8 +13,10 @@ Markdown files are plain text. You can read and write them in any editor. No spe
 
 ```markdown
 # This is a heading
+
 This is a paragraph
-- This is a list item
+
+-   This is a list item
 ```
 
 ## Portable and Future-Proof
