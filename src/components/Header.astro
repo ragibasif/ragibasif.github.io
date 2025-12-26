@@ -1,0 +1,82 @@
+---
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const {
+    title = "Ragib Asif",
+    description = "Software Engineer, Mathematician, Writer, Artist, Poet",
+} = Astro.props;
+---
+
+<header class="header">
+    <div class="container">
+        <div class="content">
+            <a href="/">
+                <h1 class="title">{title}</h1>
+            </a>
+            {description && <p class="description">{description}</p>}
+        </div>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/about">About</a>
+        </nav>
+    </div>
+</header>
+
+<style>
+    header {
+        text-align: center;
+        padding: 3rem 1rem 2rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        margin: 0 0 0.5rem;
+        font-weight: 700;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .content {
+        margin-bottom: 1.5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+        color: #1f2937;
+    }
+
+    .description {
+        font-size: 1rem;
+        color: #6b7280;
+        margin: 0.5rem 0 0 0;
+    }
+
+    .nav {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: #4b5563;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+    }
+
+    .nav a:hover {
+        color: #1f2937;
+    }
+</style>

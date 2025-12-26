@@ -1,11 +1,86 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+const posts = await getCollection("blog");
+posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const recentPosts = posts.slice(0, 3);
 ---
-
 <Layout>
-	<Welcome />
+    <main>
+        {
+            recentPosts.length > 0 ? (
+                <div class="posts">
+                    {recentPosts.map((post) => (
+                        <article class="post-card">
+                            <time datetime={post.data.date.toISOString()}>
+                                {post.data.date.toLocaleDateString("en-US", {
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric",
+                                })}
+                            </time>
+                            <h2>
+                                <a href={`/blog/${post.slug}`}>
+                                    {post.data.title}
+                                </a>
+                            </h2>
+                            {post.data.description && (
+                                <p>{post.data.description}</p>
+                            )}
+                        </article>
+                    ))}
+                </div>
+            ) : (
+                <p class="empty-state">No blog posts yet. Check back soon!</p>
+            )
+        }
+    </main>
 </Layout>
+<style>
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+    .posts {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .post-card {
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    .post-card:last-child {
+        border-bottom: none;
+    }
+    time {
+        display: block;
+        color: #6b7280;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+        margin: 0 0 0.75rem;
+        font-weight: 600;
+    }
+    h2 a {
+        color: #111827;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    h2 a:hover {
+        color: #4b5563;
+    }
+    .post-card p {
+        color: #4b5563;
+        line-height: 1.6;
+        margin: 0;
+    }
+    .empty-state {
+        text-align: center;
+        color: #6b7280;
+        padding: 3rem 0;
+    }
+</style>

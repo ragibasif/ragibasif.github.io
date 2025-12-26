@@ -1,0 +1,149 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, getEntryBySlug } from "astro:content";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    return posts.map((post: any) => ({
+        params: { slug: post.slug },
+    }));
+}
+
+const { slug } = Astro.params;
+const post = await getEntryBySlug("blog", slug!);
+
+if (!post) {
+    return Astro.redirect("/");
+}
+
+const { Content } = await post.render();
+---
+
+<Layout>
+    <article class="post">
+        <header>
+            <a href="/blog" class="back-link">&larr; Back to all posts</a>
+            <time datetime={post.data.date.toISOString()}>
+                {
+                    post.data.date.toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                    })
+                }
+            </time>
+            <h1>{post.data.title}</h1>
+        </header>
+
+        <div class="content">
+            <Content />
+        </div>
+    </article>
+</Layout>
+
+<style>
+    .post {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    header {
+        margin-bottom: 3rem;
+    }
+
+    .back-link {
+        display: inline-block;
+        color: #6b7280;
+        text-decoration: none;
+        margin-bottom: 1rem;
+        font-size: 0.9375rem;
+        transition: color 0.2s;
+    }
+
+    .back-link:hover {
+        color: #111827;
+    }
+
+    time {
+        display: block;
+        color: #6b7280;
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .content {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: #374151;
+    }
+
+    .content :is(h2, h3, h4) {
+        margin: 2rem 0 1rem;
+        font-weight: 600;
+    }
+
+    .content h2 {
+        font-size: 1.75rem;
+    }
+
+    .content h3 {
+        font-size: 1.5rem;
+    }
+
+    .content :is(p, li) {
+        margin-bottom: 1rem;
+    }
+
+    .content :is(ul, ol) {
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .content code {
+        background: #f3f4f6;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.25rem;
+        font-family: monospace;
+        font-size: 0.95em;
+    }
+
+    .content pre {
+        background: #f3f4f6;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        margin-bottom: 1rem;
+    }
+
+    .content pre code {
+        background: none;
+        padding: 0;
+    }
+
+    .content a {
+        color: #2563eb;
+        text-decoration: none;
+    }
+
+    .content a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2rem;
+        }
+
+        .content {
+            font-size: 1rem;
+        }
+    }
+</style>
