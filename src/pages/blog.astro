@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+const posts = await getCollection("blog");
+posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<Layout>
+    <main>
+        {
+            posts.length > 0 ? (
+                <div class="posts">
+                    {posts.map((post) => (
+                        <article class="post-card">
+                            <a href={`/blog/${post.slug}`}>
+                                <h2>{post.data.title}</h2>
+                                <time datetime={post.data.date.toISOString()}>
+                                    {post.data.date.toLocaleDateString(
+                                        "en-US",
+                                        {
+                                            year: "numeric",
+                                            month: "short",
+                                            day: "numeric",
+                                        }
+                                    )}
+                                </time>
+                            </a>
+                        </article>
+                    ))}
+                </div>
+            ) : (
+                <p class="empty-state">No blog posts yet. Check back soon!</p>
+            )
+        }
+    </main>
+</Layout>
+<style>
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+    .posts {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .post-card a {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 2rem;
+    }
+    .post-card a:hover h2 {
+        color: #4b5563;
+    }
+    h2 {
+        font-size: 1.25rem;
+        margin: 0;
+        font-weight: 600;
+        transition: color 0.2s;
+    }
+    time {
+        color: #6b7280;
+        font-size: 0.875rem;
+        white-space: nowrap;
+    }
+    .empty-state {
+        text-align: center;
+        color: #6b7280;
+        padding: 3rem 0;
+    }
+</style>
