@@ -2,7 +2,7 @@
 title: Getting Started with Astro
 description: Learn how to build fast websites with Astro, the modern static site generator.
 date: 2025-12-24
-id: 0001
+id: 2
 ---
 
 Astro is a modern static site generator that allows you to build fast websites using your favorite JavaScript framework or no framework at all.
