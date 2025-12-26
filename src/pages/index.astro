@@ -5,6 +5,7 @@ const posts = await getCollection("blog");
 posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 const recentPosts = posts.slice(0, 3);
 ---
+
 <Layout>
     <main>
         {
