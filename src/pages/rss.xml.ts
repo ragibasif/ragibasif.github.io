@@ -1,19 +1,17 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 
-export async function GET(context) {
-    const posts = await getCollection('blog');
+export async function GET(context: any) {
+    const blog = await getCollection('blog');
 
     return rss({
-        title: 'My Blog',
-        description: 'Thoughts and stories',
+        title: 'Ragib Asif',
+        description: 'A blog',
         site: context.site,
-        items: posts.map((post) => ({
+        items: blog.map((post) => ({
             title: post.data.title,
             pubDate: post.data.date,
             description: post.data.description,
-            id: post.data.id,
-            content: post.body,
             link: `/blog/${post.slug}/`,
         })),
     });
