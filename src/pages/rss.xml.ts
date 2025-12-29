@@ -6,12 +6,11 @@ export async function GET(context: any) {
 
     return rss({
         title: 'Ragib Asif',
-        description: 'A blog',
+        description: 'Blog',
         site: context.site,
         items: blog.map((post) => ({
             title: post.data.title,
             pubDate: post.data.date,
-            description: post.data.description,
             link: `/blog/${post.slug}/`,
         })),
     });

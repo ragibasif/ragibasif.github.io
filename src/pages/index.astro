@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { formatDate } from "../utils/formatDate";
 const posts = await getCollection("blog");
-posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+posts.sort((a, b) => b.id.localeCompare(a.id)); // largest id first, id is a string
 const recentPosts = posts.slice(0, 3);
 ---
 
@@ -14,16 +15,11 @@ const recentPosts = posts.slice(0, 3);
           {recentPosts.map((post) => (
             <article class="post-card">
               <time datetime={post.data.date.toISOString()}>
-                {post.data.date.toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
+                {formatDate(post.data.date)}
               </time>
               <h2>
                 <a href={`/blog/${post.slug}`}>{post.data.title}</a>
               </h2>
-              {post.data.description && <p>{post.data.description}</p>}
             </article>
           ))}
         </div>
