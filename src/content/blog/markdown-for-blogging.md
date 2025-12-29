@@ -16,7 +16,7 @@ Markdown files are plain text. You can read and write them in any editor. No spe
 
 This is a paragraph
 
--   This is a list item
+- This is a list item
 ```
 
 ## Portable and Future-Proof
@@ -25,7 +25,7 @@ Because Markdown is just plain text, your content will outlive any blogging plat
 
 ## Perfect for Static Site Generators
 
-When combined with static site generators like Astro, Markdown provides the perfect workflow:
+> When combined with static site generators like Astro, Markdown provides the perfect workflow:
 
 1. Write in Markdown
 2. Add frontmatter for metadata
