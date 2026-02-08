@@ -1,0 +1,85 @@
+---
+interface Props {
+  author?: string;
+  year?: number;
+}
+
+const { author = "Ragib Asif", year = new Date().getFullYear() } = Astro.props;
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="content">
+      <p class="copyright">
+        &copy; {year}
+        {author}. All rights reserved.
+      </p>
+      <nav class="links">
+        <a href="/rss.xml">RSS</a>
+        <a
+          href="https://www.linkedin.com/in/ragibasif/"
+          target="_blank"
+          rel="noopener noreferrer">LinkedIn</a
+        >
+        <a
+          href="https://github.com/ragibasif"
+          target="_blank"
+          rel="noopener noreferrer">GitHub</a
+        >
+        <a
+          href="https://www.youtube.com/@ragib_asif"
+          target="_blank"
+          rel="noopener noreferrer">YouTube</a
+        >
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 2rem 0;
+    margin-top: 4rem;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .links a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  @media (max-width: 600px) {
+    .content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .links {
+      justify-content: center;
+    }
+  }
+</style>
