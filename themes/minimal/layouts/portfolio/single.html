@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="project">
+    <header class="project-header">
+        <h2>{{ .Title }}</h2>
+        {{ if .Params.tags }}
+        <div class="tags">
+            {{ range .Params.tags }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+        {{ if .Params.link }}
+        <a href="{{ .Params.link }}" class="project-link" target="_blank">View Live Project →</a>
+        {{ end }}
+        {{ if .Params.github }}
+        <a href="{{ .Params.github }}" class="project-link" target="_blank">View Source →</a>
+        {{ end }}
+    </header>
+
+    <div class="content">
+        {{ .Content }}
+    </div>
+</article>
+
+<a href="{{ "portfolio" | relURL }}" class="back-link">← Back to Portfolio</a>
+{{ end }}
