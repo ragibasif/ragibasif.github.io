@@ -6,6 +6,7 @@
     <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <link rel="icon" type="image/svg+xml" href="{{ "/favicon.svg" | relURL }}">
 </head>
 <body>
     <header>
@@ -26,7 +27,7 @@
     <footer class="container">
         <p>&copy; {{ now.Year }} {{ .Site.Params.author }}. All rights reserved.</p>
         <p>
-            {{ if .Site.Params.github }}<a href="{{ .Site.Params.github }}">GitHub</a>{{ end }}
+            {{ if .Site.Params.github }}<a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>{{ end }}
             {{ if .Site.Params.email }} | <a href="mailto:{{ .Site.Params.email }}">Email</a>{{ end }}
         </p>
     </footer>
