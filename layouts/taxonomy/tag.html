@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section>
+  <h2>Tagged: {{ .Title }}</h2>
+  <ul class="post-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <li>
+      <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+  <a class="back-link" href="/tags">← All Tags</a>
+</section>
+{{ end }}

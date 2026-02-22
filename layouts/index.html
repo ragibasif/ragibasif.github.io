@@ -1,39 +1,9 @@
 {{ define "main" }}
-<section class="hero">
-    <h2>Welcome</h2>
-    <p>{{ .Site.Params.description }}</p>
-</section>
-
 <section>
-    <h3>Recent Blog Posts</h3>
-    <ul class="post-list">
-        {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
-        <li>
-            <span class="date">{{ .Date.Format "Jan 2, 2006" }}</span>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </li>
-        {{ end }}
-    </ul>
-    <a href="{{ "blog" | relURL }}" class="more-link">View all posts →</a>
-</section>
-
-<section>
-    <h3>Featured Projects</h3>
-    <div class="project-grid">
-        {{ range first 3 (where .Site.RegularPages "Section" "portfolio") }}
-        <div class="project-card">
-            <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-            <p>{{ .Summary }}</p>
-            {{ if .Params.tags }}
-            <div class="tags">
-                {{ range .Params.tags }}
-                <span class="tag">{{ . }}</span>
-                {{ end }}
-            </div>
-            {{ end }}
-        </div>
-        {{ end }}
+    <div >
+        <h2>Welcome</h2>
     </div>
-    <a href="{{ "portfolio" | relURL }}" class="more-link">View all projects →</a>
 </section>
 {{ end }}
+
+

@@ -1,0 +1,13 @@
+{{- $pages := where .Site.RegularPages "Section" "in" (slice "archive" "software") -}}
+[
+  {{- range $i, $page := $pages -}}
+  {{- if $i }},{{ end -}}
+  {
+    "title": {{ $page.Title | jsonify }},
+    "url": {{ $page.Permalink | jsonify }},
+    "description": {{ $page.Description | jsonify }},
+    "tags": {{ $page.Params.tags | jsonify }},
+    "content": {{ $page.Plain | truncate 500 | jsonify }}
+  }
+  {{- end -}}
+]

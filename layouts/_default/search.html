@@ -1,0 +1,57 @@
+{{ define "main" }}
+<section>
+  <h2>Search</h2>
+  <div class="search-wrap">
+    <input
+      type="text"
+      id="search-input"
+      class="search-input"
+      placeholder="Search archive and software..."
+      autofocus
+    />
+  </div>
+  <ul class="post-list" id="search-results"></ul>
+  <p id="search-empty" style="display:none;">No results found.</p>
+</section>
+
+<script>
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  const empty = document.getElementById('search-empty');
+  let index = [];
+
+  fetch('/index.json')
+    .then(res => res.json())
+    .then(data => { index = data; });
+
+  input.addEventListener('input', () => {
+    const query = input.value.trim().toLowerCase();
+    results.innerHTML = '';
+    empty.style.display = 'none';
+
+    if (!query) return;
+
+    const matches = index.filter(page =>
+      page.title?.toLowerCase().includes(query) ||
+      page.description?.toLowerCase().includes(query) ||
+      page.content?.toLowerCase().includes(query) ||
+      page.tags?.some(t => t.toLowerCase().includes(query))
+    );
+
+    if (matches.length === 0) {
+      empty.style.display = 'block';
+      return;
+    }
+
+    matches.forEach(page => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <a href="${page.url}">${page.title}</a>
+        ${page.description ? `<p>${page.description}</p>` : ''}
+        ${page.tags?.length ? `<div class="tags">${page.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+      `;
+      results.appendChild(li);
+    });
+  });
+</script>
+{{ end }}

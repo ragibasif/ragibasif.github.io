@@ -1,8 +1,8 @@
 {{ define "main" }}
 <article>
 
-  <div class="project-header">
-    <a class="back-link" href="/software">← Back to Software</a>
+  <div class="post-header">
+    <a class="back-link" href="/archive">← Back to Archive</a>
     <h2>{{ .Title }}</h2>
     <div class="meta">
       {{ .Date.Format "January 2, 2006" }}
@@ -12,9 +12,6 @@
       </span>
       {{ end }}
     </div>
-    {{ with .Params.url }}
-    <a class="project-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">View Project →</a>
-    {{ end }}
   </div>
 
   <div class="content">

@@ -4,11 +4,18 @@ title = "Ragib Asif"
 
 [params]
   author = "Ragib Asif"
-  description = "A minimal blog and portfolio"
+  description = "Personal website of Ragib Asif"
   github = "https://github.com/ragibasif"
   linkedin = "https://www.linkedin.com/in/ragibasif"
   youtube = "https://www.youtube.com/@ragib_asif"
   email = "ragibasif@tuta.io"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+[taxonomies]
+  tag = "tags"
 
 [menu]
   [[menu.main]]
@@ -16,13 +23,21 @@ title = "Ragib Asif"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "Blog"
-    url = "/blog/"
+    name = "Archive"
+    url = "/archive/"
     weight = 2
   [[menu.main]]
     name = "Software"
     url = "/software/"
     weight = 3
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 4
+  [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 5
 
 [markup]
   [markup.goldmark]

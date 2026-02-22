@@ -1,22 +1,21 @@
 {{ define "main" }}
 <section>
-  <h2>Projects</h2>
-  <div class="projects-grid">
+  <h2>Archive</h2>
+  <ul class="post-list">
     {{ range .Pages.ByDate.Reverse }}
-    <div class="project-card">
+    <li>
       <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
-      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
       {{ with .Description }}<p>{{ . }}</p>{{ end }}
       {{ with .Params.tags }}
       <div class="tags">
         {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
       </div>
       {{ end }}
-      {{ with .Params.url }}
-      <a class="project-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">View Project →</a>
-      {{ end }}
-    </div>
+    </li>
+    {{ else }}
+    <li><p>No posts yet.</p></li>
     {{ end }}
-  </div>
+  </ul>
 </section>
 {{ end }}
