@@ -1,5 +1,5 @@
 ---
-title: "Blog"
+title: "Archive"
 ---
 
-Welcome to my blog where I share thoughts, tutorials, and insights.
+An archive of posts, notes, thoughts, insights, tutorials, etc.
