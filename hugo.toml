@@ -4,11 +4,9 @@ title = "Ragib Asif"
 
 [params]
   author = "Ragib Asif"
-  description = "Personal website of Ragib Asif"
+  description = "Personal website and blog of Ragib Asif"
   github = "https://github.com/ragibasif"
   linkedin = "https://www.linkedin.com/in/ragibasif"
-  youtube = "https://www.youtube.com/@ragib_asif"
-  email = "ragibasif@tuta.io"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
