@@ -1,3 +1,19 @@
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/fonts/JetBrainsMono-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
 :root {
     --primary-color: #5b8ef0;
     --primary-dim: rgba(91, 142, 240, 0.12);
@@ -463,19 +479,20 @@ article {
     padding: 0.15rem 0.4rem;
     border-radius: var(--radius-sm);
     font-size: 0.85em;
-    color: var(--text-color);
+    color: #8ba7f5;
 }
 
 .content pre {
     font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', ui-monospace, monospace;
-    background: var(--bg-card);
+    background: #0d1117;
     border: 1px solid var(--border-color);
-    padding: 1.25rem;
-    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: 1.25rem 1.5rem;
     overflow-x: auto;
     margin-bottom: 1.25rem;
     font-size: 0.875rem;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .content pre code {
@@ -483,7 +500,16 @@ article {
     border: none;
     padding: 0;
     font-size: inherit;
+    color: var(--text-color);
 }
+
+.content pre::-webkit-scrollbar { height: 4px; }
+.content pre::-webkit-scrollbar-track { background: transparent; }
+.content pre::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
+}
+.content pre::-webkit-scrollbar-thumb:hover { background: var(--text-light); }
 
 .content blockquote {
     border-left: 3px solid var(--border-color);
