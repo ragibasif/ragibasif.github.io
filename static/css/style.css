@@ -50,9 +50,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 ::selection {
@@ -112,7 +109,7 @@ header a.active {
 /* ── Main ── */
 
 main {
-    flex: 1;
+    min-height: calc(100vh - var(--header-height) - 6rem);
     padding-top: 2rem;
 }
 
@@ -160,7 +157,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
+    min-height: calc(100vh - var(--header-height) - 6rem);
 }
 
 .home-content {
