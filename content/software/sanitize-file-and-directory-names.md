@@ -46,4 +46,4 @@ snake -d photos -r        # specific folder, recursive
 
 Perfect for cleaning up downloads, media libraries, backups, or any folder full of files coming from Windows, web, cameras, etc.
 
-MIT licensed • Python 3.13+ • https://github.com/ragibasif/snake
+MIT licensed • Python 3.13+

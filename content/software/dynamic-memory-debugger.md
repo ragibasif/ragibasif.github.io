@@ -24,4 +24,4 @@ Key highlights:
 
 Ideal for development and debug builds on Linux/macOS (POSIX systems). Not meant for production.
 
-MIT licensed • Actively maintained • https://github.com/ragibasif/watchdog
+MIT licensed • Actively maintained
