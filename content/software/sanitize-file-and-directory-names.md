@@ -5,9 +5,7 @@ tags: ["python", "script", "cli"]
 link: "https://github.com/ragibasif/snake"
 ---
 
-**Snake** 🐍
-
-A clean, lightweight CLI tool that sanitizes file and directory names. It turns messy, unsafe names into clean, alphanumeric ones.
+**Snake** is a clean, lightweight CLI tool that sanitizes file and directory names. It turns messy, unsafe names into clean, alphanumeric ones.
 
 ## What it does
 
