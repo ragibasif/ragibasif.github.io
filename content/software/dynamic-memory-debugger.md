@@ -1,6 +1,6 @@
 ---
 title: "Dynamic Memory Debugger"
-date: 2026-03-09
+date: 2026-01-07
 tags: ["c"]
 link: "https://github.com/ragibasif/watchdog"
 ---
