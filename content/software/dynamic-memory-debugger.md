@@ -1,44 +1,27 @@
 ---
 title: "Dynamic Memory Debugger"
-date: 2026-02-22
+date: 2026-03-09
 tags: ["c"]
 link: "https://github.com/ragibasif/watchdog"
 ---
 
-Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder.
+**Watchdog** is a lightweight, thread-safe C library that acts as a runtime memory debugger for heap allocations.
 
-## Overview
+It wraps `malloc`, `calloc`, `realloc`, and `free` to detect and report common bugs with minimal overhead and zero external dependencies:
 
-Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder.
+- Unfreed memory (leaks) at program exit
+- Buffer overflows (via guard canaries)
+- Double frees
+- Invalid frees
 
-## Technologies Used
+Key highlights:
 
-- **Placeholder**: Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder
-- **Placeholder Placeholder**: Placeholder Placeholder Placeholder Placeholder Placeholder
-- **Placeholder Placeholder**: Placeholder Placeholder Placeholder Placeholder Placeholder
-- **Placeholder Placeholder**: Placeholder, Placeholder Placeholder Placeholder Placeholder
+- POSIX threads support (mutex-protected)
+- Optional verbose/color logging (console or file)
+- Easy drop-in usage via macro-based interception
+- Dockerized test suite + GitHub Actions CI
+- Clean API with simple initialization: `w_init(verbose, log_to_file, color)`
 
-## Features
+Ideal for development and debug builds on Linux/macOS (POSIX systems). Not meant for production.
 
-- Placeholder Placeholder Placeholder Placeholder Placeholder
-- Placeholder Placeholder Placeholder Placeholder Placeholder
-- Placeholder Placeholder Placeholder Placeholder Placeholder
-- Placeholder Placeholder Placeholder Placeholder Placeholder
-- Placeholder Placeholder Placeholder Placeholder Placeholder
-
-## Design Goals
-
-The design prioritizes:
-
-1. **Placeholder**: Placeholder, Placeholder-Placeholder Placeholder Placeholder
-2. **Placeholder**: Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder
-3. **Placeholder**: Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder
-4. **Placeholder**: Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder
-
-## Challenges
-
-Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder.
-
-## Results
-
-Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder.
+MIT licensed • Actively maintained • https://github.com/ragibasif/watchdog
