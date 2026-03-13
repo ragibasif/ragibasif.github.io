@@ -154,7 +154,6 @@ section {
 /* ── Home ── */
 
 .home {
-    max-width: 640px;
     padding-top: 3rem;
 }
 
@@ -180,7 +179,6 @@ section {
     color: var(--text-light);
     font-size: 1rem;
     line-height: 1.75;
-    max-width: 480px;
 }
 
 .home-section {
@@ -564,13 +562,22 @@ article {
     color: var(--text-color);
 }
 
-.content pre::-webkit-scrollbar { height: 4px; }
-.content pre::-webkit-scrollbar-track { background: transparent; }
+.content pre::-webkit-scrollbar {
+    height: 4px;
+}
+
+.content pre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 .content pre::-webkit-scrollbar-thumb {
     background: var(--border-color);
     border-radius: 2px;
 }
-.content pre::-webkit-scrollbar-thumb:hover { background: var(--text-light); }
+
+.content pre::-webkit-scrollbar-thumb:hover {
+    background: var(--text-light);
+}
 
 .content blockquote {
     border-left: 3px solid var(--border-color);
