@@ -179,6 +179,40 @@ section {
     color: var(--text-light);
     font-size: 1rem;
     line-height: 1.75;
+    margin-bottom: 1.25rem;
+}
+
+.home-social-icons {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    width: fit-content;
+}
+
+.home-social-icons a {
+    color: var(--text-light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.home-social-icons a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    background: rgba(91, 142, 240, 0.08);
+}
+
+.home-social-icons svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
 }
 
 .home-section {
