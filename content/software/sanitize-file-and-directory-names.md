@@ -1,7 +1,7 @@
 ---
 title: "Sanitize File and Directory Names"
 date: 2026-03-09
-tags: ["python", "script", "cli"]
+tags: ["python", "script", "utility"]
 link: "https://github.com/ragibasif/snake"
 ---
 

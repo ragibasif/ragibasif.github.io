@@ -1,7 +1,7 @@
 ---
 title: "Strip Metadata from Images"
 date: 2026-03-05
-tags: ["python", "script", "images", "privacy", "cli"]
+tags: ["python", "script", "images", "privacy"]
 ---
 
 Photos carry a large amount of personal information: GPS coordinates, camera model, exact date & time, and even the device’s serial number. To remove such EXIF metadata, I created a Python script that recursively cleans metadata from every valid image in the current directory and all subdirectories.
