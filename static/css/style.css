@@ -101,11 +101,6 @@ header a {
     transition: color 0.15s;
 }
 
-.nav-search-icon {
-    display: flex;
-    align-items: center;
-}
-
 header a:hover,
 header a.active {
     color: var(--text-color);
