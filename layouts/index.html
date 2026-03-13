@@ -1,7 +1,41 @@
 {{ define "main" }}
 <section class="home">
-  <div class="home-content">
-    <h2>Welcome</h2>
+
+  <div class="home-hero">
+    <h2>Hey, I'm Ragib.</h2>
+    <p class="home-tagline">Software Engineer</p>
+    <p class="home-bio">I like building things and thinking in public. This is where I keep my projects, notes, and whatever I'm working through lately.</p>
   </div>
+
+  <div class="home-section">
+    <div class="home-section-header">
+      <span class="home-section-label">Recent Posts</span>
+      <a href="/archive/" class="home-section-link">View all →</a>
+    </div>
+    <ul class="home-post-list">
+      {{ range first 3 (where .Site.RegularPages "Section" "archive") }}
+      <li class="home-post-item">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span class="home-post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <div class="home-section">
+    <div class="home-section-header">
+      <span class="home-section-label">Projects</span>
+      <a href="/software/" class="home-section-link">View all →</a>
+    </div>
+    <div class="home-project-grid">
+      {{ range first 3 (where .Site.RegularPages "Section" "software") }}
+      <a class="home-project-card" href="{{ with .Params.link }}{{ . }}{{ else }}{{ .RelPermalink }}{{ end }}" {{ with .Params.link }}target="_blank" rel="noopener noreferrer"{{ end }}>
+        <div class="home-project-name">{{ .Title }}</div>
+        <div class="home-project-desc">{{ .Summary | truncate 60 }}</div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+
 </section>
 {{ end }}
