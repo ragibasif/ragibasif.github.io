@@ -1,4 +1,4 @@
-{{- $pages := where .Site.RegularPages "Section" "in" (slice "archive" "software") -}}
+{{- $pages := where .Site.RegularPages "Section" "archive" -}}
 [
   {{- range $i, $page := $pages -}}
   {{- if $i }},{{ end -}}

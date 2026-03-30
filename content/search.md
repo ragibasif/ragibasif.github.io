@@ -1,6 +1,6 @@
 ---
 title: "Search"
 layout: "search"
-_build:
+build:
   list: never
 ---
