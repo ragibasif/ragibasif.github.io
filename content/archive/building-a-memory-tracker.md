@@ -9,7 +9,7 @@ its most common source of pain. When a project starts crashing because of a bad
 `free()`, a silent leak, or a buffer overwrite that corrupts heap state long
 before the actual fault, debugging gets expensive fast.
 
-`[watchdog](https://github.com/ragibasif/watchdog)` was built to make those failures visible earlier. Instead of waiting
+[Watchdog](https://github.com/ragibasif/watchdog) was built to make those failures visible earlier. Instead of waiting
 for a segfault or using a heavyweight external tool every time, the project
 wraps the standard heap APIs and records enough metadata to explain what
 happened and where it happened.

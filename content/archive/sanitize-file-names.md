@@ -4,7 +4,7 @@ date: 2026-03-30
 tags: ["python","script","cli"]
 ---
 
-Most developer tools aim to do more every release. `[snake](https://github.com/ragibasif/snake)` is interesting for the opposite reason: it does one job, does it predictably, and stays out of the way.
+Most developer tools aim to do more every release. [Snake](https://github.com/ragibasif/snake) is interesting for the opposite reason: it does one job, does it predictably, and stays out of the way.
 
 At its core, Snake is a lightweight Python CLI for sanitizing file and directory names. It replaces non-alphanumeric characters with underscores, collapses repeated underscores, trims leading and trailing separators, and skips hidden files and directories. If a name would otherwise collapse into nothing, it falls back to a UTC timestamp so the rename still succeeds.
 
