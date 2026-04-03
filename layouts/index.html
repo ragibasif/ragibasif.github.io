@@ -28,18 +28,18 @@
   </div>
 
   <div class="home-section">
-    <div class="home-section-header">
-      <span class="home-section-label">Recent Posts</span>
-      <a href="/archive/" class="home-section-link">View all →</a>
-    </div>
-    <ul class="home-post-list">
-      {{ range first 3 (where .Site.RegularPages "Section" "archive") }}
-      <li class="home-post-item">
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        <span class="home-post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
-      </li>
+    <span class="home-section-label">Projects</span>
+    <div class="home-project-grid">
+      {{ range .Site.Data.projects.project }}
+      <a class="project-card" href="{{ .link }}" target="_blank" rel="noopener noreferrer">
+        <div class="project-card-name">{{ .name }}</div>
+        <div class="project-card-desc">{{ .description }}</div>
+        <div class="project-card-tags">
+          {{ range .tags }}<span class="project-tag">{{ . }}</span>{{ end }}
+        </div>
+      </a>
       {{ end }}
-    </ul>
+    </div>
   </div>
 
 </section>
