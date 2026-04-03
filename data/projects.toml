@@ -2,10 +2,10 @@
 name = "Watchdog"
 description = "A lightweight, thread-safe C library that acts as a runtime memory debugger for heap allocations, detecting leaks, overflows, and double frees."
 link = "https://github.com/ragibasif/watchdog"
-tags = ["C"]
+techs = ["C"]
 
 [[project]]
 name = "Snake"
 description = "A clean, lightweight CLI tool that sanitizes file and directory names. Turns messy, unsafe names into clean, alphanumeric ones."
 link = "https://github.com/ragibasif/snake"
-tags = ["Python"]
+techs = ["Python"]

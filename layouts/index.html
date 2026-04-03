@@ -34,8 +34,8 @@
       <a class="project-card" href="{{ .link }}" target="_blank" rel="noopener noreferrer">
         <div class="project-card-name">{{ .name }}</div>
         <div class="project-card-desc">{{ .description }}</div>
-        <div class="project-card-tags">
-          {{ range .tags }}<span class="project-tag">{{ . }}</span>{{ end }}
+        <div class="project-card-techs">
+          {{ range .techs }}<span class="project-tech">{{ . }}</span>{{ end }}
         </div>
       </a>
       {{ end }}

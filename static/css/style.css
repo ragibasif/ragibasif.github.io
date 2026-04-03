@@ -263,13 +263,13 @@ section {
     margin-bottom: 0.75rem;
 }
 
-.project-card-tags {
+.project-card-techs {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
 }
 
-.project-tag {
+.project-tech {
     font-size: 0.7rem;
     color: var(--text-light);
     border: 1px solid var(--border-color);
